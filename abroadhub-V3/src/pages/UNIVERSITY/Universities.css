@@ -1,0 +1,135 @@
+
+.universities{
+  width: 100%;
+  padding-bottom: 1rem;
+}
+/* Heading styles */
+.universities-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.universities-heading h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Scrollable list styles */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+  white-space: nowrap; /* Ensure that content stays in a single row */
+}
+
+.university-container {
+  /* background-color: #fff; */
+  /* border: 1px solid #ddd; */
+  border-radius: 8px;
+  flex: 0 0 300px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  transition: transform 0.3s ease-in-out;
+  display: inline-block; 
+  width: auto; 
+}
+
+
+.university-cards{
+  display: flex;
+  gap: 10px;
+}
+.university-cards img{
+  width: auto;
+  height: 200px;
+}
+.university-card:hover{
+transform: scale(1.02);
+}
+.university-card {
+  background-color:rgba(288,288,288,0.8);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease-in-out;
+}
+.university-card:hover{
+  cursor: pointer;
+  transform: scale(1.02);
+  background-color: #e9e5e5;
+  }
+.university-card h3 {
+  color: #007bff;
+}
+
+.university-card p {
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Dots for navigation */
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dots .dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dots .dot.active {
+  background-color: #007bff;
+}
+
+/* Scroll buttons */
+.scroll-buttons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.scroll-buttons button {
+  background-color: #ddd;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;  /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+  .university-container {
+    flex: 0 0 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .scroll-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
