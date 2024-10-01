@@ -16,15 +16,15 @@ export default function Body() {
         <div className="body-container">
 
                 <Navbar />
-                {/* <Home />
+                <Home />
                 <Country/>
                 <VisaInfo />
-                <Universities/>
+                {/* <Universities/> */}
                 <VisaSteps />
                 <Tourist />
                 <Services />
                 <Experts />
-                <Footer /> */}
+                <Footer />
       
         </div>
     );

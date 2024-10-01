@@ -57,7 +57,64 @@
     text-align: center;
   }
   
-
+  .search-btn {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 50px;
+    padding: 10px;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .search-input {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .search-input p {
+    width: 100%;
+    border: 1px solid #ccc;
+    font-size: 1.4rem;
+    border: 0.2rem solid var(--mainBgColor);
+    border-radius: 5rem;
+    color: var(--bigStone);
+    padding: 0.6rem;
+    padding-left: 3rem;
+    font-weight: 500;
+  }
+  
+  a{
+    color: var(--mainTextColor);
+  }
+  .search-button {
+    position: absolute;
+    top: 1rem;
+    right: 20px;
+    border: 2px solid var(--mainBgColor);
+    border-radius: 2rem;
+    font-weight: 400;
+    width: 16rem;
+    padding: 8px;
+    font-size: 18px;
+    background-color: var(--logoColor2);
+    color: var(--mainTextColor);
+  }
+  
+  .search-button:hover {
+    background-color: var(--mainTextColor);
+    color: var(--mainTextColor);
+  }
+  .search-button a:hover{
+    color: var(--mainBgColor);
+    font-weight: 400;
+  }
   
   /*=======================================================================================
              MEDIA QUERY
@@ -306,7 +363,7 @@
   padding: 0.5rem;
   padding-left:1.5rem;
 }
-/* 
+
 .search-button {
   top: 1rem;
   right: 20px;
@@ -318,7 +375,7 @@
   font-size: 18px;
   background-color: var(--mainBgColor);
   color: var(--mainTextColor);
-} */
+}
 }
 @media (min-width:1024px){
   .home-page {
@@ -393,7 +450,7 @@
     position: relative;
   }
   
-/*   
+  
   .search-button {
     top: 1.2rem;
     right: 20px;
@@ -401,7 +458,7 @@
     width: 18rem;
     padding: 8px;
     font-size: 18px;
-  } */
+  }
   
 }
   

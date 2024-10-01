@@ -6,15 +6,12 @@ import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/NAVBAR/Navbar";
 import Footer from "../../components/FOOTER/Footer";
-import Filter from "../UNIVERSITY/Filter.jsx";
 
 export default function MSList() {
     const [universityData, setUniversityData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-
- 
 
     useEffect(() => {
         const getUniversity = async () => {
@@ -30,20 +27,6 @@ export default function MSList() {
         };
         getUniversity();
     }, []);
-
-
-    //HANDLING UNIVERSITIES FILTERS
-    const handleFilter = async (filters) => {
-        try {
-          setLoading(true);
-          const filteredData = await fetchFilteredUniversities(filters);
-          setUniversities(filteredData);
-          setLoading(false);
-        } catch (err) {
-          setError("Failed to load universities");
-          setLoading(false);
-        }
-      };
 
 
     if (loading) {
@@ -62,7 +45,7 @@ export default function MSList() {
                     <h1>Universities List</h1>
                     <div className="uni-container">
                         <div className="uni-list-leftSide-container">
-                           <Filter onFilter={handleFilter}/>
+                          
                         </div>
                         <div className="uni-list-rightSide-container">
                             <ul className="uni-list-container">
