@@ -25,7 +25,7 @@ h1 {
 }
 
 .carousel-item {
-  flex: 0 0 33.33%; /* Show 3 flags in a row */
+  flex: 0 0 33.33% !important;
   padding: 10px;
   opacity: 0; /* Initially hidden */
   transform: translateY(100px); /* Start flags below the screen */
