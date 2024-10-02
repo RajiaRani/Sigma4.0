@@ -26,15 +26,15 @@ h1 {
 
 .carousel-item {
   flex: 0 0 33.33% !important;
-  padding: 10px;
-  opacity: 0; /* Initially hidden */
-  transform: translateY(100px); /* Start flags below the screen */
+  padding: 10px !important;
+  transform: translateY(100px) !important; 
   transition: opacity 1s ease, transform 1s ease;
+  opacity: 1 !important; /* Force visible */
 }
 
 .carousel-item.visible {
-  opacity: 1;
-  transform: translateY(0); /* Flags move to normal position */
+  opacity: 1 !important;
+  transform: translateY(0) !important; /* Flags move to normal position */
 }
 
 .carousel-item img {
@@ -53,7 +53,7 @@ h1 {
 
 /* Title overlay on hover */
 .carousel-item .title-overlay {
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
   width: 100%;
@@ -62,7 +62,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  opacity: 0 !important;
   transition: opacity 0.3s ease-in-out; /* Smooth transition */
   color: white;
   font-size: 1.9rem;
@@ -70,15 +70,15 @@ h1 {
 }
 
 .carousel-item:hover .title-overlay {
-  opacity: 1; /* Show title when hovered */
+  opacity: 1 !important; 
 }
 /* Responsive adjustments for mobile screens */
 @media (max-width: 575.98px) {
   .tourist-container {
-    width: 100%;
-    margin: auto;
+    width: 100% !important;
+    margin: auto !important;
     text-align: center;
-    overflow: hidden;
+    overflow: hidden !important;
     margin-top: -8rem;
   }
 
@@ -90,10 +90,10 @@ h1 {
 
 @media (min-width: 576px) and (max-width: 767.98px) {
   .tourist-container {
-    width: 100%;
-    margin: auto;
+    width: 100% !important;
+    margin: auto !important;
     text-align: center;
-    overflow: hidden;
+    overflow: hidden !important;
     margin-top: -8rem;
   }
 

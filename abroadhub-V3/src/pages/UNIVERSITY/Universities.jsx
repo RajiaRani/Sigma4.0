@@ -78,10 +78,10 @@ export default function Universities() {
                 <div className="universities">
                     <h1>Universities For MS/PG Programs</h1>
                     <Link to="/universities/MS-PG"><li>View All</li></Link>
-                    <div className="scroll-buttons">
+                    {/* <div className="scroll-buttons">
                         <button onClick={scrollLeft}>&lt;</button>
                         <button onClick={scrollRight}> &gt;</button>
-                    </div>
+                    </div> */}
 
                     {/* Scrollable list */}
                     <ul className="scroll-container" ref={scrollRef}>

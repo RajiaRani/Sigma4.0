@@ -89,13 +89,21 @@ footer .topInfo .col:last-child {
 footer .topInfo .col svg {
     font-size: 26px !important;
     margin-right: 7px !important;
-    color: #fff !important;
+    color:  rgba(288, 288, 288, 0.8) !important;
 }
 
 footer .topInfo .col span {
     font-size: 15px !important;
-    color: #fff !important;
+    color: rgba(288, 288, 288, 0.8) !important;
 }
+footer .topInfo .col:hover{
+    background-color: rgba(288,288,288,0.1);
+}
+
+.col Button{
+    color:rgba(288, 288, 288, 0.9)!important;
+}
+
 .footer-middle {
     margin: 50px auto !important;
 }
@@ -103,7 +111,7 @@ footer .topInfo .col span {
     color: #fff !important;
 }
 .footer-middle .col ul li a {
-    color: rgba(288, 288, 288, 0.6) !important;
+    color:  rgba(288, 288, 288, 0.4) !important;
     text-decoration: none;
     font-size: 12px;
 }
@@ -113,20 +121,17 @@ footer .topInfo .col span {
     color: rgba(288, 288, 288, 1.0)  !important;
 }
 
-
-
-
 .copyright {
     width: 100%;
-    border-top: 0.5px solid var(--mainTextColor);
+    border-top: 0.5px solid rgba(288, 288, 288, 0.4);
     text-align: center;
     background-color: var(--logoColor2);
 }
 
 .copyright p {
     font-size: 15px;
-    color: #fff;
-    padding: 3px 0px;
+    color:  rgba(288, 288, 288, 0.8) !important;
+    padding: 3px 0px !important;
     margin-bottom: 0rem;
 }
 

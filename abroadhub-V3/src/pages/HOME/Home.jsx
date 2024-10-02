@@ -1,19 +1,19 @@
 import "./Home.css"
 import "../../styles/global.css";
-import { RiSearchLine } from "react-icons/ri"
+import Button from '@mui/material/Button';
+import { RiSearchLine } from "react-icons/ri";
 export default function Home() {
     return (
         <>
           <div className="main-container">
             <section className="section">
             <div className="home-page">
-                <div className="search-btn">
+                <div className="search-btn w-100">
                     <div className="search-input">
-                        <p>
-                            Talk to our Experts Free.....
-                        </p>
+                        <span className="search-icon">< RiSearchLine/></span>
+                         <input type="text" placeholder="Search Universities, Countries.."></input>
                     </div>
-                    <button className="search-button"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfTYNHdmGrZCQWaXeODsJ6ASI49fd3iJ6hNR3CRBCsc_nfAYw/viewform" >Book Free Appointment</a></button>
+                    <Button className="search-button">Search</Button>
                 </div>
                 <div className="home-bg-image">
                     <video autoPlay muted loop playsInline className="home-bg-video">

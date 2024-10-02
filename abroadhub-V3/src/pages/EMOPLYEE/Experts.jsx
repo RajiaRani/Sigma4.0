@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import "./Experts.css";
 import "../../styles/global.css";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
+import Button from '@mui/material/Button';
 import { FaTimes } from "react-icons/fa";  // Import the close (X) icon
 import expert1 from "../../assets/IMAGES/Experts/chenchuImg.jpeg";
 import expert2 from "../../assets/IMAGES/Experts/expert2.png";
@@ -117,12 +118,12 @@ export default function Experts() {
                         <img src={expert.image} alt={expert.name} />
                         <h3>{expert.name}</h3>
                         <h4>{expert.position}</h4>
-                        <button 
+                        <Button 
                             className="free-counseling-btn" 
                             onClick={() => handleCounselingClick(index)}
                         >
                             Get Free Counseling
-                        </button>
+                        </Button>
 
                         {/* Display the contact card if the "Get Free Counseling" button was clicked */}
                         {clickedExpertIndex === index && (
