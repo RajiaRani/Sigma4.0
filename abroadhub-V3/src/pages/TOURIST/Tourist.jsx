@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Tourist.css";
 import "../../styles/global.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import usa from "../../assets/IMAGES/Flag/usa.png";
 import canada from "../../assets/IMAGES/Flag/canada.png";
 import italy from "../../assets/IMAGES/Flag/italy.png";
@@ -11,100 +14,103 @@ import germany from "../../assets/IMAGES/Flag/germany.png";
 import newzealand from "../../assets/IMAGES/Flag/newzealand.png";
 import swaziland from "../../assets/IMAGES/Flag/swaziland.png";
 
-// Flag array with details for each country
-const flags = [
-  { src: usa, alt: "USA", title: "USA", link: "https://example.com/usa" },
-  { src: canada, alt: "Canada", title: "Canada", link: "https://example.com/canada" },
-  { src: australia, alt: "Australia", title: "Australia", link: "https://example.com/australia" },
-  { src: italy, alt: "Italy", title: "Italy", link: "https://example.com/italy" },
-  { src: dubai, alt: "Dubai", title: "Dubai", link: "https://example.com/dubai" },
-  { src: france, alt: "France", title: "France", link: "https://example.com/france" },
-  { src: germany, alt: "Germany", title: "Germany", link: "https://example.com/germany" },
-  { src: newzealand, alt: "New Zealand", title: "New Zealand", link: "https://example.com/newzealand" },
-  { src: swaziland, alt: "Swaziland", title: "Swaziland", link: "https://example.com/swaziland" },
-];
+
+
 
 export default function Tourist() {
-  const flagsPerGroup = 3; // Show 3 flags per group
-  const [visibleItems, setVisibleItems] = useState(
-    new Array(flags.length).fill(false) // Initialize all flags as invisible
-  );
-
-  const flagRefs = useRef([]);
-
-  // Intersection Observer to trigger animation when flags come into view
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Only start the staggered animation when the group comes into view
-            const index = flagRefs.current.indexOf(entry.target);
-            if (index >= 0) {
-              staggerReveal(index); // Call stagger reveal when the group is in view
-            }
-          }
-        });
-      },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
-    );
-
-    flagRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      if (flagRefs.current) {
-        flagRefs.current.forEach((ref) => {
-          if (ref) observer.unobserve(ref);
-        });
-      }
-    };
-  }, []);
-
-  // Staggered reveal function
-  const staggerReveal = (startIndex) => {
-    const groupIndex = Math.floor(startIndex / flagsPerGroup);
-    const start = groupIndex * flagsPerGroup;
-    const end = start + flagsPerGroup;
-
-    const interval = setInterval(() => {
-      setVisibleItems((prevVisibleItems) => {
-        const nextItems = [...prevVisibleItems];
-        for (let i = start; i < end && i < flags.length; i++) {
-          nextItems[i] = true; // Mark flags as visible
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 100,
+    slidesToShow: 4, // default for larger screens
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 1024, // for screens smaller than 1024px
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true, // Enable dots on smaller screens
         }
-        return nextItems;
-      });
-      clearInterval(interval); // Only reveal the group once
-    }, 500); // Delay between groups
+      },
+      {
+        breakpoint: 768, // for screens smaller than 768px
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: false, // Disable arrows for small screens
+        }
+      },
+      {
+        breakpoint: 480, // for screens smaller than 480px
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: false, // Disable autoplay on very small screens
+        }
+      }
+    ]
   };
+  
+ return (
 
-  return (
     <div className="main-container">
       <section className="section">
         <div className="tourist-container">
-          <h1>Apply Tourist Visa To Following Countries through AbroadHub</h1>
-          <div className="carousel-wrapper">
-            <div className="carousel">
-              {flags.map((flag, i) => (
-                <a
-                  key={i}
-                  href={flag.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`carousel-item ${visibleItems[i] ? "visible" : ""}`}
-                  ref={(el) => (flagRefs.current[i] = el)} // Attach each flag to the ref array
-                >
-                  <h2>{flag.title}</h2>
-                  <img src={flag.src} alt={flag.alt} />
-                  <div className="title-overlay">{flag.title}</div>
-                </a>
-              ))}
+          <h1>Apply Tourist Visa To Following Countries through AbroadHub</h1> <br />
+          <Slider {...settings}  className="mt-4">
+            <div className="item text-center">
+              <img src={usa} />
+              <h5>USA</h5>
             </div>
-          </div>
-        </div>
-      </section>
+
+            <div className="item text-center">
+              <img src={canada} />
+              <h5>Canada </h5>
+            </div>
+            <div className="item text-center">
+              <img src={italy} />
+              <h5>Italy </h5>
+            </div>
+
+            <div className="item text-center">
+              <img src={australia} />
+              <h5>Australia </h5>
+            </div>
+            <div className="item text-center">
+              <img src={france} />
+              <h5>France</h5>
+            </div>
+
+            <div className="item text-center">
+              <img src={germany} />
+              <h5>Germany </h5>
+            </div>
+
+            <div className="item text-center">
+              <img src={newzealand} />
+              <h5>Newzealand</h5>
+            </div>
+
+            <div className="item text-center">
+              <img src={swaziland} />
+              <h5>Swaziland</h5>
+            </div>
+
+            <div className="item text-center">
+              <img src={france} />
+              <h5>France</h5>
+            </div>
+            <div className="item text-center">
+              <img src={dubai} />
+              <h5>Dubai </h5>
+            </div>
+      </Slider>
     </div>
+      </section >
+    </div >
   );
 }

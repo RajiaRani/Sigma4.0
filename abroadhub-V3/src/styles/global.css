@@ -37,12 +37,12 @@ body{
 
 .section h1{
     font-weight: 700;
-    font-size: 2.3rem;
-    letter-spacing: -1.6px;
+    font-size: 2.3rem !important;
+    letter-spacing: -1.6px !important;
     color: var(--logoColor2);
 } 
 .section h2{
-  font-size:1.6rem;
+  font-size:1.6rem !important;
   font-weight: 700;
   color: var(--headingColor);
 }
@@ -51,32 +51,30 @@ h4,
 h5,
 h6 {
     font-weight: 600;
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
 }
 
 a {
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1rem !important;
     color: var(--mainBgColor);
 }
 
 p{
-    font-size: 1.1rem;
-    line-height: 1.5;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    font-size: 1.1rem !important;
+    line-height: 1.5 !important;
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
 }
 
 li{
     list-style: none;
-    font-size: 1rem;
+    font-size: 1rem !important;
     color: var(--mainBgColor);
 }
-span{
-    font-size: 1rem;
-}
+
 .main-container{
-    width: 60%;
+    width: 60% !important;
     margin: auto !important;
     margin-top: 50px !important;
     margin-bottom: 80px !important;
@@ -129,12 +127,12 @@ span{
         border-radius: 20px;
     }
     .section h1{
-        font-size: 1.7rem;
-        letter-spacing: -1.7px;
+        font-size: 1.7rem !important;
+        letter-spacing: -1.7px !important;
     } 
     .section h2{
-      font-size: 1.3rem;
-      letter-spacing: -1.2px;
+      font-size: 1.3rem !important;
+      letter-spacing: -1.2px !important;
       font-weight: 700;
     }
     h3,
@@ -142,27 +140,27 @@ span{
     h5,
     h6 {
         font-weight: 600;
-        font-size: 1.2rem;
+        font-size: 1.2rem !important;
     }
     
     a {
         text-decoration: none;
-        font-size:0.7rem;
+        font-size:0.7rem !important;
     }
     
     p{
-        font-size: 0.9rem;
-        margin-bottom: 0px;
-        line-height: 1.6;
+        font-size: 0.9rem !important;
+        margin-bottom: 0px !important;
+        line-height: 1.6 !important;
         font-weight: 500;
     }
     
     .lower-links li{
         list-style: none;
-        font-size: 0.7rem;
+        font-size: 0.7rem !important;
     }
     span{
-        font-size: 0.7rem;
+        font-size: 0.7rem !important;
     }
 }
 
@@ -173,19 +171,19 @@ span{
         border-radius: 20px;
     }
     .section h1{
-        font-size: 2rem;
-        letter-spacing: -1.5px;
+        font-size: 2rem !important;
+        letter-spacing: -1.5px !important;
     } 
     .section h2{
-      font-size: 1.7rem;
-      letter-spacing: -1.0px;
+      font-size: 1.7rem !important;
+      letter-spacing: -1.0px !important;
     }
     h3,
     h4,
     h5,
     h6 {
         font-weight: 600;
-        font-size: 1.2rem;
+        font-size: 1.2rem !important;
     }
     
     a {
@@ -193,15 +191,13 @@ span{
     }
     
     p{
-        font-size: 1rem;
-        margin-bottom: 0px;
-        line-height: 1.6;
+        font-size: 1rem !important;
+        margin-bottom: 0px !important;
+        line-height: 1.6 !important;
     }
     
     li{
-        font-size: 1rem;
+        font-size: 1rem !important;
     }
-    span{
-        font-size: 1rem;
-    } 
+    
 }

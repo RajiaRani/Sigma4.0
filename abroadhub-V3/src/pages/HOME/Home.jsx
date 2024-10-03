@@ -8,7 +8,7 @@ export default function Home() {
           <div className="main-container">
             <section className="section">
             <div className="home-page">
-                <div className="search-btn w-100">
+                <div className="search-btn">
                     <div className="search-input">
                         <span className="search-icon">< RiSearchLine/></span>
                          <input type="text" placeholder="Search Universities, Countries.."></input>

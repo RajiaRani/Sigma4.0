@@ -92,8 +92,8 @@ li {
 
 .navbar-upper-links .upper-link .dropdown-menu {
     display: block;
-    min-width: 140px !important;
-    width: 140px;
+    min-width: 160px !important;
+    width: 160px;
     height: auto !important;
     border-radius: none !important;
     position: absolute !important;
@@ -154,7 +154,7 @@ li {
 }
 
 .navbar-upper-links .upper-link .dropdown-menu li Button svg {
-    font-size: 12px !important;
+    font-size: 13px !important;
     margin-right: 3px !important;
 }
 

@@ -46,17 +46,18 @@
 .visa-steps-container {
     border-top: 1px solid var(--mainBgColor);
     border-bottom: 1px solid var(--mainBgColor); 
-    height: 41rem;
+    height: 34rem !important;
     padding: 1rem 0px;
-    margin:  0px;
+    margin:  0px !important;
+    padding: 20px 0px !important;
    background-color: rgb(240, 245, 250);
 }
 
 .visa-steps {
     width:60%;
-    margin: auto !important;
+    margin: 30px auto !important;
     display: grid;
-    grid-gap:10px 20px;
+    grid-gap: 20px!important;
     grid-template-rows: repeat(2,1fr);
    grid-template-columns: repeat(2,1fr);
 }
@@ -114,10 +115,10 @@ color: var(--headingColor);
     }
    
     .visa-steps-container {
-        width: 100%;
-        margin: 10rem auto;
-        height: auto;
-        padding: 0px 20px;
+        width: 100% !important;
+        margin: 10rem auto !important;
+        height: auto !important;
+        padding: 0px 20px !important;
     }
     
     .visa-steps-container .highlight {
@@ -125,12 +126,14 @@ color: var(--headingColor);
         font-weight: 700;
         text-align: start;
         color: var(--backgroundColor);
-        margin: 30px 0px;
+        margin: 30px 0px !important;
     }
-  
+    .visa-steps-container span{
+        font-size: 19px !important;
+    }
     .visa-steps {
-        height: auto;
-        width: 100%;
+        height: auto !important;
+        width: 100% !important;
        display: flex;
        flex-direction: column;
     }
@@ -146,8 +149,8 @@ color: var(--headingColor);
     .step2,
     .step3,
     .step4 {
-        width: auto;
-        height: auto;
+        width: auto !important;
+        height: auto !important;
         padding:  10px;
     }
     
