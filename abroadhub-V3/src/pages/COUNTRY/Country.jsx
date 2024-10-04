@@ -38,6 +38,7 @@ export default function Country() {
       try {
         setLoading(true); // Set loading to true before the fetch
         const countryData = await fetchCountry(); // Fetch country data from backend
+        console.log(countryData); // Check API response
         setCountries(countryData);
         setLoading(false); // Set loading to false once the fetch is done
       } catch (error) {
@@ -55,11 +56,11 @@ export default function Country() {
       scrollInterval = setInterval(() => {
         if (scrollRef.current) {
           scrollRef.current.scrollBy({
-            left: 1, // Adjust the scroll speed here
+            left: 2, // Adjust scroll speed here
             behavior: "smooth",
           });
         }
-      }, 1); // Adjust the interval time for smoothness
+      }, 30); // Adjust interval time for smooth scrolling
     }
     return () => clearInterval(scrollInterval);
   }, [isHovered]);
@@ -112,11 +113,11 @@ export default function Country() {
               />
               <div className="card-info">
                 <h2>{country.countryName}</h2>
-                <p>{country.description.substring(0, 100)}......</p>
+                <p>{country.description ? country.description.substring(0, 50) : "No description available"}......</p>
               </div>
               <div className="hover-content">
                 <h3>Study in {country.countryName}</h3>
-                <p>Apply now</p>
+                <p>Read More</p>
                 <Link key={country._id} to={`/country/${country._id}`} className="btn">
                   More
                 </Link>

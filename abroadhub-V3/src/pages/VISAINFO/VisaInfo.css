@@ -1,11 +1,10 @@
-
 .immigration-container {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0px !important;
     text-align: center;
-    margin:5rem auto !important;
+    margin: 5rem auto !important;
 }
 
 .image img {
@@ -71,7 +70,7 @@
 .image-text {
     width: 100%;
     margin: auto;
-    padding: 0 50px !important; 
+    padding: 0 50px !important;
     border-radius: 10px;
     animation: fadeIn 2s ease-in-out;
 }
@@ -95,20 +94,24 @@
     line-height: 1.7;
     animation: fadeInUp 2s ease-in-out;
 }
-.visa-points{
-    width: 100%;
+
+.visa-points {
+    width: 100% !important;
 }
-.visa-points li{
-    display: flex;
-    text-align: start;
-    justify-content: start;
-    align-items: start;
+
+.visa-points li {
+    display: flex !important;
+    text-align: start !important;
+    justify-content: start !important;
+    align-items: start !important;
 }
+
 /* Points container */
 
 .visa-points p {
     animation: fadeInLeft 2s ease-in-out;
 }
+
 .visa-points img {
     width: 20px;
     height: 20px;
@@ -119,82 +122,88 @@
                               MEDIA QUERY
 ======================================================================================================*/
 /* Mobile phones (small screens) */
-@media (max-width: 480px) {
+@media (max-width: 575.98px) {
     .immigration-container {
         width: 100% !important;
-        margin:0px auto;
+        margin: 0px auto;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         text-align: start;
-        margin-bottom: -5rem !important;
+        height: auto !important;
     }
-    
+
     .image img {
         width: 100% !important;
         height: 20rem !important;
         border-radius: 0px !important;
     }
-    
+
     .image a {
-        text-decoration: none;
-        font-size: 23px;
-        font-weight: 600;
+        font-size: 23px !important;
         width: 100% !important;
-        border: 1px solid var(--shipCover);
-        background-color: var(--bigStone);
-        color: var(--mainTextColor);
-        position: absolute;
         border-radius: 0px;
-        box-shadow: 9px 10px 5px 0.9px var(--blue);
-        transition: all 0.3s ease;
-        animation: BackgroundColor 1s ease 0.1s infinite alternate;
     }
+
     .image a:hover {
         animation: none;
         cursor: pointer;
     }
-    
+
     .image {
-        position: relative;
-        width: 100% !important;
-        height: 100% !important;
         border-radius: 0px;
         margin-top: 2rem !important;
     }
-    
+
     .image .top {
         top: -20px;
         left: 0;
     }
-    
+
     .image .bottom {
         bottom: -20px !important;
         left: 0;
     }
-    
+
     .immigration-container .image-text {
         width: 90% !important;
         line-height: 1.5;
-        padding:0px !important;
+        padding: 0px !important;
     }
 
-    
     .immigration-container .image-text p {
-        font-size: 15px;
-        padding: 10px !important;
+        font-size: 15px !important;
+        padding: 0px !important;
     }
+
+    /* Paragraph styles */
+    .image-text p {
+        text-align: start;
+        margin-top: -5px !important;
+        line-height: 1.7;
+    }
+
+    .visa-points li {
+        padding: 15px 0px !important;
+        justify-content: center !important;
+    }
+
+    .visa-points img {
+        margin-right: 10px !important;
+    }
+
 }
 
 
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 767.98px) {
     .immigration-container {
         width: 100% !important;
-        margin:0px auto !important;
+        margin: 0px auto !important;
         display: flex;
         flex-direction: column;
         text-align: start;
+        height: auto !important;
     }
 
     .image img {
@@ -204,26 +213,8 @@
     }
 
     .image a {
-        text-decoration: none;
-        font-size: 30px;
-        font-weight: 600;
+        font-size: 30px !important;
         padding: 15px 40px !important;
-        border: 1px solid var(--shipCover);
-        background-color: var(--bigStone);
-        color: var(--mainTextColor);
-        position: absolute;
-        border-radius: 0px;
-        box-shadow: 9px 10px 5px 0.9px var(--blue);
-        transition: all 0.3s ease;
-        animation: BackgroundColor 1s ease 0.1s infinite alternate;
-    }
-    .image a:hover {
-        animation: none;
-        cursor: pointer;
-    }
-
-    .image {
-        position: relative;
     }
 
     .image .top {
@@ -231,6 +222,7 @@
         left: 0%;
 
     }
+
     .image .bottom {
         bottom: 0%;
         right: 0%;
@@ -257,4 +249,3 @@
         padding: 10px !important;
     }
 }
-
