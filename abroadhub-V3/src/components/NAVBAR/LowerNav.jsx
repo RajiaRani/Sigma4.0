@@ -23,7 +23,7 @@ export default function LowerNav() {
                 <div className="lowerWrap">
                     <div className="lower-links" id="_lowerNav">
                         <ul className={`nav d-flex ${isMenuOpen ? "open" : ""}`} >
-                            <div className="d-flex nav-mobile">
+                            <div className="d-flex nav-mobile align-items-center">
                                 <div className="logo-container">
                                     <img src={logo} alt="logo" />
                                 </div>

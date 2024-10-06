@@ -15,7 +15,7 @@
 
 .headline {
     color: #fff !important;
-    font-size: 14px;
+    font-size: 14px !important;
 }
 
 svg {
@@ -23,13 +23,6 @@ svg {
     color: #0f3054;
     font-weight: bold;
 }
-/* 
-a{
-    color: #0f3054 !important;
-    text-decoration: none;
-    font-size: 13px;
-}  */
-
 
 
 /*----------------------------------------------------------------
@@ -37,7 +30,8 @@ a{
  -------------------------------------------------------------------- */
 .navbar-upper {
     justify-content: space-between;
-    padding: 0px 30px !important;
+    align-items: center !important;
+    padding: 2px 30px !important;
 }
 
 .navbar-upper .headline a {
@@ -70,7 +64,7 @@ li {
 }
 
 .navbar-upper-links li {
-    padding: 5px 0px !important;
+    padding: 0px 0px !important;
     color: rgba(0, 0, 0, 0.5);
 }
 
@@ -85,7 +79,12 @@ li {
     font-weight: 500 !important;
     padding: 0px 8px !important;
 }
-
+.navbar-upper-links li:hover{
+    background-color: #fff;
+}
+.navbar-upper-links li:hover Button {
+color: #0f3054 !important;
+}
 .navbar-upper-links .upper-link {
     position: relative !important;
 }
@@ -184,7 +183,7 @@ li {
 }
 
 .navbar-container .global-wrapper {
-    max-width: 70%;
+    max-width: 100%;
     margin: auto !important;
     justify-content: space-around !important;
     align-items: flex-end !important;
@@ -202,6 +201,7 @@ li {
 
 .navbar-container .logo-container {
     padding: 3px !important;
+    margin-left: 150px !important;
 }
 
 .navbar-container .logo-container img {
@@ -296,6 +296,18 @@ Lower-Navbar-Links End
     display: none;
 }
 
+.contact-sm .contact-icon {
+    min-width: 24px !important;
+    width: 24px !important;
+    height: 24px !important;
+    border: none;
+    border-radius: 50% !important;
+}
+.contact-sm .contact-icon svg{
+    color: #fff; 
+    font-size: 16px !important;
+}
+
 .contact-sm Button {
     min-width: 25px !important;
     width: 25px !important;
@@ -321,6 +333,27 @@ Lower-Navbar-Links End
     left: -10%;
 }
 
+.nav {
+    display: none !important;
+    position: absolute;
+    flex-direction: column;
+    z-index: 2;
+    width: 50vw;
+    background-color: #dde6f0;
+    height: 50vh;
+    top: -17px !important;
+    right: 0 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav .g-level1 {
+    padding: 0 20px !important;
+
+}
+
+.nav.open {
+    display: flex !important;
+}
 
 
 

@@ -19,7 +19,7 @@ export default function Navbar() {
     return (
         <>
             <header>
-                <div className="navbar-upper d-flex align-items-center bg-color">
+                <div className="navbar-upper d-flex  bg-color">
                     <p className="headline">Spring and Fall {currentYear} Applications Now Open!<a href="https://docs.google.com/forms/d/e/1FAIpQLSfTYNHdmGrZCQWaXeODsJ6ASI49fd3iJ6hNR3CRBCsc_nfAYw/viewform"> GET A FREE COUNSELLING!</a></p>
                     <a className="contact-sm" href="https://docs.google.com/forms/d/e/1FAIpQLSfTYNHdmGrZCQWaXeODsJ6ASI49fd3iJ6hNR3CRBCsc_nfAYw/viewform"> GET A FREE COUNSELLING!</a>
                     <div>
