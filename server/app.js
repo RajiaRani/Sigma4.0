@@ -1,9 +1,6 @@
 
 require("dotenv").config(); // Load environment variables
 
-//console.log(process.env.MONGODB_URL);
-
-
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -109,7 +106,7 @@ app.get("/country/:id", async (req, res) => {
 //Filter Route
 app.get("/university-filter/filtered-universities-list", universityController.getFilteredUniversities);
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
