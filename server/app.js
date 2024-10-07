@@ -20,10 +20,7 @@ const MongoDb_URL = process.env.MONGODB_URL;
 // Connect to MongoDB Atlas
 async function main() {
     try {
-        await mongoose.connect(MongoDb_URL, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect(MongoDb_URL);
         console.log("Database connected successfully!!");
     } catch (err) {
         console.error('Database connection failed:', err.message);
