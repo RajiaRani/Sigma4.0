@@ -41,6 +41,11 @@ app.use(cors({
     credentials: true
 }));
 
+
+app.get("/", (req,res) => {
+    res.send("backende is working");
+})
+
 // COUNTRY List
 app.get("/country", async (req, res) => {
     try {
