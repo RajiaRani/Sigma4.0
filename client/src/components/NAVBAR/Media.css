@@ -80,6 +80,27 @@
     .signup {
         display: none;
     }
+    .nav {
+        display: none !important;
+        position: absolute;
+        flex-direction: column;
+        z-index: 2;
+        width: 50vw;
+        background-color: #dde6f0;
+        height: 50vh;
+        top: -17px !important;
+        right: 0 !important;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .nav .g-level1 {
+        padding: 0 20px !important;
+    
+    }
+    
+    .nav.open {
+        display: flex !important;
+    }
 
 
 
@@ -232,19 +253,3 @@
 }
 
 
-
-
-@media(min-width:770px){
-    .global-wrapper .user Button {
-        display: none !important; 
-        visibility: hidden !important;
-        opacity: 0 !important;
-    }
-    
-    
-    .nav .nav-mobile {
-        display: none !important; 
-        visibility: hidden !important;
-        opacity: 0 !important;
-    }
-}

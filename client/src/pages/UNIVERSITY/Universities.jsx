@@ -15,7 +15,7 @@ export default function Universities() {
     const scrollRef = useRef(null);
 
     useEffect(() => {
-        const getUniversity = async () => {
+        const getUniversity = async (id) => {
             try {
                 const universityData = await fetchUniversity();
                 setUniversityData(universityData); // Corrected state update

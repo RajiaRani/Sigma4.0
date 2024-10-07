@@ -19,7 +19,7 @@ export default function Body() {
                 <Home />
                 <Country/>
                 <VisaInfo />
-                <Universities/> 
+                {/* <Universities/>  */}
                 <VisaSteps />
                 <Tourist />
                 <Services />

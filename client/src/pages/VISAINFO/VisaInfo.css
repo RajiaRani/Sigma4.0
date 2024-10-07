@@ -8,13 +8,14 @@
 }
 
 .image img {
-    width: 36rem;
-    height: 30rem;
+    width: 34rem;
+    height: 28rem;
+    border-radius: 20px !important;
 }
 
 .image a {
     text-decoration: none;
-    font-size: 30px;
+    font-size: 28px !important;
     font-weight: 600;
     padding: 10px 40px !important;
     border: 1px solid var(--shipCover);
@@ -49,8 +50,8 @@
 
 .image {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
     border-radius: 10px;
 }
 
@@ -70,7 +71,7 @@
 .image-text {
     width: 100%;
     margin: auto;
-    padding: 0 50px !important;
+    padding: 0 40px !important;
     border-radius: 10px;
     animation: fadeIn 2s ease-in-out;
 }
@@ -89,9 +90,10 @@
 
 /* Paragraph styles */
 .image-text p {
+    font-size: 14px !important;
     text-align: start;
     margin-top: -5px !important;
-    line-height: 1.7;
+    line-height: 1.7 !important;
     animation: fadeInUp 2s ease-in-out;
 }
 
@@ -106,10 +108,12 @@
     align-items: start !important;
 }
 
-/* Points container */
 
 .visa-points p {
     animation: fadeInLeft 2s ease-in-out;
+}
+.visa-points li p, .image-text  p{
+    font-size: 17px !important;
 }
 
 .visa-points img {

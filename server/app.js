@@ -57,6 +57,7 @@ app.get("/country", async (req, res) => {
     }
 });
 
+
 //University
 app.get("/universities", async(req,res) => {
     try{
@@ -70,21 +71,28 @@ app.get("/universities", async(req,res) => {
             :`Error : ${err.message}`
         });
     }
-
 });
+
+
+
 //Show All Universities List in the full format
-app.get("/universities/MS-PG", async(req,res) => {
-  try{
-
-  }catch(err){
-    console.log(err);
-    res.status(500).json({
-        err:process.env.NODE_ENV === "production"
-        ? "Failed to fetch the data from the universities backened"
-        :`Error : ${err.message}`
-    });
-  }
-});
+// app.get("/universities/:id", async(req,res) => {
+//   try{
+//     let id = req.params;
+//     const university = await University.findById(id);
+//     if(!university){
+//         return res.status(404).json({ error: "University not found." });
+//     }
+//     res.json(university);
+//   }catch(err){
+//     console.log(err);
+//     res.status(500).json({
+//         err:process.env.NODE_ENV === "production"
+//         ? "Failed to fetch the data from the universities backened"
+//         :`Error : ${err.message}`
+//     });
+//   }
+// });
 
 
 // SHOW COUNTRY ROUTE
@@ -103,10 +111,8 @@ app.get("/country/:id", async (req, res) => {
 });
 
 
-//Filter Route
-app.get("/university-filter/filtered-universities-list", universityController.getFilteredUniversities);
 
-const port = process.env.PORT || 8080;
+const port = 3001;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
