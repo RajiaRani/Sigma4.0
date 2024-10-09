@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const initData = require("../init/uniData.js");
 const University = require("../models/University.js");
 
-const mongodbURI = "mongodb+srv://abroadhubconsult:3wtVLGuwcsTjXpG1@abroadhub.6v8ed.mongodb.net/AbroadHubDatabase?retryWrites=true&w=majority";
+const mongodbURI="mongodb://127.0.0.1/AbroadHubDatabase";
 
 main().then(() => {
     console.log("database connected successfully!!");

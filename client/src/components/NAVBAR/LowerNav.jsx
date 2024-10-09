@@ -26,8 +26,9 @@ export default function LowerNav() {
                             <div className="d-flex nav-mobile align-items-center">
                                 <div className="logo-container">
                                     <img src={logo} alt="logo" />
+                                    <RxCross2 onClick={toggleMenu} className="cross" />
                                 </div>
-                                <RxCross2 onClick={toggleMenu} className="cross" />
+                            
                             </div>
                             <li className="g-level1"><Button><Link to="/" style={{color:"#0f3054", textDecoration:"none", fontSize:"14px"}}> HOME</Link></Button></li>
                             <li className="g-level1">

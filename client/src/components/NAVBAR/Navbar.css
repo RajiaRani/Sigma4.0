@@ -325,6 +325,9 @@ Lower-Navbar-Links End
     position: absolute;
     left: -10%;
 }
+.nav-mobile .logo-container{
+    display: none;
+}
 
 
 
