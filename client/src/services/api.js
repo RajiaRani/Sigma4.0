@@ -1,9 +1,10 @@
 import axios from "axios";
 
 // Dynamically set the base URL based on the environment
-const BASE_URL = import.meta.env.NODE_ENV === "production"
+const BASE_URL = import.meta.env.MODE === "production"
     ? "http://abroadhub.in"  // Production URL
-    : "http://localhost:3001";     // Development URL
+    : `http://localhost:${import.meta.env.VITE_API_PORT || 3001}`;  // Development URL with fallback to 3001
+
 
 // COUNTRY FETCH LIST
 export const fetchCountry = async () => {
