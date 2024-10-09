@@ -11,3 +11,4 @@ node_modules/
 .vscode/
 .eslintrc.json
 .prettierrc
+.DS_Store
