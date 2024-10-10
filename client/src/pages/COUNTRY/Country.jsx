@@ -39,7 +39,11 @@ export default function Country() {
         setLoading(true); // Set loading to true before the fetch
         const countryData = await fetchCountry(); // Fetch country data from backend
         console.log(countryData); // Check API response
-        setCountries(countryData);
+        if (Array.isArray(countryData)) {
+          setCountries(countryData);
+        } else {
+          throw new Error("Invalid data format");
+        }
         setLoading(false); // Set loading to false once the fetch is done
       } catch (error) {
         console.error("Error fetching countries:", error);
@@ -84,52 +88,52 @@ export default function Country() {
   };
 
   if (loading) {
-    return <div>Loading countries...</div> // Display this while data is being fetched
+    return <div>Loading countries...</div>; // Display this while data is being fetched
   }
 
   if (error) {
-    return <div>{error}</div> // Display error message if the fetch fails
+    return <div>{error}</div>; // Display error message if the fetch fails
   }
 
   return (
     <div className="main-container">
       <section className="section">
-      <div className="study-container">
-      <h1>Apply To Following Countries through AbroadHub</h1>
-      <div
-        className="scrolling-container"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div className="scroll-button-left" onClick={scrollPrevious}>
-          <span>&lt;</span>
-        </div>
-        <div className="study-images" ref={scrollRef}>
-          {countries.map((country, index) => (
-            <div className="image-card" key={index}>
-              <img
-                src={universities[country.countryName] || "defaultImage.jpg"} // Fallback image if country name does not match
-                alt={country.countryName}
-              />
-              <div className="card-info">
-                <h2>{country.countryName}</h2>
-                <p>{country.description ? country.description.substring(0, 50) : "No description available"}......</p>
-              </div>
-              <div className="hover-content">
-                <h3>Study in {country.countryName}</h3>
-                <p>Read More</p>
-                <Link key={country._id} to={`/country/${country._id}`} className="btn">
-                  More
-                </Link>
-              </div>
+        <div className="study-container">
+          <h1>Apply To Following Countries through AbroadHub</h1>
+          <div
+            className="scrolling-container"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <div className="scroll-button-left" onClick={scrollPrevious}>
+              <span>&lt;</span>
             </div>
-          ))}
+            <div className="study-images" ref={scrollRef}>
+              {Array.isArray(countries) && countries.map((country, index) => (
+                <div className="image-card" key={index}>
+                  <img
+                    src={universities[country.countryName] || "defaultImage.jpg"} 
+                    alt={country.countryName}
+                  />
+                  <div className="card-info">
+                    <h2>{country.countryName}</h2>
+                    <p>{country.description ? country.description.substring(0, 50) : "No description available"}......</p>
+                  </div>
+                  <div className="hover-content">
+                    <h3>Study in {country.countryName}</h3>
+                    <p>Read More</p>
+                    <Link key={country._id} to={`/country/${country._id}`} className="btn">
+                      More
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="scroll-button-right" onClick={scrollNext}>
+              <span>&gt;</span>
+            </div>
+          </div>
         </div>
-        <div className="scroll-button-right" onClick={scrollNext}>
-          <span>&gt;</span>
-        </div>
-      </div>
-    </div>
       </section>
     </div>
   );
