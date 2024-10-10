@@ -17,7 +17,7 @@ export default function Body() {
 
                 <Navbar />
                 <Home />
-                <Country/>
+                {/* <Country/> */}
                 <VisaInfo />
                 {/* <Universities/>  */}
                 <VisaSteps />
