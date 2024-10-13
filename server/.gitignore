@@ -1,0 +1,14 @@
+# Ignore node modules
+node_modules/
+
+# Ignore environment variables
+.env
+
+# Ignore git folder
+.git/
+
+# Ignore local config files
+.vscode/
+.eslintrc.json
+.prettierrc
+.DS_Store

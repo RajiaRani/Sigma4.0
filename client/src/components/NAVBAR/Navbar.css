@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.bg-color {
+    background-color: #0f3054;
+}
+
+.txt-color {
+    color: #0f3054 !important;
+}
+
+.headline {
+    color: #fff !important;
+    font-size: 14px !important;
+}
+
+svg {
+    font-size: 26px;
+    color: #0f3054;
+    font-weight: bold;
+}
+
+
+/*----------------------------------------------------------------
+ Upper-Navbar-Links Start
+ -------------------------------------------------------------------- */
+.navbar-upper {
+    justify-content: space-between;
+    align-items: center !important;
+    padding: 2px 30px !important;
+}
+
+.navbar-upper .headline a {
+    font-size: 14px;
+    color: var(--mainTextColor);
+    text-decoration: none;
+    font-weight: 600;
+    animation: colorWidthChange 1s ease 1s infinite;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes colorWidthChange {
+    0% {
+        color: #fff;
+    }
+
+    100% {
+        color: rgb(251, 213, 106);
+    }
+}
+
+
+li {
+    padding: 0 !important;
+}
+
+.navbar-upper-links {
+    justify-content: space-between;
+}
+
+.navbar-upper-links li {
+    padding: 0px 0px !important;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-upper-links li a {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none !important;
+}
+
+.navbar-upper-links li Button {
+    color: #fff !important;
+    font-size: 13px;
+    font-weight: 500 !important;
+    padding: 0px 8px !important;
+}
+.navbar-upper-links li:hover{
+    background-color: #fff;
+}
+.navbar-upper-links li:hover Button {
+color: #0f3054 !important;
+}
+.navbar-upper-links .upper-link {
+    position: relative !important;
+}
+
+.navbar-upper-links .upper-link .dropdown-menu {
+    display: block;
+    min-width: 160px !important;
+    width: 160px;
+    height: auto !important;
+    border-radius: none !important;
+    position: absolute !important;
+    top: 150% !important;
+    left: 0 !important;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 0px !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.navbar-upper-links .upper-link .dropdown-menu li img {
+    width: 20px;
+    height: auto;
+}
+
+
+.navbar-upper-links .upper-link:hover {
+    background-color: #fff !important;
+}
+
+.navbar-upper-links .upper-link:hover Button {
+    color: rgba(9, 62, 115, 0.9) !important;
+    background-color: transparent;
+}
+
+.navbar-upper-links .upper-link:hover .dropdown-menu {
+    visibility: inherit;
+    opacity: 1;
+    cursor: pointer;
+    top: 100% !important;
+}
+
+.navbar-upper-links .upper-link .dropdown-menu li Button {
+    padding: 5px 0px !important;
+    border-radius: 0px !important;
+    color: rgba(9, 62, 115, 0.9) !important;
+    font-size: 13px !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    height: auto !important;
+    justify-content: flex-start;
+    font-weight: 600;
+}
+
+.navbar-upper-links .upper-link .dropdown-menu li Button:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.navbar-upper-links .upper-link .dropdown-menu li Button a {
+    font-size: 13px !important;
+    text-transform: capitalize !important;
+    color: rgba(9, 62, 115, 0.9) !important;
+}
+
+.navbar-upper-links .upper-link .dropdown-menu li {
+    padding: 0px !important;
+}
+
+.navbar-upper-links .upper-link .dropdown-menu li Button svg {
+    font-size: 13px !important;
+    margin-right: 3px !important;
+}
+
+.navbar-upper-links .upper-link:hover {
+    background-color:transparent;
+}
+
+.navbar-upper-links .upper-link:hover Button {
+    color: rgba(9, 62, 115, 0.9) !important;
+    background-color: transparent;
+}
+/*----------------------------------------------------------------
+ Upper-Navbar-Links End
+ -------------------------------------------------------------------- */
+
+
+
+
+
+
+/*----------------------------------------------------------------
+ Lower-Navbar-Links Start
+ -------------------------------------------------------------------- */
+.navbar-container {
+    width: 100%;
+    border-bottom: 1px solid rgba(9, 62, 115, 0.9);
+}
+
+.navbar-container .global-wrapper {
+    max-width: 100%;
+    margin: auto !important;
+    justify-content: space-around !important;
+    align-items: flex-end !important;
+
+}
+
+
+.navbar-container .logo-container {
+    padding: 3px !important;
+    margin-left: 150px !important;
+}
+
+.navbar-container .logo-container img {
+    width: auto;
+    height: 43px;
+}
+
+.navbar-container .lowerWrap {
+    position: relative !important;
+    width: auto;
+    margin: auto;
+}
+
+.navbar-container .lowerWrap .lower-links ul.nav Button {
+    color: #0f3054 !important;
+    font-size: 14px;
+    padding: 0 10px !important;
+}
+
+#_lowerNav ul.nav li.g-level1 {
+    padding: 0 10px !important;
+    position: relative !important;
+    display: block !important;
+}
+
+#_lowerNav ul.nav li.g-level1 .submenu {
+    background-color: #fff;
+    width: 210px;
+    height: auto;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    z-index: 2;
+    position: absolute !important;
+    top: 104% !important;
+    left: 15px;
+    transition: all 0.3s ease-in-out;
+
+}
+#_lowerNav ul.nav li.g-level1 .submenu  ul.g-level2 li{
+    padding: 5px 10px!important;
+}
+#_lowerNav ul.nav li.g-level1 .submenu  ul.g-level2 li a{
+    color: #0f3054 !important;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#_lowerNav ul.nav li.g-level1:hover .submenu {
+    display: block !important;
+    opacity: 1;
+    visibility: inherit;
+}
+
+#_lowerNav ul.nav li.g-level1 .submenu ul.g-level2 li:hover {
+    cursor: pointer;
+    background-color: #e8f1fa;
+}
+
+
+.global-wrapper .user Button {
+    min-width: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    border: 1px solid transparent;
+    border-radius: 50% !important;
+    display: none !important; 
+}
+
+
+.nav .nav-mobile {
+    display: none !important; 
+    padding: 0 10px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #0f3054;
+    background-color: #fff;
+}
+
+
+
+/*----------------------------------------------------------------
+Lower-Navbar-Links End
+ -------------------------------------------------------------------- */
+
+
+
+/*--------------------------------------------------------------------
+ FOR SMALL SCREEN ONLY
+ ---------------------------------------------------------------------- */
+.contact-sm {
+    display: none;
+}
+
+.contact-sm .contact-icon {
+    min-width: 24px !important;
+    width: 24px !important;
+    height: 24px !important;
+    border: none;
+    border-radius: 50% !important;
+}
+.contact-sm .contact-icon svg{
+    color: #fff; 
+    font-size: 16px !important;
+}
+
+.contact-sm Button {
+    min-width: 25px !important;
+    width: 25px !important;
+    height: 25px !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50% !important;
+    transition: all 0.3s ease-in-out;
+    padding: 0px !important;
+    font-size: 14px !important;
+}
+
+.contact-sm Button:hover {
+    background-color: #fff !important;
+}
+
+.contact-sm Button:hover svg {
+    color: #0f3054;
+}
+
+#mobile {
+    display: none;
+    position: absolute;
+    left: -10%;
+}
+.nav-mobile .logo-container{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

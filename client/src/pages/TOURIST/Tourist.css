@@ -1,0 +1,103 @@
+.tourist-container {
+  width: auto !important;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px !important;
+  color: #333;
+}
+.slick-prev,
+.slick-next {
+  position: absolute; 
+  top: 45%; 
+  z-index: 100; 
+  display: flex; 
+  align-items: 
+  center; justify-content: 
+  center; 
+  min-width: 40px !important;
+  width: 40px !important;
+   height: 40px !important;
+    border-radius: 50%; 
+    background-color: rgba(0, 0, 0, 0.5) !important; 
+  }
+
+ .slick-prev {
+  left:10px !important;
+}
+
+ .slick-next { 
+  right:10px !important; 
+}
+
+ .slick-prev:before,
+.slick-next:before { 
+  color: white; 
+  font-size: 20px;
+}
+.item img{ 
+  width:100% !important;  
+  height: 160px !important;
+}
+ .item {
+  width: 250px !important;
+  height: 200px;
+  display:flex !important; 
+  flex-direction: column !important; 
+  align-items: center !important; 
+  padding:20px !important;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.5);
+}
+.item:hover{
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  transform: scale(1.01);
+}
+
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 575.98px) {
+  .tourist-container {
+    width: 100% !important;
+    text-align: center;
+  }
+  .tourist-container {
+    width: 100% !important;
+    margin: auto !important;
+    text-align: center;
+    overflow: hidden !important;
+    margin-top: -8rem;
+  }
+
+  .item img{ 
+    width:80% !important;  
+    height: 100% !important;
+  }
+   .item {
+    width: 100% !important;
+    height: 100% !important;
+    display:flex !important; 
+    flex-direction: column !important; 
+    align-items: center !important; 
+    padding:10px !important;
+  }
+  .item h5{
+    font-size: 16px !important;
+  }
+
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .tourist-container {
+    width: 100% !important;
+    margin: auto !important;
+    text-align: center;
+    overflow: hidden !important;
+    margin-top: -8rem !important;
+  }
+
+ 
+}

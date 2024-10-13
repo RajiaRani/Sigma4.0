@@ -1,0 +1,416 @@
+.home-page {
+  width: auto;
+  height: auto;
+  margin-top: -2.9rem !important;
+}
+
+.home-bg-image {
+  position: relative;
+  width: 100%;
+  height: 20rem !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.tag-line h1 {
+  color: var(--mainTextColor);
+  font-weight: 700;
+  font-size: 3.8rem !important;
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  text-align: center;
+}
+.tag-line p {
+  color: var(--mainTextColor);
+  font-size: 2rem !important;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 28%;
+  text-align: center;
+
+}
+.home-bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 1.0;
+  border: 1px solid transparent;
+  border-radius: 1.4rem;
+}
+
+
+.home-content {
+  position: relative;
+  z-index: 1;
+  color: var(--mainTextColor);
+  text-align: center;
+}
+
+
+.search-btn {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  background-color: transparent !important;
+  border-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+input {
+  position: relative;
+  background: transparent !important;
+  outline: none !important;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 40px;
+  border: none !important;
+  margin-left: 40px !important;
+  width: 100% !important;
+}
+
+.search-button {
+  position: absolute !important;
+  top: 2.9px !important;
+  right: 6px !important;
+}
+.search-icon{
+  position: absolute !important; 
+  top: 5px !important;
+  left: 10px !important;
+}
+.search-icon svg{
+  font-size: 19px !important;
+}
+.search-btn Button {
+  min-width: 90px !important;
+  width: 90px !important;
+  padding: 5.5px 60px !important;
+  border-radius: 80px !important;
+  transition: all 0.3s ease-in-out;
+  background-color:  #0f3054 ;
+  color: #fff;
+  font-size: 13px;
+}
+
+.search-button svg {
+  color: rgba(0, 0, 0, 0.8) !important;
+  font-size: 19px ;
+}
+.search-btn Button:hover{
+  background-color:#fff;
+  color: #0f3054 !important;
+  border: 1px solid #0f3054 !important;
+}
+
+/*=======================================================================================
+             MEDIA QUERY
+  ========================================================================================= */
+
+@media (max-width: 575.98px) {
+  .home-page {
+    width: 100% !important;
+  }
+
+  .home-bg-image {
+    width: 100% !important;
+    height: 13rem !important;
+    display: flex;
+  }
+
+  .tag-line h1 {
+    color: var(--mainTextColor);
+    font-weight: 600;
+    font-size: 2rem !important;
+    position: absolute !important;
+    bottom: 45% !important;
+    left: 32% !important;
+  }
+  .tag-line p {
+    color: var(--mainTextColor);
+    font-size: 1.2rem !important;
+    font-weight: 500;
+    position: absolute;
+    bottom: 40% !important;
+    left: 11% !important;
+  }
+
+  .home-bg-video {
+    border-radius: 0;
+    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .home-content {
+    position: relative;
+    z-index: 1;
+    color: var(--mainTextColor);
+    text-align: center;
+  }
+
+  .search-btn {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    border-radius: 20px;
+    padding: 0px !important;
+    z-index: 1;
+    position: relative;
+  }
+  input {
+    position: relative;
+    background: transparent !important;
+    outline: none !important;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 40px;
+    border: none !important;
+    margin-left: 40px !important;
+    width: 100% !important;
+  }
+
+  .search-input {
+    position: relative;
+    width: 100% !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+  .search-btn Button {
+    min-width: 90px !important;
+    width: 90px !important;
+    padding: 6px 40px !important;
+    border-radius: 80px !important;
+    transition: all 0.3s ease-in-out;
+    background-color:  #0f3054 ;
+    color: #fff;
+    font-size: 13px;
+  }
+  .search-button {
+    position: absolute !important;
+    top: 2.1px !important;
+    right: 6px !important;
+  }
+  .search-icon{
+    position: absolute !important; 
+    top: 10px !important;
+    left: 10px !important;
+  }
+}
+
+
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .home-page {
+    width: 100%;
+    margin: auto;
+    height: auto;
+  }
+
+  .home-bg-image {
+    width: 100%;
+    height: 10rem !important;
+  }
+
+
+  .tag-line h1 {
+    color: var(--mainTextColor);
+    font-weight: 600;
+    font-size: 2rem !important;
+    position: absolute !important;
+    bottom: 45% !important;
+    left: 30% !important;
+  }
+  .tag-line p {
+    color: var(--mainTextColor);
+    font-size: 1rem;
+    font-weight: 500;
+    position: absolute;
+    bottom: 40%;
+    left: 19%;
+  }
+
+
+  .home-page-body {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .home-bg-video {
+    opacity: 1.0;
+    border-radius: 0px;
+  }
+
+  .home-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .search-btn {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    background-color: transparent !important;
+    border-radius: 50px;
+    width: 100% !important;
+    padding: 0px !important;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+  }
+  
+  input {
+    position: relative;
+    background: transparent !important;
+    outline: none !important;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 30px;
+    border: none !important;
+    margin-left: 30px !important;
+    width: 100% !important;
+  }
+  
+  .search-button {
+    position: absolute !important;
+    top: 1px !important;
+    right: 6px !important;
+  }
+  .search-icon{
+    position: absolute !important; 
+    top: 10px !important;
+    left: 10px !important;
+  }
+  .search-icon svg{
+    font-size: 16px !important;
+  }
+  .search-btn Button {
+    min-width: 90px !important;
+    width: 90px !important;
+    padding: 5.5px 60px !important;
+    font-size: 13px;
+  }
+  
+  .search-button svg {
+    font-size: 17px ;
+  }
+
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+
+  .home-page {
+    width: 80% !important;
+    margin: auto;
+    height: auto;
+  }
+
+
+  .home-bg-image {
+    position: relative;
+    width: 100%;
+    height: 14rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+
+  .tag-line h1 {
+    font-size: 3.5rem !important;
+    top: 35%;
+    left: 25%;
+  }
+
+  .tag-line p {
+    font-size: 1.8rem !important;
+    top: 53%;
+    left: 14%;
+  }
+
+  .home-bg-video {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 1.0;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+  }
+
+  .search-btn {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    background-color: transparent !important;
+    border-radius: 50px;
+    padding: 0px !important;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+  }
+  
+  input {
+    position: relative;
+    background: transparent !important;
+    outline: none !important;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 30px;
+    border: none !important;
+    margin-left: 30px !important;
+    width: 100% !important;
+  }
+  
+  .search-button {
+    position: absolute !important;
+    top:0px !important;
+    right: 6px !important;
+  }
+  .search-icon{
+    position: absolute !important; 
+    top: 10px !important;
+    left: 10px !important;
+  }
+  .search-icon svg{
+    font-size: 16px !important;
+  }
+  .search-btn Button {
+    min-width: 90px !important;
+    width: 90px !important;
+    padding: 5.5px 60px !important;
+    font-size: 13px;
+  }
+  
+  .search-button svg {
+    font-size: 17px ;
+  }
+}
+
+@media (min-width:1024px) {}
