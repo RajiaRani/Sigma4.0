@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.navbar-upper {
+    background-color: var(--logoColor2);
+    color: var(--mainTextColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px;
+}
+
+.navbar-upper .headline {
+}
+
+.navbar-upper .headline a {
+    color: var(--mainTextColor);
+    text-decoration: none;
+    font-weight: 600;
+    animation: colorWidthChange 1s ease 1s infinite;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes colorWidthChange {
+    0% {
+        color: var(--headingColor);
+    }
+
+    100% {
+        color: var(--hoverColor);
+    }
+}
+
+.navbar-upper-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    min-width: 11rem;
+    background-color: var(--mainTextColor);
+    z-index: 1;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0;
+}
+
+.contact,
+.social,
+.course,
+.universities,
+.countries,
+.exams,
+.loan {
+    position: relative;
+}
+
+.contact .dropdown-menu li,
+.social .dropdown-menu li,
+.course .dropdown-menu li,
+.universities .dropdown-menu li,
+.countries .dropdown-menu li,
+.exams .dropdown-menu li,
+.loan .dropdown-menu li {
+    padding: 10px;
+    color: var(--mainBgColor);
+}
+
+.dropdown-menu li:hover {
+    background-color:var(--light2);
+    color: var(--mainTextColor);
+}
+
+.contact:hover .dropdown-menu,
+.social:hover .dropdown-menu,
+.course:hover .dropdown-menu,
+.universities:hover .dropdown-menu,
+.countries:hover .dropdown-menu,
+.exams:hover .dropdown-menu,
+.loan:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar-upper-links li span {
+    padding: 0 20px;
+    position: relative;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--mainTextColor);
+}
+
+.navbar-upper-links li a {
+    text-decoration: none;
+    color: var(--mainBgColor);
+}
+
+.navbar-upper-links li:hover {
+    color: var(--headingColor);
+    cursor: pointer;
+}
+
+.logo-container img {
+    width: auto;
+    height: 3rem;
+}
+.navbar-upper-links .social .dropdown-menu img{
+    width: 22px;
+    height: 22px;
+   }
+
+/*---------------------------------- Lower Links ------------------------------*/
+.navbar-container {
+    background-color: var(--mainTextColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid var(--mainBgColor);
+    position: relative;
+    padding-top: 10px;
+}
+
+.navbar-lower-links {
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navbar-lower-links li {
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    padding: 0px 20px;
+}
+
+.navbar-lower-links li:hover {
+    cursor: pointer;
+    color: var(--headingColor);
+}
+
+.navbar-lower-links li:hover::after {
+    content: "";
+    position: absolute;
+    background-color: var(--headingColor);
+    width: 30%;
+    height: 2px;
+    bottom: -4px;
+    left: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+/*---------------------------------- Lower Links  End ------------------------------*/
+#mobile {
+    display: none;
+}
+
+.hamburger,
+.cross {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+
+@media (max-width: 768px) {
+    #mobile {
+        display: block;
+        padding: 0;
+    }
+
+    .navbar-upper {
+        padding: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    
+    }
+
+    .navbar-upper .headline {
+        margin-left: 0%;
+        font-size: 0px;
+    }
+   .social{
+    display: none;
+   }
+    .navbar-upper .headline a {
+        font-size: 14px;
+        align-self: start;
+        justify-self: start;
+    }
+
+    .navbar-upper-links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        opacity: 1;
+        visibility: visible;
+        padding: 0px;
+        position: relative;
+    }
+
+    .navbar-upper-links li {
+        font-size: 14px;
+        padding: 0px;
+        width: 100%;
+    }
+
+    
+    .navbar-upper-links li span {
+        padding: 0 20px;
+        position: relative;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+   .navbar-upper-links .social .dropdown-menu img{
+    width: 22px;
+    height: 22px;
+   }
+
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding-top: 10px;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+    .logo-container img {
+        width: auto;
+        height: 30px;
+    }
+
+    .navbar-lower-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        right: 0;
+        top: 2.8rem;
+        height: 100vh;
+        width: 50%;
+        color: var(--backgroundColor);
+        background-color: #fffdfd;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        transition: 0.3s ease-in-out;
+        padding: 0;
+        z-index: 1;
+    }
+
+    .navbar-lower-links.open {
+        display: flex;
+    }
+
+    .navbar-lower-links li {
+        font-size: 21px;
+        width: 100%;
+        padding: 10px 20px;
+        margin-bottom: 2px;
+    }
+
+    .navbar-lower-links li:hover {
+   
+    }
+
+    .navbar-lower-links li:hover::after {
+        display: none;
+    }
+}
+
+/* For larger screens */
+@media (min-width: 769px) {
+    .navbar-upper-links {
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+        padding: 0;
+    }
+    .navbar-lower-links {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        width: auto;
+    }
+}

@@ -1,0 +1,260 @@
+.immigration-container {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    text-align: center;
+    margin:5rem auto;
+}
+
+.image img {
+    width: 36rem;
+    height: 30rem;
+}
+
+.image a {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 15px 40px;
+    border: 1px solid var(--shipCover);
+    background-color: var(--bigStone);
+    color: var(--mainTextColor);
+    position: absolute;
+    border-radius: 12px;
+    box-shadow: 9px 10px 5px 0.9px var(--blue);
+    transition: all 0.3s ease;
+    animation: BackgroundColor 1s ease 0.1s infinite alternate;
+}
+
+@keyframes BackgroundColor {
+    from {
+        border: 1px solid var(--shipCover);
+        background-color: var(--bigStone);
+        box-shadow: 9px 10px 5px 0.9px var(--blue);
+    }
+
+    to {
+        color: var(--mainBgColor);
+        background-color: var(--lightShade);
+        border: 1px solid var(--blue);
+        box-shadow: 9px 10px 5px 0.9px var(--mainBgColor);
+    }
+}
+
+.image a:hover {
+    animation: none;
+    cursor: pointer;
+}
+
+.image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.image .top {
+    position: absolute;
+    top: -5%;
+    left: -10%;
+
+}
+
+.image .bottom {
+    position: absolute;
+    bottom: -5%;
+    right: -20%;
+}
+
+.image-text {
+    width: 100%;
+    margin: auto;
+    padding: 0 50px; 
+    border-radius: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.image-text h1 {
+    margin-bottom: 10px;
+    text-align: start;
+    animation: slideDown 1s ease-in-out;
+}
+
+.image-text h2 {
+    margin-bottom: 20px;
+    text-align: start;
+    animation: slideDown 1.5s ease-in-out;
+}
+
+/* Paragraph styles */
+.image-text p {
+    text-align: start;
+    margin-top: -5px;
+    line-height: 1.7;
+    animation: fadeInUp 2s ease-in-out;
+}
+.visa-points{
+    width: 100%;
+}
+.visa-points li{
+    display: flex;
+    text-align: start;
+    justify-content: start;
+    align-items: start;
+}
+/* Points container */
+
+.visa-points p {
+    animation: fadeInLeft 2s ease-in-out;
+}
+.visa-points img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* =================================================================================================
+                              MEDIA QUERY
+======================================================================================================*/
+/* Mobile phones (small screens) */
+@media (max-width: 480px) {
+    .immigration-container {
+        width: 100%;
+        margin:0px auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: start;
+        margin-bottom: -5rem;
+    }
+    
+    .image img {
+        width: 100%;
+        height: 20rem;
+        border-radius: 0px;
+    }
+    
+    .image a {
+        text-decoration: none;
+        font-size: 23px;
+        font-weight: 600;
+        width: 100%;
+        border: 1px solid var(--shipCover);
+        background-color: var(--bigStone);
+        color: var(--mainTextColor);
+        position: absolute;
+        border-radius: 0px;
+        box-shadow: 9px 10px 5px 0.9px var(--blue);
+        transition: all 0.3s ease;
+        animation: BackgroundColor 1s ease 0.1s infinite alternate;
+    }
+    .image a:hover {
+        animation: none;
+        cursor: pointer;
+    }
+    
+    .image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+        margin-top: 2rem;
+    }
+    
+    .image .top {
+        top: -20px;
+        left: 0;
+    }
+    
+    .image .bottom {
+        bottom: -20px;
+        left: 0;
+    }
+    
+    .immigration-container .image-text {
+        width: 90%;
+        line-height: 1.5;
+        padding:0px;
+    }
+
+    
+    .immigration-container .image-text p {
+        font-size: 15px;
+        padding: 10px;
+    }
+}
+
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .immigration-container {
+        width: 100%;
+        margin:0px auto;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+    }
+
+    .image img {
+        width: 100%;
+        height: 24rem;
+        border-radius: 0px;
+    }
+
+    .image a {
+        text-decoration: none;
+        font-size: 30px;
+        font-weight: 600;
+        padding: 15px 40px;
+        border: 1px solid var(--shipCover);
+        background-color: var(--bigStone);
+        color: var(--mainTextColor);
+        position: absolute;
+        border-radius: 0px;
+        box-shadow: 9px 10px 5px 0.9px var(--blue);
+        transition: all 0.3s ease;
+        animation: BackgroundColor 1s ease 0.1s infinite alternate;
+    }
+    .image a:hover {
+        animation: none;
+        cursor: pointer;
+    }
+
+    .image {
+        position: relative;
+    }
+
+    .image .top {
+        top: 0%;
+        left: 0%;
+
+    }
+    .image .bottom {
+        bottom: 0%;
+        right: 0%;
+    }
+
+    .immigration-container .image-text {
+        width: auto;
+        line-height: 1.5;
+        padding: 15px 15px 0px 15px;
+        border-radius: 10px;
+    }
+
+    .immigration-container .image-text h1 {
+        font-size: 39px;
+    }
+
+    .immigration-container .image-text h2 {
+        font-weight: 32px;
+        text-decoration: underline;
+    }
+
+    .immigration-container .image-text p {
+        font-size: 18px;
+        padding: 10px;
+    }
+}
+
