@@ -125,7 +125,7 @@ export default function Country() {
                       <p>Read More</p>
                       <Link
                         key={country._id}
-                        to={`/country/${country._id}`}
+                        to={`/api/country/${country._id}`}
                         className="btn"
                       >
                         More

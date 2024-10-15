@@ -15,10 +15,10 @@ function App() {
         <CSSTransition timeout={100} classNames="page" key={window.location.pathname}>
           <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="/country" element={<Country />} />
-            <Route path="/country/:id" element={<CountryDetails />} />
-            <Route path="/universities" element={<Universities />} />
-            <Route path="/universities/MS-PG" element={<MSList />} />
+            <Route path="/api/country" element={<Country />} />
+            <Route path="/api/country/:id" element={<CountryDetails />} />
+            <Route path="/api/universities" element={<Universities />} />
+            <Route path="/api/universities/MS-PG" element={<MSList />} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>
