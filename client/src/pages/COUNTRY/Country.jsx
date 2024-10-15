@@ -14,23 +14,25 @@ export default function Country() {
   useEffect(() => {
     const getCountry = async () => {
       try {
-        setLoading(true); // Set loading to true before the fetch
-        const countryData = await fetchCountry(); // Fetch country data from backend
-        console.log(countryData); // Check API response
+        setLoading(true);
+        const countryData = await fetchCountry(); // Fetch country data
+        console.log("Fetched data:", countryData); // Log the API response to see what you get
         if (Array.isArray(countryData)) {
-          setCountries(countryData);
+          setCountries(countryData); // Set countries if data is an array
         } else {
           throw new Error("Invalid data format");
         }
-        setLoading(false); // Set loading to false once the fetch is done
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching countries:", error);
         setError("Failed to fetch country data. Please try again later.");
-        setLoading(false); // Set loading to false in case of error
+        setLoading(false);
       }
     };
     getCountry();
   }, []);
+
+
 
   useEffect(() => {
     let scrollInterval;
