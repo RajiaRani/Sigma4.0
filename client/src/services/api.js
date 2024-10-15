@@ -3,8 +3,7 @@ import axios from "axios";
 // Dynamically set the base URL based on the environment
 const BASE_URL = import.meta.env.MODE === "production"
     ? import.meta.env.VITE_API_BASE_URL || "http://abroadhub.in"  // Ensure VITE_API_BASE_URL is set in the .env.production
-    : `http://localhost:${import.meta.env.VITE_API_PORT || 3001}`;  // Development URL with fallback to 3001
-
+    : `http://localhost:3000`;  // Corrected: Removed the extra closing brace
 
 // COUNTRY FETCH LIST
 export const fetchCountry = async () => {
@@ -22,8 +21,7 @@ export const fetchCountry = async () => {
     }
 };
 
-
-//University Fetch List
+// University Fetch List
 export const fetchUniversity = async (id) => { 
     if (!id) throw new Error("University ID is required."); // Ensure id is defined
     try {
@@ -34,16 +32,14 @@ export const fetchUniversity = async (id) => {
         });
         return response.data;
     } catch (error) {
-        console.error(`Error fetching country details for ID ${id}:`, error.message);
-        throw new Error('Unable to fetch country details. Please try again later.');
+        console.error(`Error fetching university details for ID ${id}:`, error.message);
+        throw new Error('Unable to fetch university details. Please try again later.');
     }
 };
 
-
-
 // FETCH COUNTRY DETAILS BY ID
 export const fetchCountryDetailsById = async (id) => {
-    if (!id) throw new Error("University ID is required."); 
+    if (!id) throw new Error("Country ID is required."); // Ensure id is defined
     try {
         const response = await axios.get(`${BASE_URL}/api/country/${id}`, {
             headers: {
