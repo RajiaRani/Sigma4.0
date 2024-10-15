@@ -48,7 +48,7 @@ app.get("/", (req,res) => {
 })
 
 // COUNTRY List
-app.get("/country", async (req, res) => {
+app.get("/api/country", async (req, res) => {
     try {
         let countries = await Country.find({});
         //console.log(countries);
@@ -65,7 +65,7 @@ app.get("/country", async (req, res) => {
 
 
 //University
-app.get("/universities", async(req,res) => {
+app.get("/api/universities", async(req,res) => {
     try{
         const university = await University.find({});
         res.json(university);
@@ -82,7 +82,7 @@ app.get("/universities", async(req,res) => {
 
 
 //Show All Universities List in the full format
-// app.get("/universities/:id", async(req,res) => {
+// app.get("/api/universities/:id", async(req,res) => {
 //   try{
 //     let id = req.params;
 //     const university = await University.findById(id);
@@ -102,7 +102,7 @@ app.get("/universities", async(req,res) => {
 
 
 // SHOW COUNTRY ROUTE
-app.get("/country/:id", async (req, res) => {
+app.get("/api/country/:id", async (req, res) => {
     try {
         let { id } = req.params;
         const country = await Country.findById(id);
