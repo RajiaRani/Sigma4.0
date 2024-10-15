@@ -1,4 +1,4 @@
-import "./Navbar.css"
+import LowerNav from "./LowerNav";
 import "../../styles/global.css";
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
@@ -10,7 +10,7 @@ import telegram from "../../assets/IMAGES/SocialMedia/telegram.png"
 import facebook from "../../assets/IMAGES/SocialMedia/facebook.png"
 import whatsapp from "../../assets/IMAGES/SocialMedia/whatsapp.png"
 import { IoMdCall } from "react-icons/io";
-import LowerNav from "./LowerNav";
+import "./Navbar.css";
 import "./Media.css";
 
 export default function Navbar() {
@@ -89,8 +89,8 @@ export default function Navbar() {
                             <li><a href="#">
                                 <Button>FreeCall</Button>
                             </a></li>
-                            <li className="login"><Link to="#"><Button>Log in</Button></Link></li>
-                            <li className="signup"><Link to="#"><Button>Sign Up</Button></Link></li>
+                            {/* <li className="login"><Link to="#"><Button>Log in</Button></Link></li>
+                            <li className="signup"><Link to="#"><Button>Sign Up</Button></Link></li> */}
                         </ul>
                     </div>
 

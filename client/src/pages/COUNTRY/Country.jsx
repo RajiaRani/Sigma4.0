@@ -3,15 +3,6 @@ import { fetchCountry } from "../../services/api.js";
 import { Link } from "react-router-dom";
 import "./Country.css";
 import "../../styles/global.css";
-import bigben from "../../assets/IMAGES/College/bigben.jpeg";
-import frankfurtGr from "../../assets/IMAGES/College/frankfurtGr.jpeg";
-import statueOfLiberty from "../../assets/IMAGES/College/statueOfLiberty(USA).webp";
-import toronto from "../../assets/IMAGES/College/toronto.jpeg";
-import italy from "../../assets/IMAGES/College/italy.jpg";
-import australia from "../../assets/IMAGES/College/australia.jpg";
-import france from "../../assets/IMAGES/College/france.jpg";
-import switzerland from "../../assets/IMAGES/College/Switzerland.jpg";
-import newzeland from "../../assets/IMAGES/College/newzeland.jpeg";
 
 export default function Country() {
   const [countries, setCountries] = useState([]); // Store fetched country data
@@ -19,19 +10,6 @@ export default function Country() {
   const [error, setError] = useState(null); // Error state for fetching issues
   const scrollRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
-
-  // Frontend image mapping
-  const universities = {
-    USA: statueOfLiberty,
-    Canada: toronto,
-    UK: bigben,
-    Germany: frankfurtGr,
-    France: france,
-    Italy: italy,
-    Australia: australia,
-    Switzerland: switzerland,
-    "New Zealand": newzeland,
-  };
 
   useEffect(() => {
     const getCountry = async () => {
@@ -108,27 +86,54 @@ export default function Country() {
             <div className="scroll-button-left" onClick={scrollPrevious}>
               <span>&lt;</span>
             </div>
+
             <div className="study-images" ref={scrollRef}>
-              {Array.isArray(countries) && countries.map((country, index) => (
-                <div className="image-card" key={index}>
-                  <img
-                    src={universities[country.countryName] || "defaultImage.jpg"} 
-                    alt={country.countryName}
-                  />
-                  <div className="card-info">
-                    <h2>{country.countryName}</h2>
-                    <p>{country.description ? country.description.substring(0, 50) : "No description available"}......</p>
+              {countries.map((country, index) => {
+                // Get the first image from the first section (if available)
+                const firstImage =
+                  country.description.length > 0 &&
+                    country.description[0].images.length > 0
+                    ? country.description[0].images[0]
+                    : null;
+
+                return (
+                  <div className="image-card" key={index}>
+                    <div className="card-info">
+
+
+                      {/* Display only the first image */}
+                      {firstImage && (
+                        <img
+                          src={firstImage}
+                          alt={`Image of ${country.countryName}`}
+                          className="country-image"
+                        />
+                      )}
+
+                      <h2>{country.countryName}</h2>
+                      {country.description.map((section, sectionIndex) => (
+                        <div key={sectionIndex}>
+                          <p>{section.content.substring(0,30)}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="hover-content">
+                      <h3>Study in {country.countryName}</h3>
+                      <p>Read More</p>
+                      <Link
+                        key={country._id}
+                        to={`/country/${country._id}`}
+                        className="btn"
+                      >
+                        More
+                      </Link>
+                    </div>
                   </div>
-                  <div className="hover-content">
-                    <h3>Study in {country.countryName}</h3>
-                    <p>Read More</p>
-                    <Link key={country._id} to={`/country/${country._id}`} className="btn">
-                      More
-                    </Link>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
+
             <div className="scroll-button-right" onClick={scrollNext}>
               <span>&gt;</span>
             </div>

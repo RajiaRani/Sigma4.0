@@ -12,24 +12,23 @@ export default function LowerNav() {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-
     return (
         <>
-            <div className="global-wrapper d-flex align-items-center">
+            <div className="global-wrapper d-flex  ">
                 <div className="logo-container">
                     <img src={logo} alt="logo" />
                 </div>
 
                 <div className="lowerWrap">
                     <div className="lower-links" id="_lowerNav">
-                        <ul className={`nav d-flex ${isMenuOpen ? "open" : ""}`} >
-                            <div className="d-flex nav-mobile align-items-center">
+                        <ul className={`nav d-flex ${isMenuOpen ? "open" : "close"}`} >
+                            {/* <div className="d-flex nav-mobile align-items-center">
                                 <div className="logo-container">
                                     <img src={logo} alt="logo" />
-                                    <RxCross2 onClick={toggleMenu} className="cross" />
                                 </div>
-                            
-                            </div>
+                                <RxCross2 onClick={toggleMenu} className="cross"/>
+                            </div> */}
+
                             <li className="g-level1"><Button><Link to="/" style={{color:"#0f3054", textDecoration:"none", fontSize:"14px"}}> HOME</Link></Button></li>
                             <li className="g-level1">
                                 <Button className="d-flex" >COURSES <RiArrowDropDownFill className="ms-auto" /></Button>
@@ -96,10 +95,10 @@ export default function LowerNav() {
                                 <Button>Loan <RiArrowDropDownFill /></Button>
                                 <div className="submenu shadow">
                                     <ul className="g-level2">
-                                        <li><Link to="#">Study Loan  </Link></li>
-                                        <li><Link to="#"> loan2 </Link></li>
-                                        <li><Link to="#"> loan3 </Link></li>
-                                        <li><Link to="#">lon3  </Link></li>
+                                        <li><Link to="#">Student Loan</Link></li>
+                                        <li><Link to="#">Loan Eligibility </Link></li>
+                                        <li><Link to="#">Interest Rate </Link></li>
+                                        <li><Link to="#">Repayment Options </Link></li>
                                         <li><Link to="#"> </Link></li>
                                         <li><Link to="#"> </Link></li>
 
@@ -111,7 +110,7 @@ export default function LowerNav() {
                 </div>
 
                 <div className="user">
-                    <Link to="#"><Button><FaUserCircle /></Button></Link>
+                    {/* <Link to="#"><Button><FaUserCircle /></Button></Link> */}
                 </div>
 
                 {/* For Mobile Hamburger */}

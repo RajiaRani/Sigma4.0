@@ -165,6 +165,7 @@ color: #0f3054 !important;
     color: rgba(9, 62, 115, 0.9) !important;
     background-color: transparent;
 }
+
 /*----------------------------------------------------------------
  Upper-Navbar-Links End
  -------------------------------------------------------------------- */
@@ -264,17 +265,6 @@ color: #0f3054 !important;
 }
 
 
-.nav .nav-mobile {
-    display: none !important; 
-    padding: 0 10px !important;
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #0f3054;
-    background-color: #fff;
-}
-
-
 
 /*----------------------------------------------------------------
 Lower-Navbar-Links End
@@ -322,12 +312,14 @@ Lower-Navbar-Links End
 
 #mobile {
     display: none;
-    position: absolute;
-    left: -10%;
 }
-.nav-mobile .logo-container{
-    display: none;
+
+.hamburger,
+.cross {
+    font-size: 26px;
+    font-weight: 600;
 }
+
 
 
 

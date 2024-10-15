@@ -3,8 +3,6 @@
     MEDIA QUERY
  ------------------------------------------------------------------------*/
 
-
-
  @media only screen and (min-width: 320px) and (max-width: 480px){
     .navbar-upper {
         min-width: 100% !important;
@@ -51,7 +49,6 @@
         height: auto;
     }
 
-  
     .navbar-upper-links li Button:hover {
         color: #fff !important;
     }
@@ -76,22 +73,6 @@
         margin-right: 3px !important;
     }
 
-    .login,
-    .signup {
-        display: none;
-    }
-    .nav {
-        display: none !important;
-        position: absolute;
-        flex-direction: column;
-        z-index: 2;
-        width: 50vw;
-        background-color: #dde6f0;
-        height: 50vh;
-        top: -17px !important;
-        right: 0 !important;
-        transition: all 0.3s ease-in-out;
-    }
     
     .nav .g-level1 {
         padding: 0 20px !important;
@@ -102,8 +83,6 @@
         display: flex !important;
     }
 
-
-
     /*----------------------------------------------------------------
      Lower-Navbar-Links Start
  -------------------------------------------------------------------- */
@@ -113,28 +92,31 @@
     }
 
     .navbar-container .global-wrapper {
+        width: 70%;
         position: relative;
-        max-width: 80%;
         display: flex;
-        align-items: center !important;
-        justify-content: space-between !important;
-
+        align-items: start !important;
+        justify-content: start !important;
     }
 
     .navbar-container .logo-container img {
         height: 27px;
     }
+    .navbar-container .logo-container {
+        margin-right: 0px;
+    }
 
     .global-wrapper .user Button{
         display: block !important;
     }
-    .nav .nav-mobile{
-        display: flex !important;
-    }
+ 
 
     #mobile {
         display: flex;
+        padding: 0 !important;
     }
+
+
  }
 
 
@@ -160,7 +142,6 @@
     .contact-sm {
         display: flex;
     }
-
 
     .navbar-upper-links {
         justify-content: space-between;
@@ -215,21 +196,17 @@
         margin-right: 3px !important;
     }
 
-    .login,
-    .signup {
-        display: none;
-    }
+   
     .navbar-container {
         width: 100%;
         border-bottom: 1px solid rgba(9, 62, 115, 0.9);
     }
-
     .navbar-container .global-wrapper {
+        width: 70%;
         position: relative;
-        max-width: 80%;
         display: flex;
-        align-items: center !important;
-        justify-content: space-between !important;
+        align-items: start !important;
+        justify-content: start !important;
 
     }
 
@@ -237,17 +214,24 @@
         height: 27px;
     }
 
-
     .global-wrapper .user Button{
         display: block !important;
     }
-    .nav .nav-mobile{
-        display: flex !important;
-    }
-
 
     #mobile {
         display: flex;
+    }
+    .nav{
+        display: none !important;
+        position: absolute;
+        flex-direction: column;
+        z-index: 2;
+        width: 50vw;
+        background-color: #dde6f0;
+        height: 50vh;
+        top: -17px !important;
+        right: 0 !important;
+        transition: all 0.3s ease-in-out;
     }
 
 }
