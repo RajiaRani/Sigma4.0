@@ -1,7 +1,7 @@
 import "./CountryDetails.css"
 import "../../styles/global.css";
-import Navbar from "../../components/NAVBAR/Navbar.jsx";
-import Footer from "../../components/FOOTER/Footer.jsx";
+import Navbar from "../../components/NAVBAR/Navbar.js";
+import Footer from "../../components/FOOTER/Footer.js";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCountryDetailsById } from "../../services/api.js";

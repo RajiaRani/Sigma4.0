@@ -1,11 +1,11 @@
 import "./styles/global.css";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
-import MainPage from "../src/pages/MAINPAGE/MainPage.jsx";
+import MainPage from "./pages/MAINPAGE/MainPage.js";
 import Country from "./pages/COUNTRY/Country.jsx";
 import CountryDetails from "./pages/COUNTRY/CountryDetails.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Universities from "./pages/UNIVERSITY/Universities.jsx";
-import MSList from "./pages/UNIVERSITY/MSList.jsx";
+import Universities from "./pages/UNIVERSITY/Universities.js";
+import MSList from "./pages/UNIVERSITY/MSList.js";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 function App() {
   return (
