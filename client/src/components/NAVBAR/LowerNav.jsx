@@ -29,7 +29,7 @@ export default function LowerNav() {
                                 <RxCross2 onClick={toggleMenu} className="cross"/>
                             </div> */}
 
-                            <li className="g-level1"><Button><Link to="/" style={{color:"#0f3054", textDecoration:"none", fontSize:"14px"}}> HOME</Link></Button></li>
+                            <li className="g-level1"><Button><Link to="/abroadhub" style={{color:"#0f3054", textDecoration:"none", fontSize:"11px"}}> HOME</Link></Button></li>
                             <li className="g-level1">
                                 <Button className="d-flex" >COURSES <RiArrowDropDownFill className="ms-auto" /></Button>
                                 <div className="submenu shadow">

@@ -2,8 +2,8 @@ import axios from "axios";
 
 // Dynamically set the base URL based on the environment
 const BASE_URL = import.meta.env.MODE === "production"
-    ? import.meta.env.VITE_API_BASE_URL || "http://abroadhub.in"  // Ensure VITE_API_BASE_URL is set in the .env.production
-    : `http://localhost:3000`;  // Corrected: Removed the extra closing brace
+    ?  "http://abroadhub.in"  
+    : "http://localhost:3000"; 
 
 // COUNTRY FETCH LIST
 export const fetchCountry = async () => {

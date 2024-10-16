@@ -14,7 +14,7 @@ function App() {
       <TransitionGroup>
         <CSSTransition timeout={100} classNames="page" key={window.location.pathname}>
           <Routes>
-            <Route path="/" element={<MainPage />} />
+            <Route path="/abroadhub" element={<MainPage />} />
             <Route path="/country" element={<Country />} />
             <Route path="/api/country/:id" element={<CountryDetails />} />
             <Route path="/universities" element={<Universities />} />
