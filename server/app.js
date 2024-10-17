@@ -29,11 +29,11 @@ main().catch(err => {
 
 const allowedOrigins = [
     "http://localhost:3000",
-    "http://localhost:5173", 
-    "http://127.0.0.1:5173", 
-    "http://abroadhub.in" , // Your production frontend URL
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://abroadhub.in",
     "http://www.abroadhub.in",
-     "http://88.222.212.202:4173"
+    "http://88.222.212.202:4173"
 ];
 
 // CORS Configuration
