@@ -33,6 +33,7 @@ const allowedOrigins = [
     "http://127.0.0.1:5173", 
     "http://abroadhub.in" , // Your production frontend URL
     "http://www.abroadhub.in",
+     "http://88.222.212.202:4173"
 ];
 
 // CORS Configuration
