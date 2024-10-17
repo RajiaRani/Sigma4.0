@@ -18,11 +18,11 @@ export default function Footer() {
     return (
         <footer>
             <div className=" width last-footer">
-                <div class="header-logo">
+                <div className="header-logo">
                     <img src={logo} alt="header-logo" />
                 </div>
-                <div class="footer-social">
-                    <ul class="footer-links">
+                <div className="footer-social">
+                    <ul className="footer-links">
                         <li><Button><a href="https://wa.me/9121382805"><img src={whatsapp} alt="whatsapp" /></a></Button></li>
                         <li><Button>< a href="https://www.instagram.com/i_am_abroadhub/"><img src={instagram} alt="instagram" /></a></Button></li>
                         <li><Button><a href="https://t.me/AbroadHub"><img src={telegram} alt="telegram" /></a></Button></li>
@@ -31,7 +31,7 @@ export default function Footer() {
                     </ul>
                 </div>
             </div>
-            <div class="footer-container">
+            <div className="footer-container">
                 <div className="topInfo row width">
                     <div className="col align-items-center">
                         <span><RiCustomerService2Line /></span>
@@ -155,7 +155,7 @@ export default function Footer() {
                 </div>
 
 
-                <div class="copyright row">
+                <div className="copyright row">
                     <p>&copy; All Rights are reserved by AbroadHub.</p>
                 </div>
 
