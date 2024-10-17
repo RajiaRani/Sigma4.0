@@ -33,12 +33,13 @@ const allowedOrigins = [
     "http://127.0.0.1:5173",
     "http://abroadhub.in",
     "http://www.abroadhub.in",
-    "http://88.222.212.202:4173"
+    "http://88.222.212.202:4173",
 ];
 
 // CORS Configuration
 app.use(cors({
     origin: allowedOrigins, 
+    optionsSuccessStatus: 200,
     methods: ["GET", "PUT", "POST", "DELETE"],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
