@@ -1,0 +1,61 @@
+.uni-container{
+    width: 100%;
+    display: flex;
+    border-left: 1px solid #555;
+    border-right: 1px solid #555;
+}
+.uni-list-leftSide-container{
+    width: 40%;
+   
+}
+.uni-list-rightSide-container{
+width: 60%;
+margin: auto;
+}
+.uni-list-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.uni-image img{
+    width: 15rem;
+    height: auto;
+    border: none;
+    border-radius: 20px;
+}
+.universities-cards{
+   
+
+}
+.universities-cards-info{
+    width: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content:start;
+    padding: 20px 0px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    border-radius: 20px;
+    height: 11rem;
+    box-shadow: 3px 4px 8px rgba(0,0,0,0.5);
+}
+.uni-basic-info{
+    text-align: start;
+    margin-left: 10px;
+}
+
+.uni-container p{
+    font-size: 0.9rem;
+    color: #555;
+}
+.uni-container h6{
+    font-size: 1rem;
+}
+.course-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+

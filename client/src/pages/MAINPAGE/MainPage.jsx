@@ -1,0 +1,31 @@
+import Home from "../HOME/Home.jsx";
+import VisaInfo from "../VISAINFO/VisaInfo.jsx";
+import VisaSteps from "../VISASTEP/VisaSteps.jsx";
+import Services from "../SERVICES/Services.jsx";
+import Experts from "../EMOPLYEE/Experts.jsx";
+import Tourist from "../TOURIST/Tourist.jsx";
+import Country from "../COUNTRY/Country.jsx";
+import Navbar from "../../components/NAVBAR/Navbar.jsx";
+import Footer from "../../components/FOOTER/Footer.jsx";
+import "./MainPage.css";
+import "../../styles/global.css";
+import Universities from "../UNIVERSITY/Universities.jsx";
+
+export default function Body() {
+    return (
+        <div className="body-container">
+
+                <Navbar />
+                <Home />
+                <Country/>
+                <VisaInfo />
+                <Universities/>  
+                <VisaSteps />
+                <Tourist />
+                <Services />
+                <Experts />
+                <Footer />
+      
+        </div>
+    );
+}
