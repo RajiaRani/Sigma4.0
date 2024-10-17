@@ -7,16 +7,15 @@ import axios from "axios";
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-
 // COUNTRY FETCH LIST
 export const fetchCountry = async () => {
     try {
         const response = await axios.get(`${BASE_URL}/api/country`, {
             headers: {
                 "Accept": "application/json",
-            }
+            },
+            withCredentials: true // Ensure credentials are sent with the request
         });
-       
         return response.data;
     } catch (error) {
         console.error("Fail to fetch", error);
@@ -30,19 +29,15 @@ export const fetchUniversity = async () => {
         const response = await axios.get(`${BASE_URL}/api/universities`, {
             headers: {
                 "Accept": "application/json",
-            }
+            },
+            withCredentials: true // Ensure credentials are sent with the request
         });
-
         return response.data;
     } catch (error) {
         console.error(`Error fetching university list:`, error);
         throw new Error('Unable to fetch university details. Please try again later.');
     }
 };
-
-
-
-
 
 // FETCH COUNTRY DETAILS BY ID
 export const fetchCountryDetailsById = async (id) => {
@@ -51,7 +46,8 @@ export const fetchCountryDetailsById = async (id) => {
         const response = await axios.get(`${BASE_URL}/api/country/${id}`, {
             headers: {
                 "Accept": "application/json",
-            }
+            },
+            withCredentials: true // Ensure credentials are sent with the request
         });
         return response.data;
     } catch (error) {
