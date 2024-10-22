@@ -6,6 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
+import { LiaHomeSolid } from "react-icons/lia";
 
 export default function LowerNav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,7 +30,7 @@ export default function LowerNav() {
                                 <RxCross2 onClick={toggleMenu} className="cross"/>
                             </div> */}
 
-                            <li className="g-level1"><Button><Link to="/" style={{color:"#0f3054", textDecoration:"none", fontSize:"11px"}}> HOME</Link></Button></li>
+                            <li className="g-level1"><Button><Link to="/"> <LiaHomeSolid /> HOME</Link></Button></li>
                             <li className="g-level1">
                                 <Button className="d-flex" >COURSES <RiArrowDropDownFill className="ms-auto" /></Button>
                                 <div className="submenu shadow">

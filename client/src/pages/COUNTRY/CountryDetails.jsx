@@ -33,7 +33,7 @@ export default function CountryDetails() {
                 {/* Use countryDetails instead of countries */}
                 <h1>{countryDetails.countryName}</h1>
                 {countryDetails.description.map((section, sectionIndex) => (
-                    <div key={sectionIndex}>
+                    <div key={sectionIndex} className="paragraph">
                         <h3>{section.heading}</h3>
                         <p>{section.content}</p>
                         {section.images && section.images.map((img, imgIndex) => (
@@ -42,9 +42,9 @@ export default function CountryDetails() {
                     </div>
                 ))}
 
-                <h3>Visa Types:</h3>
+                <h3>Visa Types</h3>
                 {countryDetails.visaTypes.map((visaType, visaIndex) => (
-                    <div key={visaIndex}>
+                    <div key={visaIndex} className="paragraph">
                         <h4>{visaType.visaType}</h4>
                         <p>{visaType.description}</p>
                         <ul>

@@ -219,6 +219,17 @@ color: #0f3054 !important;
     position: relative !important;
     display: block !important;
 }
+#_lowerNav ul.nav li.g-level1 a{
+    text-decoration: none !important;
+    font-size: 13.5px !important;
+    color: #0f3054 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+#_lowerNav ul.nav li.g-level1 a svg{
+    font-size: 16px !important;
+    color: #0f3054 !important;
+}
 
 #_lowerNav ul.nav li.g-level1 .submenu {
     background-color: #fff;
