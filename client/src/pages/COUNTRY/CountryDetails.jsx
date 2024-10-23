@@ -35,10 +35,12 @@ export default function CountryDetails() {
                 {countryDetails.description.map((section, sectionIndex) => (
                     <div key={sectionIndex} className="paragraph">
                         <h3>{section.heading}</h3>
-                        <p>{section.content}</p>
+                       <div className="para1">
+                       <p>{section.content}</p>
                         {section.images && section.images.map((img, imgIndex) => (
                             <img key={imgIndex} src={img} alt={section.heading} />
                         ))}
+                       </div>
                     </div>
                 ))}
 
@@ -49,7 +51,7 @@ export default function CountryDetails() {
                         <p>{visaType.description}</p>
                         <ul>
                             {visaType.requiredDocuments.map((doc, docIndex) => (
-                                <li key={docIndex}>{doc}</li>
+                                <li key={docIndex} className="para-list">{doc}</li>
                             ))}
                         </ul>
                         <p>Eligibility: {visaType.eligibility}</p>

@@ -16,9 +16,19 @@ p{
 }
 .country-details img{
     width: 50% !important;
-    height: 500px !important;
+  
 }
 .paragraph img{
     width: 70% !important;
     height: 400px !important;
+    margin-left: 10px !important; 
+    margin-right: 10px !important; 
+    vertical-align: middle !important;
+}
+.para1{
+    
+}
+.para-list{
+    list-style: inherit !important;
+    font-size: 14px !important;
 }
