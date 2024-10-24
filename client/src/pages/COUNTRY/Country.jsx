@@ -104,15 +104,17 @@ export default function Country() {
 
 
                       {/* Display only the first image */}
-                      {firstImage && (
+                      {/* {firstImage && (
                         <img
                           src={firstImage}
                           alt={`Image of ${country.countryName}`}
                           className="country-image"
                         />
-                      )}
+                      )} */}
 
+                     <img src={country.countryImage} alt="countryImage"/>
                       <h2>{country.countryName}</h2>
+
                       {country.description.map((section, sectionIndex) => (
                         <div key={sectionIndex}>
                           <p>{section.content.substring(0,30)}</p>

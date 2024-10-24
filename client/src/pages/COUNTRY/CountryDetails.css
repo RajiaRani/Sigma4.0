@@ -1,6 +1,16 @@
+.main-container-country{
+    background-color: rgb(252, 253, 253);
+    width: 60% !important;
+    margin: auto !important;
+    margin-top: 6.5rem;
+    height: auto !important;
+    padding: 20px 40px !important;
+    line-height: 1.9 !important;
+    font-size: 14px !important;
+}
 .country-details{
-    background-color: aliceblue;
-    width: 63% !important;
+    background-color: rgb(125, 185, 238);
+    width: 100% !important;
     margin: auto !important;
     margin-top: 6.5rem;
     height: auto !important;
@@ -14,21 +24,16 @@ p{
     font-size: 20px !important;
     color: red !important;
 }
-.country-details img{
-    width: 50% !important;
-  
-}
-.paragraph img{
-    width: 70% !important;
-    height: 400px !important;
-    margin-left: 10px !important; 
-    margin-right: 10px !important; 
-    vertical-align: middle !important;
-}
-.para1{
+
+
+
+.paragraph{
+    padding: 20px 0px !important;
     
 }
-.para-list{
-    list-style: inherit !important;
-    font-size: 14px !important;
+
+.country-image img{
+    width: 100% !important;
+    height: 300px !important;
+    border: 1px solid transparent;
 }

@@ -5,6 +5,8 @@ import Footer from "../../components/FOOTER/Footer.jsx";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCountryDetailsById } from "../../services/api.js";
+import { FcNext } from "react-icons/fc";
+import sq from "../../assets/IMAGES/AllLogos/sq.png";
 
 export default function CountryDetails() {
     const { id } = useParams();
@@ -29,25 +31,46 @@ export default function CountryDetails() {
     return (
         <>
             <Navbar/>
-            <div className="main-container">
+            <div className="main-container-country">
                 {/* Use countryDetails instead of countries */}
                 <h1>{countryDetails.countryName}</h1>
+                 <p>{countryDetails.intro}</p>
+
+                <div className="country-image">
+                <img src={countryDetails.countryImage} alt="countryImage"/>
+                </div>
                 {countryDetails.description.map((section, sectionIndex) => (
                     <div key={sectionIndex} className="paragraph">
-                        <h3>{section.heading}</h3>
+                        <h5>{section.heading}</h5>
                        <div className="para1">
                        <p>{section.content}</p>
-                        {section.images && section.images.map((img, imgIndex) => (
-                            <img key={imgIndex} src={img} alt={section.heading} />
-                        ))}
                        </div>
                     </div>
                 ))}
-
-                <h3>Visa Types</h3>
+               <hr />
+               <br />
+               <h3><FcNext /> Types of  Universities in {countryDetails.countryName}</h3>
+               {
+                countryDetails.universityTypes.map((universityType, universityIndex) => (
+                    <div key={universityIndex} className="paragraph university-type"> 
+                  <h5> {universityType.university}</h5>
+                      <ul>
+                        {
+                            universityType.universityType.map((type,typeIndex) => (
+                            <li key={typeIndex} className="para-list"><img src={sq} alt="sq-image" style={{width:"16px", height:"16px"}}/> {type}</li>
+                            ))
+                        }
+                      </ul>
+                    </div>
+                ))
+               }
+                <hr />
+                <br />
+               <h2><FcNext /> Visa Types : </h2>
                 {countryDetails.visaTypes.map((visaType, visaIndex) => (
                     <div key={visaIndex} className="paragraph">
-                        <h4>{visaType.visaType}</h4>
+                 
+                        <h5>{visaType.visaType}</h5>
                         <p>{visaType.description}</p>
                         <ul>
                             {visaType.requiredDocuments.map((doc, docIndex) => (
@@ -56,9 +79,7 @@ export default function CountryDetails() {
                         </ul>
                         <p>Eligibility: {visaType.eligibility}</p>
                         <p>Cost: Application Fee: ${visaType.cost.applicationFee}</p>
-                        {visaType.images && visaType.images.map((img, imgIndex) => (
-                            <img key={imgIndex} src={img} alt={visaType.visaType} width="200px" />
-                        ))}
+                       
                     </div>
                 ))}
             </div>

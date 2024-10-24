@@ -21,13 +21,25 @@ const sectionSchema = new mongoose.Schema({
     images: [String] // Array of image URLs for the section, can be up to 4 images
 });
 
+const universityTypeSchema = new mongoose.Schema({
+    university:{type:String},
+    universityType:[String],
+});
+
 const countrySchema = new mongoose.Schema({
     countryName: {
         type: String,
         required: true
     },
+    intro:{
+        type: String,
+    },
+    countryImage:{
+        type: String,
+    },
     description: [sectionSchema], // Flexible array of sections with optional headings, text, and images
-    visaTypes: [visaTypeSchema] // Visa types with details as a nested schema
+    visaTypes: [visaTypeSchema] ,
+    universityTypes:[universityTypeSchema],
 });
 
 const Country = mongoose.model("Country", countrySchema);

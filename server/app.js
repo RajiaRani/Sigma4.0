@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Log the MongoDB URL to verify it's loaded correctly
 const MongoDb_URL = process.env.MONGODB_URL;
-console.log("MongoDB URL:", MongoDb_URL);
+//console.log("MongoDB URL:", MongoDb_URL);
 
 // Connect to MongoDB Atlas
 async function main() {

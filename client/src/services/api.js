@@ -6,6 +6,7 @@ import axios from "axios";
 //     : "http://localhost:3000"; 
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+console.log("Using BASE_URL:", BASE_URL);
 
 // COUNTRY FETCH LIST
 export const fetchCountry = async () => {
