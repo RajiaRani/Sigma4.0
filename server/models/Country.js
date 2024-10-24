@@ -51,7 +51,7 @@ const countrySchema = new mongoose.Schema({
     description: [sectionSchema], // Flexible array of sections with optional headings, text, and images
     visaTypes: [visaTypeSchema] ,
     universityTypes:[universityTypeSchema],
-    studystudyRequirements:[studyRequirementsSchema],
+    studyRequirements:[studyRequirementsSchema],
 });
 
 const Country = mongoose.model("Country", countrySchema);

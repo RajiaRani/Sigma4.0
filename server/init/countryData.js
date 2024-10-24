@@ -90,7 +90,7 @@ const countryData = [
             },
 
         ],
-        studystudyRequirements:[
+        studyRequirements:[
             {
                 study:"Undergraduate Requirements" ,
                 requirements:{
