@@ -64,35 +64,8 @@ export default function CountryDetails() {
                     </div>
                 ))
                }
-               <hr />
-               <br />
-                <h2><FcNext />Study Requirements</h2>
-                <br />
-                <div>
-                {countryDetails.studyRequirements.map((requirement, index) => (
-                <div key={index}>
-                    <h5>{requirement.study}</h5>
-                    <h4>Mandatory Requirements:</h4>
-                    <ul>
-                        {requirement.requirements.MandatoryRequirements.map((req, reqIndex) => (
-                            <li key={reqIndex}><img src={sq} alt="sq-image" style={{width:"16px", height:"16px"}}/>{req}</li>
-                        ))}
-                    </ul>
-                    {/* <h4>Popular Universities:</h4>
-                    <ul>
-                        {requirement.requirements.PopularUniversities.map((uni, uniIndex) => (
-                            <li key={uniIndex}>{uni}</li>
-                        ))}
-                    </ul> */}
-                    <h4>Optional Requirements:</h4>
-                    <ul>
-                        {requirement.requirements.OptionalRequirements.map((optReq, optReqIndex) => (
-                            <li key={optReqIndex}>{optReq}</li>
-                        ))}
-                    </ul>
-                </div>
-            ))}
-                </div>
+               
+               
                 <hr />
                 <br /> 
                <h2><FcNext /> Visa Types : </h2>
