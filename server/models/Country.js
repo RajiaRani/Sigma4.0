@@ -26,6 +26,17 @@ const universityTypeSchema = new mongoose.Schema({
     universityType:[String],
 });
 
+const studyRequirementsSchema = new mongoose.Schema({
+  study:{
+    type:String
+  },
+  requirements:{
+    MandatoryRequirements:[String],
+    PopularUniversities:[String],
+    OptionalRequirements:[String],  
+  },
+});
+
 const countrySchema = new mongoose.Schema({
     countryName: {
         type: String,
@@ -40,6 +51,7 @@ const countrySchema = new mongoose.Schema({
     description: [sectionSchema], // Flexible array of sections with optional headings, text, and images
     visaTypes: [visaTypeSchema] ,
     universityTypes:[universityTypeSchema],
+    studystudyRequirements:[studyRequirementsSchema],
 });
 
 const Country = mongoose.model("Country", countrySchema);

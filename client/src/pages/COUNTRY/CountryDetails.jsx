@@ -53,7 +53,7 @@ export default function CountryDetails() {
                {
                 countryDetails.universityTypes.map((universityType, universityIndex) => (
                     <div key={universityIndex} className="paragraph university-type"> 
-                  <h5> {universityType.university}</h5>
+                     <h5> {universityType.university}</h5>
                       <ul>
                         {
                             universityType.universityType.map((type,typeIndex) => (

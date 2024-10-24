@@ -31,6 +31,16 @@ p{
     padding: 20px 0px !important;
     
 }
+.para-list{
+    text-transform: capitalize !important;
+}
+.main-container-country h5{
+    text-transform: capitalize !important;
+    color: #137daf;
+    font-size: 25px !important;
+    font-weight: 600 !important;
+    margin-bottom: 10px !important;
+}
 
 .country-image img{
     width: 100% !important;

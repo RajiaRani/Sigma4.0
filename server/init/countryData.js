@@ -89,6 +89,24 @@ const countryData = [
                 universityType:["Group of 8 universities", "Located in Northeast Region","Elite Colleges very selective in admission, academic excellence, known for Business programs" ],
             },
 
+        ],
+        studystudyRequirements:[
+            {
+                study:"Undergraduate Requirements" ,
+                requirements:{
+                  MandatoryRequirements:["Academic Percentage (10th & 12th) – 55% and above English Proficiency – (Any one of the below)", " IELTS (minimum 6.0+)", " TOEFL (minimum 70+)", " PTE (minimum 53+)", " DET (minimum 100+)"],
+                  PopularUniversities:[ " Virginia Tech Language and Culture Institute", "University of Connecticut ", "University of Delaware ", "Worcester Polytechnic Institute", "University of South Florida", "Rochester Institute of Technology ", " Arizona State University", "Miami University--Oxford ","University of Maryland, Baltimore County ", "Virginia Commonwealth University ", "Savanah College of Art and Design ", " Southern Illinois University"],
+                  OptionalRequirements:[" Scholastic Aptitude Test (SAT)", " Minimum score of 1150+", "American College Testing (ACT) ", "Minimum score of 25+ "],  
+                },
+            } ,
+            {
+                study:"Graduate Requirements " ,
+                requirements:{
+                  MandatoryRequirements:["Academic Percentage (Bachelors)– 56% and above", " English Proficiency – (Any one of the below) ", "IELTS (minimum 6.5+)", "TOEFL (minimum 78+)", "PTE (minimum 58+) ", "DET (minimum 115+)"],
+                  PopularUniversities:[" Virginia Tech Language and Culture Institute", "University of Massachusetts--Amherst ", " Worcester Polytechnic Institute" , "Arizona State University ",  "Miami University--Oxford ", "University of Maryland, Baltimore County " , "Virginia Commonwealth University ",  "Savanah College of Art and Design ", "Southern Illinois University"],
+                  OptionalRequirements:["Graduate Record Examination (GRE)", "Minimum score of  290 to 300+ ", "Graduate Management Admission Test(GMAT) ", " Minimum score of  550+ "],  
+                },
+            } 
         ]
     },
     {
