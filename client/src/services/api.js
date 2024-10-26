@@ -56,3 +56,21 @@ export const fetchCountryDetailsById = async (id) => {
         throw error;
     }
 };
+
+
+
+
+// Fetch universities filtered by country name
+export const fetchUniversitiesByCountry = async (countryName) => {
+    try {
+        const response = await axios.get(`${BASE_URL}/api/universities/search`, {
+            params: {
+                countryName: countryName,
+            },
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching university data:", error);
+        throw error;
+    }
+};

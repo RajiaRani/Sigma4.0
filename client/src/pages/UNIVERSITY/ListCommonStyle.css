@@ -1,3 +1,7 @@
+.uni-main-container{
+    width: 58% !important;
+    margin: auto !important;
+}
 .uni-container{
     width: 100%;
     display: flex;
@@ -5,24 +9,35 @@
     border-right: 1px solid #555;
 }
 .uni-list-leftSide-container{
-    width: 40%;
+    width: 35%;
    
 }
 .uni-list-rightSide-container{
-width: 60%;
+width: 70% !important;
 margin: auto;
 }
-.uni-list-container{
+.uni-list-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap; /* Allows items to wrap if they don’t fit in one row */
+    gap: 20px; /* Adds space between items */
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
+.university-container {
+    flex: 1 1 300px; /* Allows each item to take up a minimum of 300px */
+    max-width: 300px; /* Ensures they don’t grow beyond this width */
+    box-sizing: border-box;
+}
+.uni-image {
+    padding: 0 10px !important;
+}
 .uni-image img{
-    width: 15rem;
-    height: auto;
+    width: 13rem !important;
+    height: auto !important;
     border: none;
-    border-radius: 20px;
+    border-radius: 20px !important;
 }
 .universities-cards{
    
@@ -30,32 +45,58 @@ margin: auto;
 }
 .universities-cards-info{
     width: 40rem;
-    display: flex;
-    align-items: center;
-    justify-content:start;
-    padding: 20px 0px;
-    margin-bottom: 20px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content:start!important;
+    padding: 20px 0px !important;
+    margin-bottom: 8px !important;
     border: 1px solid #555;
     border-radius: 20px;
     height: 11rem;
     box-shadow: 3px 4px 8px rgba(0,0,0,0.5);
 }
-.uni-basic-info{
-    text-align: start;
-    margin-left: 10px;
-}
 
+.uni-basic-info{
+ 
+}
+.uni-basic-info p svg{
+    font-size: 15px !important;
+    color: #1C3342;
+}
 .uni-container p{
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
     color: #555;
 }
 .uni-container h6{
-    font-size: 1rem;
+    font-size: 1rem !important;
 }
 .course-details{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+.uni-basic-info Button{
+    color: #1C3342;
+    border: 1px solid #1C3342;
+    font-size: 12px !important;
+    align-items: center !important;
+    text-align: center !important;
+    text-transform:capitalize !important;
+    padding: 2px !important;
+}
+.filter{
+    width: 15rem;
+    margin: 15px !important;
+    border: 1px solid #1C3342;
+    border-radius: 10px !important;
+    text-align: center !important;
+}
+
+
+
+
+
+
+
 
 

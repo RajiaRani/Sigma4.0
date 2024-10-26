@@ -5,6 +5,8 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const Country = require("./models/Country.js");
 const University = require("./models/University.js");
+const bodyParser = require("body-parser");
+
 
 const app = express();
 app.use(express.json());
@@ -25,6 +27,10 @@ async function main() {
 main().catch(err => {
     console.error('Database connection failed:', err.message);
 });
+
+
+// Middleware
+app.use(bodyParser.json());
 
 // Allowed origins for CORS
 const allowedOrigins = [
@@ -73,7 +79,9 @@ app.get("/api/country", async (req, res) => {
     }
 });
 
-// University List route
+
+
+// University List route - Fetch all universities for the initial page load
 app.get("/api/universities", async (req, res) => {
     try {
         const universities = await University.find({});
@@ -87,6 +95,34 @@ app.get("/api/universities", async (req, res) => {
         });
     }
 });
+
+
+// University Search route - Filters universities by country name
+app.get("/api/universities/search", async (req, res) => {
+    const { countryName } = req.query;
+
+    try {
+        // Log to debug if the correct query is being received
+        console.log("Searching for country:", countryName);
+        
+        // Use a case-insensitive regular expression to match the country name
+        const data = await University.find({
+            countryName: new RegExp(countryName, "i")  // "i" for case-insensitive matching
+        });
+        //console.log("Search Results:", data);
+
+        if (data.length > 0) {
+            res.json(data);
+        } else {
+            res.status(404).json({ message: "No universities found for the given country" });
+        }
+    } catch (error) {
+        console.error("Error fetching universities by country:", error);
+        res.status(500).json({ message: "Server error" });
+    }
+});
+
+
 
 // SHOW COUNTRY ROUTE
 app.get("/api/country/:id", async (req, res) => {

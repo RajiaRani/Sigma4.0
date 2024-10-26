@@ -14,7 +14,7 @@ import { RiArrowDropDownFill } from "react-icons/ri"
 import "./Footer.css"
 import { useState } from "react"
 export default function Footer() {
-    
+
     return (
         <footer>
             <div className=" width last-footer">
@@ -77,7 +77,7 @@ export default function Footer() {
                     </div>
                     <div className="col">
                         <ul>
-                        <li className="g-level1">
+                            <li className="g-level1">
                                 <Button>COUNTRIES <RiArrowDropDownFill /></Button>
                                 <div className="submenu">
                                     <ul className="g-level2">
@@ -97,7 +97,7 @@ export default function Footer() {
                     </div>
                     <div className="col">
                         <ul>
-                        <li className="g-level1">
+                            <li className="g-level1">
                                 <Button>UNIVERSITIES <RiArrowDropDownFill /></Button>
                                 <div className="submenu">
                                     <ul className="g-level2">
@@ -117,7 +117,7 @@ export default function Footer() {
 
                     <div className="col">
                         <ul>
-                        <li className="g-level1">
+                            <li className="g-level1">
                                 <Button>EXAMS <RiArrowDropDownFill /></Button>
                                 <div className="submenu">
                                     <ul className="g-level2">
@@ -136,16 +136,14 @@ export default function Footer() {
                     </div>
                     <div className="col">
                         <ul>
-                        <li className="g-level1">
+                            <li className="g-level1">
                                 <Button>Loan <RiArrowDropDownFill /></Button>
                                 <div className="submenu">
                                     <ul className="g-level2">
-                                        <li><Link to="#">Study Loan  </Link></li>
-                                        <li><Link to="#"> loan2 </Link></li>
-                                        <li><Link to="#"> loan3 </Link></li>
-                                        <li><Link to="#">lon3  </Link></li>
-                                        <li><Link to="#"> </Link></li>
-                                        <li><Link to="#"> </Link></li>
+                                        <li><Link to="#">Student Loan</Link></li>
+                                        <li><Link to="#">Loan Eligibility </Link></li>
+                                        <li><Link to="#">Interest Rate </Link></li>
+                                        <li><Link to="#">Repayment Options </Link></li>
 
                                     </ul>
                                 </div>
