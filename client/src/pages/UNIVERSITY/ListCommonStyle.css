@@ -1,19 +1,19 @@
 .uni-main-container{
-    width: 58% !important;
-    margin: auto !important;
+    width: 50% !important;
+    margin: 10px auto !important;
 }
 .uni-container{
     width: 100%;
     display: flex;
-    border-left: 1px solid #555;
-    border-right: 1px solid #555;
+    border-left: 1px solid  rgba(0,0,0,0.3);
+    border-right: 1px solid  rgba(0,0,0,0.3); 
 }
 .uni-list-leftSide-container{
     width: 35%;
    
 }
 .uni-list-rightSide-container{
-width: 70% !important;
+width: 40% !important;
 margin: auto;
 }
 .uni-list-container {
@@ -44,7 +44,7 @@ margin: auto;
 
 }
 .universities-cards-info{
-    width: 40rem;
+    width: 34rem !important;
     display: flex !important;
     align-items: center !important;
     justify-content:start!important;
@@ -92,6 +92,22 @@ margin: auto;
     text-align: center !important;
 }
 
+input::-webkit-input-placeholder {
+    text-overflow: inherit;
+    overflow-wrap: normal;
+    line-height: initial !important;
+    -webkit-user-modify: read-only !important;
+    white-space: pre;
+    overflow: hidden;
+}
+::-webkit-input-placeholder {
+    -webkit-text-security: none !important;
+    color: rgb(117, 117, 117)  !important;
+    direction: inherit !important;
+    pointer-events: none !important;
+    text-orientation: inherit !important;
+    writing-mode: inherit !important;
+}
 
 
 

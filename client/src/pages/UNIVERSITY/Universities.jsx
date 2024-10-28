@@ -11,14 +11,13 @@ export default function Universities() {
     const [error, setError] = useState(null);
     const numberOfDots = 5;
 
-
     const scrollRef = useRef(null);
 
     useEffect(() => {
-        const getUniversity = async (id) => {
+        const getUniversity = async () => {
             try {
-                const universityData = await fetchUniversity();
-                setUniversityData(universityData); // Corrected state update
+                const data = await fetchUniversity();
+                setUniversityData(data); // Corrected state update
                 setLoading(false); // Set loading to false after fetching data
             } catch (error) {
                 console.error("Error fetching data:", error);
@@ -43,7 +42,7 @@ export default function Universities() {
     const scrollRight = () => {
         if (scrollRef.current) {
             const nextIndex = (activeIndex + 1) % universityData.length;
-            scrollRef.current.scrollBy({ left: 400, behavior: "smooth" }); // Adjust the scroll value to match your item width
+            scrollRef.current.scrollBy({ left: 400, behavior: "smooth" });
             setActiveIndex(nextIndex);
         }
     };
@@ -52,14 +51,14 @@ export default function Universities() {
     const scrollLeft = () => {
         if (scrollRef.current) {
             const prevIndex = (activeIndex - 1 + universityData.length) % universityData.length;
-            scrollRef.current.scrollBy({ left: -400, behavior: "smooth" }); // Scroll left
+            scrollRef.current.scrollBy({ left: -400, behavior: "smooth" });
             setActiveIndex(prevIndex);
         }
     };
 
     // Function to scroll to a specific index when a dot is clicked
     const scrollToIndex = (index) => {
-        const scrollAmount = index * 300; // Adjust scroll value based on item width
+        const scrollAmount = index * 300;
         scrollRef.current.scrollTo({ left: scrollAmount, behavior: "smooth" });
         setActiveIndex(index);
     };
@@ -78,29 +77,17 @@ export default function Universities() {
                 <div className="universities">
                     <h1>Universities For MS/PG Programs</h1>
                     <Link to="/universities/MS-PG"><li>View All</li></Link>
-                    {/* <div className="scroll-buttons">
-                        <button onClick={scrollLeft}>&lt;</button>
-                        <button onClick={scrollRight}> &gt;</button>
-                    </div> */}
 
                     {/* Scrollable list */}
                     <ul className="scroll-container" ref={scrollRef}>
-                        {universityData.map((countryData, index) => (
+                        {universityData.map((university, index) => (
                             <li className="university-container" key={index}>
-                                <div className="universities-heading">
-                                    {/* <h2>Country: {countryData.countryName}</h2> */}
-                                </div>
-                                {/* Now iterate over the universities in each country */}
-                                <div className="university-cards">
-                                    {countryData.universities.map((university, uniIndex) => (
-                                        <div key={uniIndex} className="university-card">
-                                            <img src={university.imageUrl} alt="university-image" />
-                                            <p>{university.universityName}</p>
-                                            <p>Location: {university.location}</p>
-                                            <p>Fee: {university.fees}</p>
-                                            <p>Type: {university.uniType}</p>
-                                        </div>
-                                    ))}
+                                <div className="university-card">
+                                    <img src={university.imageUrl} alt="university-image" />
+                                    <p>{university.universityName}</p>
+                                    <p>Location: {university.location}</p>
+                                    <p>Fee: {university.fees}</p>
+                                    <p>Type: {university.uniType}</p>
                                 </div>
                             </li>
                         ))}

@@ -1,0 +1,81 @@
+/* CountryFilter.css */
+
+.filter-container {
+    width: 70%;
+}
+
+
+/* .search-input {
+    position: relative !important;
+    height: 23px !important;
+    padding: 0px !important;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+} */
+.filter-container  svg{
+    position: absolute !important;
+    font-size: 16px !important;
+    left: 10px !important;
+}
+.filter-container .filter-btn{
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 20px ;
+    padding: 0px !important;
+}
+
+.selected-countries {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.selected-country {
+    background-color: #007BFF;
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: start !important;
+}
+
+.remove-button {
+    background: none;
+    border: none;
+    color: #007BFF !important;
+    margin-left: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.country-radio-group {
+    max-height: 230px !important; 
+    overflow-y: auto !important;
+}
+
+.radio-option {
+    display: flex !important;
+    align-items: center !important;
+}
+.radio-option input{
+    height: 12px !important;
+    width: 12px !important;
+    border-radius: 0px !important;
+
+}
+
+.radio-option input[type="radio"] {
+    accent-color: #007BFF;
+}
+
+.radio-option input[type="radio"]:checked + label {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.radio-option label {
+    font-size: 13px !important;
+    color: #555;
+    cursor: pointer;
+}

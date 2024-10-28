@@ -6,6 +6,8 @@ import CountryDetails from "./pages/COUNTRY/CountryDetails.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Universities from "./pages/UNIVERSITY/Universities.jsx";
 import MSList from "./pages/UNIVERSITY/MSList.jsx";
+
+
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 function App() {
   return (

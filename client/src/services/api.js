@@ -42,14 +42,9 @@ export const fetchUniversity = async () => {
 
 // FETCH COUNTRY DETAILS BY ID
 export const fetchCountryDetailsById = async (id) => {
-    if (!id) throw new Error("Country ID is required."); // Ensure id is defined
+    if (!id) throw new Error("Country ID is required."); 
     try {
-        const response = await axios.get(`${BASE_URL}/api/country/${id}`, {
-            headers: {
-                "Accept": "application/json",
-            },
-            withCredentials: true // Ensure credentials are sent with the request
-        });
+        const response = await axios.get(`${BASE_URL}/api/country/${id}`);
         return response.data;
     } catch (error) {
         console.error("Failed to fetch the country details from the backend.", error);
@@ -58,16 +53,15 @@ export const fetchCountryDetailsById = async (id) => {
 };
 
 
+// FETCH University DETAILS BY ID
+
+
 
 
 // Fetch universities filtered by country name
 export const fetchUniversitiesByCountry = async (countryName) => {
     try {
-        const response = await axios.get(`${BASE_URL}/api/universities/search`, {
-            params: {
-                countryName: countryName,
-            },
-        });
+        const response = await axios.get(`${BASE_URL}/api/universities/search`);
         return response.data;
     } catch (error) {
         console.error("Error fetching university data:", error);

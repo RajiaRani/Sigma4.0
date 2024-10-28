@@ -1,18 +1,18 @@
 import "./ListCommonStyle.css";
 import "../../styles/global.css";
 import { useEffect, useState } from "react";
-import { fetchUniversity, fetchUniversitiesByCountry } from "../../services/api";
+import { fetchUniversity } from "../../services/api";
 import { FaLocationDot } from "react-icons/fa6";
 import Navbar from "../../components/NAVBAR/Navbar";
 import Footer from "../../components/FOOTER/Footer";
-import { Button } from "@mui/material";
+import CountryFilter from "../../components/Filter/CountryFilter.jsx";
+import { Link } from "react-router-dom";
 
 export default function MSList() {
-    const [universityData, setUniversityData] = useState([]);  // Holds the full university list
-    const [filteredData, setFilteredData] = useState([]);      // Holds filtered results based on the search
+    const [universityData, setUniversityData] = useState([]); // Full university list
+    const [filteredData, setFilteredData] = useState([]); // Filtered university list
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [countryName, setCountryName] = useState("");        // Country name for search
 
     // Load all universities on page load
     useEffect(() => {
@@ -21,7 +21,7 @@ export default function MSList() {
                 setLoading(true);
                 const data = await fetchUniversity();
                 setUniversityData(data);
-                setFilteredData(data);  // Initially display all universities
+                setFilteredData(data); // Show all universities initially
                 setLoading(false);
             } catch (error) {
                 console.error("Error fetching universities:", error);
@@ -32,34 +32,19 @@ export default function MSList() {
         loadAllUniversities();
     }, []);
 
-    // Trigger filtering based on the country name when the Filter button is clicked
-    const handleFilterClick = async () => {
-        if (countryName.trim() === "") {
-            setFilteredData(universityData);  // Show all universities if input is empty
-            setError(null);  // Reset error message when displaying all universities
+    // Filter universities by country name
+    const handleFilter = (countryName) => {
+        if (!countryName) {
+            setFilteredData(universityData); // Reset to all universities if filter is cleared
+            setError(null);
         } else {
-            try {
-                setLoading(true);
-                setError(null);  // Reset any previous errors
-                const data = await fetchUniversitiesByCountry(countryName.trim());
-                setFilteredData(data);
-                setLoading(false);
-            } catch (error) {
-                setLoading(false);
-                if (error.response && error.response.status === 404) {
-                    // Custom message for 404 not found
-                    setError("No universities found for the given country.");
-                    setFilteredData([]);  // Clear filtered data
-                } else {
-                    // General error message for other errors
-                    console.error("Error fetching universities:", error);
-                    setError("Failed to load universities.");
-                }
-            }
+            const filtered = universityData.filter(
+                (university) => university.countryName && university.countryName.toLowerCase() === countryName.toLowerCase()
+            );
+            setFilteredData(filtered);
+            setError(filtered.length ? null : "No universities found for the selected country.");
         }
     };
-
-    
 
     if (loading) {
         return <div>Loading universities...</div>;
@@ -74,58 +59,49 @@ export default function MSList() {
             <Navbar />
             <div className="body-container">
                 <section className="uni-main-container">
-                    <h1>Universities List</h1>
+                    <h1>Universities List</h1> <br />
                     <div className="uni-container">
                         {/* Left Side Search Section */}
                         <div className="uni-list-leftSide-container">
-                            <div className="filter">
-                            <h6>Search Country</h6>
-                            <input
-                                type="text"
-                                value={countryName}
-                                onChange={(e) => setCountryName(e.target.value)}
-                                placeholder="Enter country name"
-                            />
-                            <Button onClick={handleFilterClick} >Filter</Button>
-                            </div>
+                            <CountryFilter onFilter={handleFilter} availableCountries={["USA", "Canada", "UK", "Germany"]} />
                         </div>
     
                         {/* Right Side University List Section */}
                         <div className="uni-list-rightSide-container">
-                            {/* Display error message if it exists */}
                             {error ? (
                                 <p>{error}</p>
                             ) : (
-                           <div>
-                                    {filteredData.map((countryData, index) => (
-                                        <ul className="uni-list-container">
-                                        <li className="university-container" key={index}>
-                                            <div className="universities-cards">
-                                                {countryData.universities.map((university, uniIndex) => (
-                                                    <div key={uniIndex} className="universities-cards-info">
-                                                        <div className="uni-image">
-                                                            <img src={university.imageUrl} alt="university-image" />
-                                                        </div>
-                                                        <div className="uni-basic-info">
-                                                            <h6>{university.universityName}</h6>
-                                                            <p><FaLocationDot /> {university.location} | {university.uniType}</p>
-                                                            <hr />
-                                                            <p>1st year Tuition Fees:</p>
-                                                            <p>{university.fees}</p>
-                                                            {university.PG.map((course, courseIndex) => (
-                                                                <div key={courseIndex} className="course-details">
-                                                                    <p>Course Duration: {course.duration}</p>
-                                                                </div>
-                                                            ))}
-                                                        </div>
+                                <div>
+                                    {filteredData.map((university, uniIndex) => (
+                                        <ul className="uni-list-container" key={uniIndex}>
+                                            <li className="university-container">
+                                                <div className="universities-cards">
+                                                    <div className="universities-cards-info">
+                                                        <Link to={`/universities/${university._id}`} className="universities-cards-info-link">
+                                                            <div className="uni-image">
+                                                                <img src={university.imageUrl} alt="university-image" />
+                                                            </div>
+                                                            <div className="uni-basic-info">
+                                                                <h6>{university.universityName}</h6>
+                                                                <p><FaLocationDot /> {university.location} | {university.uniType}</p>
+                                                                <hr />
+                                                                <p>1st year Tuition Fees:</p>
+                                                                <p>{university.fees}</p>
+                                                                {university.PG && university.PG.map((course, courseIndex) => (
+                                                                    <div key={courseIndex} className="course-details">
+                                                                        <p>Course: {course.courseName}</p>
+                                                                        <p>Duration: {course.duration}</p>
+                                                                        <p>Price: {course.price}</p>
+                                                                    </div>
+                                                                ))}
+                                                            </div>
+                                                        </Link>
                                                     </div>
-                                                ))}
-                                            </div>
-                                        </li>
+                                                </div>
+                                            </li>
                                         </ul>
                                     ))}
-                            </div>
-                             
+                                </div>
                             )}
                         </div>
                     </div>
@@ -134,5 +110,4 @@ export default function MSList() {
             <Footer />
         </>
     );
-    
 }
