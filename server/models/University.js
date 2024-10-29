@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 const examSchema = new mongoose.Schema({
   examName: { type: String, required: true },
-  scoreRange: { type: String }, // Score range (e.g., 0-9 for IELTS, 260-340 for GRE)
-  required: { type: Boolean, default: false }, // Is the exam required for admission
-  waiver: { type: Boolean, default: false }, // Waiver for the exam (e.g., for certain countries or conditions)
+  scoreRange: { type: String }, 
+  required: { type: Boolean, default: false }, 
+  waiver: { type: Boolean, default: false }, 
 });
 
 const scholarshipSchema = new mongoose.Schema({
@@ -14,21 +14,21 @@ const scholarshipSchema = new mongoose.Schema({
 });
 
 const intakeSchema = new mongoose.Schema({
-  intakeName: { type: String, required: true }, // Intake name (e.g., Summer, Winter, July)
-  intakeDate: { type: Date, required: true }, // Intake date
-  deadline: { type: Date, required: true }, // Application deadline for the intake
+  intakeName: { type: String, required: true },
+  intakeDate: { type: Date, required: true }, 
+  deadline: { type: Date, required: true }, 
 });
 
 const courseSchema = new mongoose.Schema({
-  courseName: { type: String, required: true }, // Course name (e.g., Computer Science)
-  degree: { type: String, required: true }, // Degree type (e.g., Bachelors, Masters)
-  degreeLevel: { type: String, enum: ["UG", "PG", "PhD"], required: true }, // UG, PG, PhD
-  price: { type: String }, // Course price (tuition fee)
-  duration: { type: String }, // Duration of the course (e.g., 4 years, 2 years)
-  exams: [examSchema], // List of exams required for the course
-  scholarships: [scholarshipSchema], // List of scholarships available for the course
-  intakes: [intakeSchema], // List of intakes (e.g., Summer, Winter, July)
-  credential: { type: String }, // Required credentials for the course (e.g., undergraduate degree)
+  courseName: { type: String, required: true }, 
+  degree: { type: String, required: true }, 
+  degreeLevel: { type: String, enum: ["UG", "PG", "PhD"], required: true }, 
+  price: { type: String }, 
+  duration: { type: String }, 
+  exams: [examSchema], 
+  scholarships: [scholarshipSchema],
+  intakes: [intakeSchema], 
+  credential: { type: String }, 
 });
 
 // Pre-save hook to automatically update intake and deadline to the current or next year
@@ -60,23 +60,24 @@ courseSchema.pre("save", function (next) {
 
 const universitySchema = new mongoose.Schema({
   universityName: { type: String, required: true },
+  countryName: {type: String},
   location: { type: String, required: true },
   ranking: { type: Number },
   acceptanceRate: { type: Number },
-  fees: { type: String }, // Adjusted to String since it's given in multiple formats (e.g., ₹14.98 L)
-  uniType: { type: String }, // Public or Private
+  fees: { type: String }, 
+  uniType: { type: String },
   imageUrl: { type: String },
   description: { type: String },
-  UG: [courseSchema], // Array of UG courses
-  PG: [courseSchema], // Array of PG courses
-  PhD: [courseSchema], // Array of PhD courses
+  UG: [courseSchema], 
+  PG: [courseSchema], 
+  PhD: [courseSchema], 
 
 });
 
-const countrySchema = new mongoose.Schema({
-  countryName: { type: String, required: true },
-  universities: [universitySchema],
-});
+// const countrySchema = new mongoose.Schema({
+//   countryName: { type: String, required: true },
+//   universities: [universitySchema],
+// });
 
-const University = mongoose.model("University", countrySchema);
+const University = mongoose.model("University", universitySchema);
 module.exports = University;

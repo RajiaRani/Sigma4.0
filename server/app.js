@@ -99,27 +99,19 @@ app.get("/api/universities", async (req, res) => {
 
 // University Search route - Filters universities by country name
 app.get("/api/universities/search", async (req, res) => {
-    const { countryName } = req.query;
-
     try {
-        // Log to debug if the correct query is being received
-        console.log("Searching for country:", countryName);
-        
-        // Use a case-insensitive regular expression to match the country name
-        const data = await University.find({
-            countryName: new RegExp(countryName, "i")  // "i" for case-insensitive matching
-        });
-        //console.log("Search Results:", data);
-
-        if (data.length > 0) {
-            res.json(data);
-        } else {
-            res.status(404).json({ message: "No universities found for the given country" });
-        }
-    } catch (error) {
-        console.error("Error fetching universities by country:", error);
-        res.status(500).json({ message: "Server error" });
-    }
+        const { countryName, universityName } = req.query;
+        const query = {};
+    
+        if (countryName) query.countryName = countryName;
+        if (universityName) query.universityName = new RegExp(universityName, 'i'); // Partial match
+    
+        const universities = await University.find(query);
+        res.json(universities);
+      } catch (error) {
+        console.error("Error fetching universities:", error);
+        res.status(500).json({ message: "Error fetching universities" });
+      }
 });
 
 
@@ -135,9 +127,28 @@ app.get("/api/country/:id", async (req, res) => {
         res.json(country);
     } catch (error) {
         console.error(error); // Log the error for debugging
-        res.status(500).json({ error: "Failed to fetch the country data." });
+        res.status(500).json({ error: "Opps! Failed to fetch the country data." });
     }
 });
+
+
+
+//SHOW UNIVERSITY 
+app.get("/api/universities/:id", async (req, res) => {
+    const { id } = req.params;
+    try{
+        const university = await University.findById(id);
+        if(!university){
+            return res.status(404).json({error : "University Not Found"});
+        }
+        res.json(university);
+    } catch(error){
+        console.error(error);
+        res.status(500).json({error:"Opps!! Failed to fetch the university data."})
+    }
+
+});
+
 
 const port = 3000;
 app.listen(port, () => {
