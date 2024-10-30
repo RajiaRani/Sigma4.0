@@ -54,14 +54,24 @@ export const fetchCountryDetailsById = async (id) => {
 
 
 // FETCH University DETAILS BY ID
-
-
+export const fetchUniversityDetailsById = async(id) => {
+    if(!id) throw new Error("Opps! University Id Required");
+    try{
+      const response = await axios.get(`${BASE_URL}/api/universities/${id}`);
+      return response.data;
+    }  catch(error) {
+        console.error("Failed to fetch the university details from the backend.", error);
+        throw error;
+    }
+}
 
 
 // Fetch universities filtered by country name
-export const fetchUniversitiesByCountry = async (countryName) => {
+export const fetchUniversitiesByFilters = async ({ countryName, universityName }) => {
     try {
-        const response = await axios.get(`${BASE_URL}/api/universities/search`);
+        const response = await axios.get(`${BASE_URL}/api/universities/search`, {
+            params: { countryName, minFees, maxFees, universityName },
+        });
         return response.data;
     } catch (error) {
         console.error("Error fetching university data:", error);

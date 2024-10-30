@@ -40,7 +40,9 @@ margin: auto;
     border-radius: 20px !important;
 }
 .universities-cards{
-   
+   display: flex !important;
+   align-items: center;
+   width: 35rem !important;
 
 }
 .universities-cards-info{

@@ -7,12 +7,20 @@ import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { LiaHomeSolid } from "react-icons/lia";
-
+import { useNavigate } from "react-router-dom";
 export default function LowerNav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
+
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
+    const handleCountryClick = (country) => {
+        navigate(`/universities/${country}`);
+    };
+
+
     return (
         <>
             <div className="global-wrapper d-flex  ">
@@ -50,15 +58,10 @@ export default function LowerNav() {
                                 <Button>COUNTRIES <RiArrowDropDownFill /></Button>
                                 <div className="submenu shadow">
                                     <ul className="g-level2">
-                                        <li><Link to="#">USA </Link></li>
-                                        <li><Link to="#">Canada  </Link></li>
-                                        <li><Link to="#"> UK </Link></li>
-                                        <li><Link to="#">Australia </Link></li>
-                                        <li><Link to="#"> Germony </Link></li>
-                                        <li><Link to="#">Ireland  </Link></li>
-                                        <li><Link to="#">France </Link></li>
-                                        <li><Link to="#">More Countries</Link></li>
-
+                                    <li><Link to="#" onClick={() => handleCountryClick("USA")}>USA</Link></li>
+                                    <li><Link to="#" onClick={() => handleCountryClick("Canada")}>Canada</Link></li>
+                                    <li><Link to="#" onClick={() => handleCountryClick("UK")}>UK</Link></li>
+                                    <li><Link to="#" onClick={() => handleCountryClick("Germany")}>Germany</Link></li>
                                     </ul>
                                 </div>
                             </li>
