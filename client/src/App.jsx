@@ -20,9 +20,8 @@ function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="/country" element={<Country />} />
             <Route path="/country/:id" element={<CountryDetails />} />
-            <Route path="/universities/MS-PG" element={<MSList />} />
-            <Route path="/universities/:country" element={<MSList />} />
             <Route path="/universities/:id" element={<UniversityDetails/>}/ >
+            <Route path="/universities/MS-PG" element={<MSList />} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>

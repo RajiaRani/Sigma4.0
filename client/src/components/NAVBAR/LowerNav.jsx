@@ -7,17 +7,17 @@ import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { LiaHomeSolid } from "react-icons/lia";
-import { useNavigate } from "react-router-dom";
+import Country from "./COUNTRIES/Country.jsx";
+import University from "./UNIVERSITIES/University.jsx";
+import Courses from "./COURSES/Courses.jsx";
+import Exams from "./EXAMS/Exams.jsx";
+import Loan from "./LOAN/Loan.jsx";
+
 export default function LowerNav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const navigate = useNavigate();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
-    };
-
-    const handleCountryClick = (country) => {
-        navigate(`/universities/${country}`);
     };
 
 
@@ -42,71 +42,32 @@ export default function LowerNav() {
                             <li className="g-level1">
                                 <Button className="d-flex" >COURSES <RiArrowDropDownFill className="ms-auto" /></Button>
                                 <div className="submenu shadow">
-                                    <ul className="g-level2">
-                                        <li><Link to="#">CSE & Technology</Link></li>
-                                        <li><Link to="#"> Business & Management</Link></li>
-                                        <li><Link to="#">Engineering</Link></li>
-                                        <li><Link to="#">Medicine & Healthcare</Link></li>
-                                        <li><Link to="#">Law </Link></li>
-                                        <li><Link to="#">Arts & Humanities</Link></li>
-                                        <li><Link to="#">Natural Sciences </Link></li>
-                                        <li><Link to="#">Social Sciences </Link></li>
-                                    </ul>
+                                    <Courses/>
                                 </div>
                             </li>
                             <li className="g-level1">
                                 <Button>COUNTRIES <RiArrowDropDownFill /></Button>
                                 <div className="submenu shadow">
-                                    <ul className="g-level2">
-                                    <li><Link to="#" onClick={() => handleCountryClick("USA")}>USA</Link></li>
-                                    <li><Link to="#" onClick={() => handleCountryClick("Canada")}>Canada</Link></li>
-                                    <li><Link to="#" onClick={() => handleCountryClick("UK")}>UK</Link></li>
-                                    <li><Link to="#" onClick={() => handleCountryClick("Germany")}>Germany</Link></li>
-                                    </ul>
+                                  <Country/>
                                 </div>
                             </li>
                             <li className="g-level1">
                                 <Button>UNIVERSITIES <RiArrowDropDownFill /></Button>
                                 <div className="submenu shadow">
-                                    <ul className="g-level2">
-                                        <li><Link to="#">MS University </Link></li>
-                                        <li><Link to="#">MBA  </Link></li>
-                                        <li><Link to="#">BE/BTech </Link></li>
-                                        <li><Link to="#"> NEng </Link></li>
-                                        <li><Link to="#"> MIM </Link></li>
-                                        <li><Link to="#"> BBA </Link></li>
-                                        <li><Link to="#"> CSE</Link></li>
-
-                                    </ul>
+                                    <University/>
                                 </div>
                             </li>
                             <li className="g-level1">
                                 <Button>EXAMS <RiArrowDropDownFill /></Button>
                                 <div className="submenu shadow">
-                                    <ul className="g-level2">
-                                        <li><Link to="#">IELTS </Link></li>
-                                        <li><Link to="#">TOEFL  </Link></li>
-                                        <li><Link to="#"> DET </Link></li>
-                                        <li><Link to="#"> PET </Link></li>
-                                        <li><Link to="#">GRE </Link></li>
-                                        <li><Link to="#">GMAT </Link></li>
-                                        <li><Link to="#">SAT </Link></li>
-                                    </ul>
+                                   <Exams/>
                                 </div>
 
                             </li>
                             <li className="g-level1">
                                 <Button>Loan <RiArrowDropDownFill /></Button>
                                 <div className="submenu shadow">
-                                    <ul className="g-level2">
-                                        <li><Link to="#">Student Loan</Link></li>
-                                        <li><Link to="#">Loan Eligibility </Link></li>
-                                        <li><Link to="#">Interest Rate </Link></li>
-                                        <li><Link to="#">Repayment Options </Link></li>
-                                        <li><Link to="#"> </Link></li>
-                                        <li><Link to="#"> </Link></li>
-
-                                    </ul>
+                                    <Loan/>
                                 </div>
                             </li>
                         </ul>

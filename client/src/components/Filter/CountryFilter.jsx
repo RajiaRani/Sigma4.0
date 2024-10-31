@@ -1,40 +1,35 @@
+// CountryFilter.jsx
 import React, { useState, useEffect } from "react";
-import "./CountryFilter.css";
 import { CiSearch } from "react-icons/ci";
+import { MdClear } from "react-icons/md";
+import "./CommonStyle.css";
 
-export default function CountryFilter({ onFilter, availableCountries = [], availableUniversities = [] }) {
-    const [selectedCountry, setSelectedCountry] = useState("");
-    const [selectedUniversity, setSelectedUniversity] = useState("");
+export default function CountryFilter({
+    onFilter,
+    availableCountries = [],
+    selectedCountry,
+    setSelectedCountry,
+    selectedUniversity,
+}) {
     const [countrySearchTerm, setCountrySearchTerm] = useState("");
-    const [universitySearchTerm, setUniversitySearchTerm] = useState("");
     const [filteredCountries, setFilteredCountries] = useState(availableCountries);
-    const [filteredUniversities, setFilteredUniversities] = useState(availableUniversities);
 
+    // Filter countries by search term
     useEffect(() => {
         setFilteredCountries(
-            availableCountries.filter(country =>
+            availableCountries.filter((country) =>
                 country.toLowerCase().includes(countrySearchTerm.toLowerCase())
             )
         );
     }, [countrySearchTerm, availableCountries]);
 
-    useEffect(() => {
-        setFilteredUniversities(
-            availableUniversities.filter(university =>
-                university.toLowerCase().includes(universitySearchTerm.toLowerCase())
-            )
-        );
-    }, [universitySearchTerm, availableUniversities]);
 
     const handleCountryChange = (country) => {
         setSelectedCountry(country);
-        onFilter({ country });
+        onFilter({ country, universityName: selectedUniversity });
     };
 
-    const handleUniversityChange = (university) => {
-        setSelectedUniversity(university);
-        onFilter({ university });
-    };
+    const clearCountrySearch = () => setCountrySearchTerm("");
 
     return (
         <div className="Filter-container">
@@ -42,7 +37,7 @@ export default function CountryFilter({ onFilter, availableCountries = [], avail
             <div className="filter-container">
                 <h3>Filter by Country</h3>
                 <div className="filter-btn">
-                    <CiSearch />
+                    <CiSearch className="search-icon"  />
                     <input
                         type="text"
                         placeholder="Search Country"
@@ -50,6 +45,9 @@ export default function CountryFilter({ onFilter, availableCountries = [], avail
                         onChange={(e) => setCountrySearchTerm(e.target.value)}
                         className="search-input"
                     />
+                    {countrySearchTerm && (
+                        <MdClear className="clear-icon" onClick={clearCountrySearch} />
+                    )}
                 </div>
 
                 <div className="country-radio-group scrollable-list">
@@ -63,41 +61,9 @@ export default function CountryFilter({ onFilter, availableCountries = [], avail
                                 checked={selectedCountry === country}
                                 onChange={() => handleCountryChange(country)}
                             />
-                            <label htmlFor={country}>{country}</label>
-                        </div>
-                    ))}
-                </div>
-            </div>
-            
-            <hr />
-            <br />
-
-            {/* University Filter */}
-            <div className="filter-container">
-                <h3>Filter by University</h3>
-                <div className="filter-btn">
-                    <CiSearch />
-                    <input
-                        type="text"
-                        placeholder="Search University"
-                        value={universitySearchTerm}
-                        onChange={(e) => setUniversitySearchTerm(e.target.value)}
-                        className="search-input"
-                    />
-                </div>
-
-                <div className="country-radio-group scrollable-list">
-                    {filteredUniversities.map((university) => (
-                        <div key={university} className="radio-option">
-                            <input
-                                type="radio"
-                                id={university}
-                                name="university"
-                                value={university}
-                                checked={selectedUniversity === university}
-                                onChange={() => handleUniversityChange(university)}
-                            />
-                            <label htmlFor={university}>{university}</label>
+                            <label htmlFor={country} className={selectedCountry === country ? "active" : ""}>
+                                {country}
+                            </label>
                         </div>
                     ))}
                 </div>

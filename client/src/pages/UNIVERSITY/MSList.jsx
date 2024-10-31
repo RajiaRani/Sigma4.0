@@ -1,4 +1,3 @@
-// MSList.js
 import "./ListCommonStyle.css";
 import "../../styles/global.css";
 import { useEffect, useState } from "react";
@@ -12,18 +11,18 @@ import { Link, useLocation } from "react-router-dom";
 export default function MSList() {
     const [universityData, setUniversityData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
+    const [selectedCountry, setSelectedCountry] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const location = useLocation();
 
-    // Load all universities on page load
     useEffect(() => {
         const loadAllUniversities = async () => {
             try {
                 setLoading(true);
                 const data = await fetchUniversity();
                 setUniversityData(data);
-                setFilteredData(data); // Initially show all
+                setFilteredData(data);
                 setLoading(false);
             } catch (error) {
                 console.error("Error fetching universities:", error);
@@ -34,16 +33,15 @@ export default function MSList() {
         loadAllUniversities();
     }, []);
 
-    // Apply initial filter based on URL query parameter (country)
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
         const country = searchParams.get("country");
         if (country) {
+            setSelectedCountry(country);
             handleFilter({ country });
         }
     }, [location.search, universityData]);
 
-    // Filter universities by country name
     const handleFilter = ({ country = "", universityName = "" }) => {
         let filtered = universityData;
 
@@ -71,15 +69,30 @@ export default function MSList() {
         return <div>{error}</div>;
     }
 
+    const introHeading = selectedCountry
+        ? `Discover Universities in ${selectedCountry}`
+        : "Explore Global Universities for MS/PG Programs";
+
+    const introText = selectedCountry
+        ? `Embark on an academic journey in ${selectedCountry} with our curated selection of universities. Explore standout programs designed to shape your future in fields like engineering, business, medicine, and more.`
+        : `Discover renowned universities worldwide, offering transformative programs across various fields. Whether you're eyeing studies in the USA, UK, Canada, Germany, or Ireland, our listings offer tailored details on each university.`;
+
     return (
         <>
             <Navbar />
             <div className="body-container">
                 <section className="uni-main-container">
-                    <h1>Universities List</h1> <br />
+                    <h4>{introHeading}</h4>
+                    <p>{introText}</p>
+                    <br />
                     <div className="uni-container">
                         <div className="uni-list-leftSide-container">
-                            <CountryFilter onFilter={handleFilter} availableCountries={["USA", "Canada", "UK", "Germany"]} />
+                            <CountryFilter
+                                onFilter={handleFilter}
+                                availableCountries={["USA", "Canada", "UK", "Germany", "Ireland"]}
+                                selectedCountry={selectedCountry}
+                                setSelectedCountry={setSelectedCountry}
+                            />
                         </div>
                         <div className="uni-list-rightSide-container">
                             {filteredData.map((university, uniIndex) => (
@@ -89,13 +102,13 @@ export default function MSList() {
                                             <div className="universities-cards">
                                                 <div className="universities-cards-info">
                                                     <div className="uni-image">
-                                                        <img src={university.imageUrl} alt="university-image" />
+                                                        <img src={university.imageUrl} alt={`${university.universityName} image`} />
                                                     </div>
                                                     <div className="uni-basic-info">
                                                         <h6>{university.universityName}</h6>
                                                         <p><FaLocationDot /> {university.location} | {university.uniType}</p>
                                                         <hr />
-                                                        <p>1st year Tuition Fees:</p>
+                                                        <p>1st Year Tuition Fees:</p>
                                                         <p>{university.fees}</p>
                                                         {university.PG && university.PG.map((course, courseIndex) => (
                                                             <div key={courseIndex} className="course-details">
