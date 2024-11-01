@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Universities from "./pages/UNIVERSITY/Universities.jsx";
 import MSList from "./pages/UNIVERSITY/MSList.jsx";
 import UniversityDetails from "./pages/UNIVERSITY/UniversityDetails.jsx";
-
+import CountryPrompt from "./components/CountryPrompt/CountryPrompt.jsx";
 
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 function App() {
@@ -20,8 +20,10 @@ function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="/country" element={<Country />} />
             <Route path="/country/:id" element={<CountryDetails />} />
+            <Route path="/country/:id" element={<CountryPrompt />} />
             <Route path="/universities/:id" element={<UniversityDetails/>}/ >
             <Route path="/universities/MS-PG" element={<MSList />} />
+        
           </Routes>
         </CSSTransition>
       </TransitionGroup>
