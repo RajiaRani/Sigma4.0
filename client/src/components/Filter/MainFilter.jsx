@@ -1,4 +1,3 @@
-// MainFilterContainer.jsx
 import React, { useState } from "react";
 import CountryFilter from "./CountryFilter";
 import UniversityFilter from "./UniversityFilter";
@@ -9,20 +8,20 @@ export default function MainFilterContainer({ onFilter, countries, universities 
     const [selectedUniversity, setSelectedUniversity] = useState("");
 
     const handleCountrySelect = (country) => {
-        setSelectedCountry(country);
-        onFilter({ country, universityName: selectedUniversity });
+        setSelectedCountry(country);  
+        onFilter({ country, universityName: selectedUniversity });  
     };
 
     const handleUniversitySelect = (university) => {
         setSelectedUniversity(university);
-        onFilter({ country: selectedCountry, universityName: university });
+        onFilter({ country: selectedCountry, universityName: university }); 
     };
 
     return (
         <div>
             <CountryFilter
                 onFilter={handleCountrySelect}
-                availableCountries={["USA", "Canada", "UK", "Germany", "Ireland"]}
+                availableCountries={countries}
                 selectedCountry={selectedCountry}
                 setSelectedCountry={setSelectedCountry}
             />

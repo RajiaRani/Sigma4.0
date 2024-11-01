@@ -71,7 +71,7 @@ export default function MSList() {
 
     const introHeading = selectedCountry
         ? `Discover Universities in ${selectedCountry}`
-        : "Explore Global Universities for MS/PG Programs";
+        : "Explore Country Vise Global Universities ";
 
     const introText = selectedCountry
         ? `Embark on an academic journey in ${selectedCountry} with our curated selection of universities. Explore standout programs designed to shape your future in fields like engineering, business, medicine, and more.`

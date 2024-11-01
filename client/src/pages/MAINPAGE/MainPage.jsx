@@ -10,11 +10,15 @@ import Footer from "../../components/FOOTER/Footer.jsx";
 import "./MainPage.css";
 import "../../styles/global.css";
 import Universities from "../UNIVERSITY/Universities.jsx";
+import SideSocialMedia from "../../components/SideSocialMedia/SideSocialMedia.jsx";
 
 export default function Body() {
     return (
+        <>
         <div className="body-container">
-
+        <div className="side-social-container">
+            <SideSocialMedia/>
+        </div>
                 <Navbar />
                 <Home />
                 <Country/>
@@ -25,7 +29,8 @@ export default function Body() {
                 <Services />
                 <Experts />
                 <Footer />
-      
         </div>
+        </>
+   
     );
 }

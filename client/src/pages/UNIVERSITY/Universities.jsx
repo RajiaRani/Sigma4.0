@@ -75,12 +75,13 @@ export default function Universities() {
         <div className="main-container">
             <section className="section">
                 <div className="universities">
-                    <h1>Universities For MS/PG Programs</h1>
+                    <h1>Find Country Vise Universities </h1>
                     <Link to="/universities/MS-PG"><li>View All</li></Link>
 
                     {/* Scrollable list */}
                     <ul className="scroll-container" ref={scrollRef}>
                         {universityData.map((university, index) => (
+                            <Link to="/universities/MS-PG">
                             <li className="university-container" key={index}>
                                 <div className="university-card">
                                     <img src={university.imageUrl} alt="university-image" />
@@ -90,6 +91,7 @@ export default function Universities() {
                                     <p>Type: {university.uniType}</p>
                                 </div>
                             </li>
+                            </Link>
                         ))}
                     </ul>
 

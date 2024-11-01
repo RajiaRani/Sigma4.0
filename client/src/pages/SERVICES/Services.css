@@ -9,32 +9,32 @@
 }
 
 .services h3 {
-    font-size: 21px !important;
-    width: 150px !important;
+    font-size: 20px !important;
+    width: 120px !important;
     font-weight: 500;
     color: var(--mainBgColor);
     text-align: center;
 }
 .services .services-info-container {
     width: 100%;
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 18px;
+    grid-gap: 16px !important;
     grid-template-rows: auto;
     margin-top:3rem !important;
 }
 
 .services .services-info-container .services-info img {
-    width: auto;
-    height: 3.0rem !important;
-    margin-top: 0%;
+    width: 1.8rem !important;
+    height: 2.0rem !important;
+    margin-top: 0% !important;
     z-index: 1;
 }
 
 .services .services-info-container .services-info {
     border: 1px solid var(--mainBgColor);
     width: 100% !important;
-    height: 14rem !important;
+    height: 10rem !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -113,11 +113,11 @@
     }
 
     .services h1 {
-        font-size: 34px;
+        font-size: 34px !important;
     }
 
     .services h3 {
-        font-size: 20px;
+        font-size: 20px !important;
     }
 }
 
@@ -133,6 +133,7 @@
 }
 
 .services h3 {
+    font-size: 20px !important;
     font-weight: 500;
     color: var(--mainBgColor);
     text-align: center;
@@ -141,14 +142,14 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 18px;
+    grid-gap: 16px !important;
     grid-template-rows: auto;
     margin-top:3rem !important;
 }
 
 .services .services-info-container .services-info img {
-    width: auto !important;
-    height: 3.8rem !important;
+    width: 2.8rem !important;
+    height: 3.0rem !important;
     margin-top: 0% !important;
 }
 
