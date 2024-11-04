@@ -114,6 +114,73 @@ input::-webkit-input-placeholder {
 
 
 
+@media (max-width: 575.98px){
+    .uni-main-container{
+        width: 100% !important;
+        margin: 0px auto !important;
+        border-left: 0px solid  rgba(0,0,0,0.1);
+        border-right: 0px solid  rgba(0,0,0,0.1); 
+    }
+    
+    .uni-container{
+        width: 100%;
+        display: flex;
+       flex-direction: column !important;
+    }
+    .uni-list-leftSide-container{
+        width: 100%;
+       
+    }
+    .uni-list-rightSide-container{
+    width: 100% !important;
+    margin: auto;
+    }
+    .uni-list-container {
+        gap: 10px; 
+    }
+    
+    .uni-image {
+        padding: 0 10px !important;
+    }
+    .uni-image img{
+        width: 10rem !important;
+    }
+
+    .universities-cards-info{
+        width: 26rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content:start!important;
+        padding: 0px 0px !important;
+        margin-bottom: 8px !important;
+        border: 1px solid #555;
+        border-radius: 20px;
+        height: 9rem;
+        box-shadow: 3px 4px 8px rgba(0,0,0,0.5);
+    }
+    
+    .uni-basic-info p svg{
+        font-size: 13px !important;
+    }
+    .uni-container p{
+        font-size: 0.6rem !important;
+    }
+    .uni-container h6{
+        font-size: 0.8rem !important;
+    }
+    .filter{
+        width: 100%;
+        margin: 15px !important;
+        border: 1px solid #1C3342;
+        border-radius: 10px !important;
+        text-align: center !important;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px){
+
+}
+
 
 
 

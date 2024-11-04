@@ -57,7 +57,7 @@ export default function CountryDetails() {
                             <ul>
                                 {
                                     universityType.universityType.map((type, typeIndex) => (
-                                        <li key={typeIndex} className="para-list"><img src={sq} alt="sq-image" style={{ width: "16px", height: "16px" }} /> {type}</li>
+                                        <li key={typeIndex} className="para-list"><img src={sq} alt="sq-image" /> {type}</li>
                                     ))
                                 }
                             </ul>
@@ -68,10 +68,10 @@ export default function CountryDetails() {
 
                 <hr />
                 <br />
-                <h2><FcNext /> Visa Types : </h2>
+                <h3><FcNext /> Visa Types : </h3>
                 {countryDetails.visaTypes.map((visaType, visaIndex) => (
                     <div key={visaType.id || visaIndex} className="paragraph">
-                        <h5>{visaType.visaType}</h5>
+                        <h4>{visaType.visaType}</h4>
                         <p>{visaType.description}</p>
                         <ul>
                             {visaType.requiredDocuments.map((doc, docIndex) => (
