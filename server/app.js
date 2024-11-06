@@ -37,11 +37,11 @@ const allowedOrigins = [
     "http://abroadhub.in",
     "http://www.abroadhub.in",
     "http://88.222.212.202:4173",
-    "https://abroadhub.in",           
+ "https://abroadhub.in",           
     "https://www.abroadhub.in",      
     "https://api.abroadhub.in",      
     "https://www.api.abroadhub.in" 
-];
+  ];
 
 // CORS Configuration
 const corsOptions = {
