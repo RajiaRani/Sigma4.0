@@ -1,0 +1,193 @@
+/*----------------------------------------------------------------
+ Lower-Navbar-Links Start
+ -------------------------------------------------------------------- */
+ .navbar-container {
+    width: 100%;
+    border-bottom: 1px solid rgba(9, 62, 115, 0.9);
+}
+
+.navbar-container .global-wrapper {
+    max-width: 100%;
+    margin: auto !important;
+    justify-content: space-around !important;
+    align-items: flex-end !important;
+
+}
+
+
+.navbar-container .logo-container {
+    padding: 3px !important;
+    margin-left: 150px !important;
+}
+
+.navbar-container .logo-container img {
+    width: auto;
+    height: 43px;
+}
+
+.navbar-container .lowerWrap {
+    position: relative !important;
+    width: auto;
+    margin: auto;
+}
+
+.navbar-container .lowerWrap .lower-links ul.nav Button {
+    color: #0f3054 !important;
+    font-size: 14px;
+    padding: 0 10px !important;
+}
+
+#_lowerNav ul.nav li.g-level1 {
+    padding: 0 10px !important;
+    position: relative !important;
+    display: block !important;
+}
+#_lowerNav ul.nav li.g-level1 a{
+    text-decoration: none !important;
+    font-size: 13.5px !important;
+    color: #0f3054 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+#_lowerNav ul.nav li.g-level1 a svg{
+    font-size: 16px !important;
+    color: #0f3054 !important;
+}
+
+#_lowerNav ul.nav li.g-level1 .submenu {
+    background-color: #fff;
+    width: 210px;
+    height: auto;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    z-index: 2;
+    position: absolute !important;
+    top: 104% !important;
+    left: 15px;
+    transition: all 0.3s ease-in-out;
+
+}
+#_lowerNav ul.nav li.g-level1 .submenu  ul.g-level2 li{
+    padding: 5px 10px!important;
+}
+#_lowerNav ul.nav li.g-level1 .submenu  ul.g-level2 li a{
+    color: #0f3054 !important;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#_lowerNav ul.nav li.g-level1:hover .submenu {
+    display: block !important;
+    opacity: 1;
+    visibility: inherit;
+}
+
+#_lowerNav ul.nav li.g-level1 .submenu ul.g-level2 li:hover {
+    cursor: pointer;
+    background-color: #e8f1fa;
+}
+
+
+.global-wrapper .user Button {
+    min-width: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    border: 1px solid transparent;
+    border-radius: 50% !important;
+    display: none !important; 
+}
+
+/*----------------------------------------------------------------
+Lower-Navbar-Links End
+ -------------------------------------------------------------------- */
+
+
+#_lowerNav ul.nav.closed {
+    display: none;
+}
+
+/* Menu visible when open */
+#_lowerNav ul.nav.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 60px; /* Adjust based on your layout */
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 10;
+    padding: 1rem;
+}
+
+
+.sub-menu {
+    position: relative;
+}
+
+/* Style the close icon */
+.sub-menu .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+.mobile-navbar{
+    display: none !important;
+}
+
+
+@media (max-width: 768px) {
+    .mobile-navbar{
+        display: block !important;
+    }
+    .larger-navbar{
+        display: none !important;
+    }
+    #_lowerNav ul.nav.closed {
+        display: none;
+    }
+
+    #_lowerNav ul.nav.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 30px !important;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 10;
+        padding: 1rem;
+    }
+
+    .hamburger, .cross {
+        display: block;
+        cursor: pointer;
+    }
+
+    .cross {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #0f3054;
+    }
+
+    #mobile {
+        display: block;
+        position: relative;
+        z-index: 11;
+    }
+  /* .g-level2{
+ top:100% !important;
+ margin:  0px !important;
+ width: 100vw !important;
+  } */
+  .sub-menu .close-icon {
+    display: block;
+    color: #0f3054; 
+}
+
+    
+}

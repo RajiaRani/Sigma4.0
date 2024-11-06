@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
-export default function Exams() {
+import { RxCross2 } from "react-icons/rx";
+
+export default function Exams({ closeSubMenu}) {
     return (
         <>
-            <div className="exams">
+            <div className="sub-menu">
+                 <RxCross2 className="close-icon" onClick={closeSubMenu} />
                 <ul className="g-level2">
                     <li><Link to="#">IELTS </Link></li>
                     <li><Link to="#">TOEFL  </Link></li>

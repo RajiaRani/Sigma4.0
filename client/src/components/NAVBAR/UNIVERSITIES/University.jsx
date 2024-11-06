@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
-export default function University() {
+import { RxCross2 } from "react-icons/rx";
+
+export default function University({closeSubMenu}) {
     return (
         <>
-            <div className="university">
+            <div className="sub-menu">
+            <RxCross2 className="close-icon" onClick={closeSubMenu} />
                 <ul className="g-level2">
                     <li><Link to="#">MS University </Link></li>
                     <li><Link to="#">MBA  </Link></li>

@@ -2,6 +2,8 @@ import "./Home.css"
 import "../../styles/global.css";
 import Button from '@mui/material/Button';
 import { RiSearchLine } from "react-icons/ri";
+import "./demo.css";
+
 export default function Home() {
     return (
         <>

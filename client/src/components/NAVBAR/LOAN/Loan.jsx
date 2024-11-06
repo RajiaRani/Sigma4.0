@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
-export default function Loan() {
+import { RxCross2 } from "react-icons/rx";
+
+export default function Loan({closeSubMenu}) {
     return (
         <>
-            <div className="loan">
+            <div className="sub-menu">
+            <RxCross2 className="close-icon" onClick={closeSubMenu} />
                 <ul className="g-level2">
                     <li><Link to="#">Student Loan</Link></li>
                     <li><Link to="#">Loan Eligibility </Link></li>
