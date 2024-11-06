@@ -1,0 +1,30 @@
+.notfound{
+    text-align: center !important;
+    padding: 50px !important;
+}
+
+.notfound img{
+    width: 400px !important;
+    height: 400px !important;
+}
+
+.notfound h1{
+    font-size: 22px !important;
+    text-align: center !important;
+}
+
+@media (max-width: 768px){
+    .notfound{
+        padding: 20px !important;
+    }
+    
+    .notfound img{
+        width: 200px !important;
+        height: 200px !important;
+    }
+    
+    .notfound h1{
+        font-size: 16px !important;
+        text-align: center !important;
+    }
+}
