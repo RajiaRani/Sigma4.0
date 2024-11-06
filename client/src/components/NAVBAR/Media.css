@@ -1,9 +1,7 @@
 
-/*-----------------------------------------------------------------------
-    MEDIA QUERY
- ------------------------------------------------------------------------*/
 
- @media only screen and (min-width: 320px) and (max-width: 480px){
+
+ @media (max-width: 768px) {
     .navbar-upper {
         min-width: 100% !important;
         width: 100% !important;
@@ -83,46 +81,11 @@
         display: flex !important;
     }
 
-    /*----------------------------------------------------------------
-     Lower-Navbar-Links Start
- -------------------------------------------------------------------- */
-    .navbar-container {
-        width: 100%;
-        border-bottom: 1px solid rgba(9, 62, 115, 0.9);
-    }
-
-    .navbar-container .global-wrapper {
-        width: 70%;
-        position: relative;
-        display: flex;
-        align-items: start !important;
-        justify-content: start !important;
-    }
-
-    .navbar-container .logo-container img {
-        height: 27px;
-    }
-    .navbar-container .logo-container {
-        margin-right: 0px;
-    }
-
-    .global-wrapper .user Button{
-        display: block !important;
-    }
- 
-
-    #mobile {
-        display: flex;
-        padding: 0 !important;
-    }
-
-
  }
 
 
 
 
- 
  @media(max-width:768px) {
     .navbar-upper {
         min-width: 100% !important;
@@ -235,5 +198,8 @@
     }
 
 }
+
+
+
 
 

@@ -2,6 +2,7 @@
     position: fixed !important;
     bottom: 20px !important;
     right: 30px !important; 
+    z-index: 200 !important;
 }
 
 .side-social ul img {
@@ -51,5 +52,27 @@
     100% {
         transform: translate(-50%, -50%) scale(2);
         opacity: 0;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .side-social {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 0px !important; 
+        z-index: 200 !important;
+    }
+    
+    .side-social ul img {
+        height: 50px !important;
+        width: 50px !important;
+    }
+    
+    .side-social ul li Button {
+        max-width: 50px !important;
+        height: 50px !important;
+        width: 50px !important;
     }
 }

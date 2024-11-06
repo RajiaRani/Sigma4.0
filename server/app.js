@@ -37,10 +37,17 @@ const allowedOrigins = [
     "http://abroadhub.in",
     "http://www.abroadhub.in",
     "http://88.222.212.202:4173",
+<<<<<<< HEAD
       "https://abroadhub.in",        
     "https://www.abroadhub.in",       
     "https://api.abroadhub.in",       
     "https://www.api.abroadhub.in",
+=======
+    "https://abroadhub.in",           
+    "https://www.abroadhub.in",      
+    "https://api.abroadhub.in",      
+    "https://www.api.abroadhub.in" 
+>>>>>>> 212dacdd8a31a848d9be2cde651464e79e89b513
 ];
 
 // CORS Configuration
@@ -142,6 +149,12 @@ app.get("/api/universities/:id", async (req, res) => {
         res.status(500).json({ error: "Oops! Failed to fetch the university data." });
     }
 });
+
+
+app.use((req,res) => {
+    res.status(404).send("Opps!! Page Not Found ..");
+});
+
 
 const port = 3000;
 app.listen(port, () => {
