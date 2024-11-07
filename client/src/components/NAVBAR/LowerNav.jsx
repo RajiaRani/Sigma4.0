@@ -2,7 +2,6 @@ import { RiArrowDropDownFill } from "react-icons/ri";
 import { useState } from "react";
 import logo from "../../assets/IMAGES/AllLogos/small-logo-transparent.png"
 import { RxHamburgerMenu } from "react-icons/rx";
-import { RxCross2 } from "react-icons/rx";
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
@@ -14,6 +13,7 @@ import Exams from "./EXAMS/Exams.jsx";
 import Loan from "./LOAN/Loan.jsx";
 import "./LowerNav.css";
 import MenuItem from "./MenuItem.jsx";
+import { FiXSquare } from "react-icons/fi";
 
 export default function LowerNav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,7 +40,7 @@ export default function LowerNav() {
                                 <RxCross2 onClick={toggleMenu} className="cross"/>
                             </div> */}
 
-                            <li className="g-level1"><Button><Link to="/"> <LiaHomeSolid /> HOME</Link></Button></li>
+                            <li className="g-level1"><Button><Link to="/"> HOME  <LiaHomeSolid /></Link></Button></li>
                             <li className="g-level1">
                                 <Button className="d-flex" >COURSES <RiArrowDropDownFill className="ms-auto" /></Button>
                                 <div className="submenu shadow">
@@ -82,28 +82,38 @@ export default function LowerNav() {
 
 
                 {/* For Mobile Screen */}
-                    <div className="lowerWrap mobile-navbar">
-                        <div className="lower-links" id="_lowerNav">
-                            <ul className={`nav d-flex ${isMenuOpen ? "open" : "close"}`}>
-                                <li className="g-level1"><Button><Link to="/"> <LiaHomeSolid /> HOME</Link></Button></li>
-                                <MenuItem title="COURSES" SubmenuComponent={Courses} />
-                                <MenuItem title="COUNTRIES" SubmenuComponent={Country} />
-                                <MenuItem title="UNIVERSITIES" SubmenuComponent={University} />
-                                <MenuItem title="EXAMS" SubmenuComponent={Exams} />
-                                <MenuItem title="LOAN" SubmenuComponent={Loan} />
-                            </ul>
-                        </div>
-                    </div>
+                <div className="lowerWrap mobile-navbar">
 
-                        {/* For Mobile Hamburger */}
-                        <div id="mobile">
-                            {!isMenuOpen ? (
-                                <RxHamburgerMenu onClick={toggleMenu} className="hamburger" />
-                            ) : (
-                                <RxCross2 onClick={toggleMenu} className="cross" />
-                            )}
-                        </div>
+                    <div className="lower-links" id="_lowerNav">
+
+                        <ul className={`nav d-flex ${isMenuOpen ? "open" : "close"}`}>
+                            <div className="logo-container d-flex ">
+                                <img src={logo} alt="logo" />
+                             
+                            </div> 
+                            
+                            <li className="g-level1"><Button><Link to="/"> HOME  <LiaHomeSolid /></Link></Button></li>
+                            <div className="mobile-navbar">
+                            <MenuItem title="COURSES" SubmenuComponent={Courses}/>
+                            <MenuItem title="COUNTRIES" SubmenuComponent={Country} />
+                            <MenuItem title="UNIVERSITIES" SubmenuComponent={University} />
+                            <MenuItem title="EXAMS" SubmenuComponent={Exams} />
+                            <MenuItem title="LOAN" SubmenuComponent={Loan} />
+                            </div>
+                        </ul>
                     </div>
-                </>
-                )
+                </div>
+
+                {/* For Mobile Hamburger */}
+                <div id="mobile">
+                    {!isMenuOpen ? (
+                        <RxHamburgerMenu onClick={toggleMenu} className="hamburger" />
+                    ) : (
+                        <FiXSquare  onClick={toggleMenu} className="cross"  />
+
+                    )}
+                </div>
+            </div>
+        </>
+    )
 }

@@ -208,11 +208,7 @@ color: #0f3054 !important;
     margin: auto;
 }
 
-.navbar-container .lowerWrap .lower-links ul.nav Button {
-    color: #0f3054 !important;
-    font-size: 14px;
-    padding: 0 10px !important;
-}
+
 
 #_lowerNav ul.nav li.g-level1 {
     padding: 0 10px !important;
@@ -245,6 +241,12 @@ color: #0f3054 !important;
     transition: all 0.3s ease-in-out;
 
 }
+
+.g-level1[aria-expanded="true"] .submenu {
+    opacity: 1;
+    max-height: 300px;
+}
+
 #_lowerNav ul.nav li.g-level1 .submenu  ul.g-level2 li{
     padding: 5px 10px!important;
 }
@@ -327,9 +329,11 @@ Lower-Navbar-Links End
 
 .hamburger,
 .cross {
-    font-size: 26px;
+    font-size: 25px;
     font-weight: 600;
 }
+
+
 
 
 

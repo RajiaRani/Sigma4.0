@@ -63,6 +63,7 @@
     }
 
     .navbar-upper-links .upper-link .dropdown-menu li Button a {
+        color: #fff;
         font-size: 14px !important;
     }
 
@@ -70,108 +71,38 @@
         font-size: 14px !important;
         margin-right: 3px !important;
     }
-
+  
     
     .nav .g-level1 {
         padding: 0 20px !important;
     
     }
-    
-    .nav.open {
-        display: flex !important;
-    }
-
- }
-
-
-
-
- @media(max-width:768px) {
-    .navbar-upper {
-        min-width: 100% !important;
-        width: 100% !important;
-        padding: 0px !important;
-    }
-
-    .headline {
-        display: none;
-    }
-
-    .social,
-    .contact {
-        display: none;
-    }
-
-    .contact-sm {
-        display: flex;
-    }
-
-    .navbar-upper-links {
-        justify-content: space-between;
-    }
-
-    .navbar-upper-links li {
-        padding: 0px 0px !important;
-    }
-
-    .navbar-upper-links li Button {
-        padding: 0px 0px !important;
-        background-color: transparent !important;
-        color: #fff;
-    }
-
-
-    .navbar-upper-links .upper-link .dropdown-menu {
-        display: block;
-        min-width: 140px !important;
-        width: 140px;
-        left:-200% !important;
-        
-    }
-
-    .navbar-upper-links .upper-link .dropdown-menu li img {
-        width: 10px;
-        height: auto;
-    }
-
   
-    .navbar-upper-links li Button:hover {
-        color: #fff !important;
-    }
+    /* .nav.open {
+        display: flex !important;
+    } */
 
-    .navbar-upper-links .upper-link .dropdown-menu li Button {
-        padding: 3px 0px !important;
-        border-radius: 0px !important;
-        color: rgba(9, 62, 115, 0.9) !important;
-        font-size: 12px !important;
-        width: 100% !important;
-        min-width: 100% !important;
-        height: auto !important;
-        justify-content: flex-start;
-    }
-
-    .navbar-upper-links .upper-link .dropdown-menu li Button a {
-        font-size: 14px !important;
-    }
-
-    .navbar-upper-links .upper-link .dropdown-menu li Button svg {
-        font-size: 14px !important;
-        margin-right: 3px !important;
-    }
 
    
-    .navbar-container {
-        width: 100%;
-        border-bottom: 1px solid rgba(9, 62, 115, 0.9);
+    .navbar-container  {
+        width: 100% !important;
+        padding: 0px 10px !important;
+    
     }
     .navbar-container .global-wrapper {
-        width: 70%;
+        width: 100%;
         position: relative;
-        display: flex;
-        align-items: start !important;
-        justify-content: start !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
 
     }
+    .navbar-container .logo-container {
+        padding: 0px !important;
+        margin-left: 0px !important;
+    }
+ 
 
     .navbar-container .logo-container img {
         height: 27px;
@@ -184,18 +115,63 @@
     #mobile {
         display: flex;
     }
+
     .nav{
         display: none !important;
-        position: absolute;
         flex-direction: column;
         z-index: 2;
-        width: 50vw;
-        background-color: #dde6f0;
+        width: 50vw !important;
+        height: 100vh !important;
         height: 50vh;
-        top: -17px !important;
-        right: 0 !important;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out !important;
+
     }
+
+    #_lowerNav ul.nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #1C3342;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 10;
+        overflow-y: auto;
+    }
+
+    #_lowerNav ul.nav li.g-level1 {
+        width: 100%;
+    }
+
+    /* Menu button styling */
+    #_lowerNav ul.nav li.g-level1 button {
+        font-size: 18px;
+        color: #fff;
+        padding: 15px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        background: none;
+    }
+
+    /* Submenu styling for mobile dropdown */
+    .submenu {
+        width: 100%; /* Full width of the navbar */
+        background-color: #f1f1f1;
+        padding: 10px 20px;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* Show submenu when active */
+    .g-level1.open .submenu {
+        max-height: 300px; /* Adjust based on submenu content */
+        opacity: 1;
+    }
+
 
 }
 
