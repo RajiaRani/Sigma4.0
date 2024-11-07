@@ -34,7 +34,7 @@
 #_lowerNav ul.nav li.g-level1 a {
     text-decoration: none !important;
     font-size: 13.5px !important;
-    color: #0f3054 !important;
+    color: #fff !important;
     display: flex !important;
     align-items: center !important;
 }
@@ -134,7 +134,10 @@ Lower-Navbar-Links End
 .mobile-navbar {
     display: none !important;
 }
+#_lowerNav ul.nav li.g-level1 button {
+    color: #1C3342;
 
+}
 
 @media (max-width: 768px) {
     .mobile-navbar {
@@ -215,7 +218,7 @@ Lower-Navbar-Links End
     /* Menu button styling */
     #_lowerNav ul.nav li.g-level1 button {
         font-size: 18px;
-        color: #fff;
+        color: #fff !important;
         padding: 15px;
         width: 100%;
         text-align: left;
@@ -231,7 +234,7 @@ Lower-Navbar-Links End
         height: 0;
         opacity: 0;
         overflow: hidden;
-        transition: height 0.3s ease, opacity 0.3s ease;
+        transition: height 0.3s ease, opacity 0.3s ease !important;
     }
 
     /* Show submenu when active */
@@ -240,4 +243,5 @@ Lower-Navbar-Links End
         opacity: 1;
         padding-top: 10px; /* Optional: Adds some spacing at the top of submenu */
     }
+
 }

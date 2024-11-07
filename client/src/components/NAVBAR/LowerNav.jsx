@@ -87,7 +87,7 @@ export default function LowerNav() {
                     <div className="lower-links" id="_lowerNav">
 
                         <ul className={`nav d-flex ${isMenuOpen ? "open" : "close"}`}>
-                            <div className="logo-container d-flex ">
+                            <div className="logo-container d-flex " style={{backgroundColor:"#fff", borderRight:"1px solid #1C3342"}}>
                                 <img src={logo} alt="logo" />
                              
                             </div> 

@@ -63,7 +63,7 @@
     }
 
     .navbar-upper-links .upper-link .dropdown-menu li Button a {
-        color: #fff;
+        color: #fff !important;
         font-size: 14px !important;
     }
 
@@ -74,7 +74,7 @@
   
     
     .nav .g-level1 {
-        padding: 0 20px !important;
+        padding: 0 0px !important;
     
     }
   
@@ -126,51 +126,13 @@
         transition: all 0.3s ease-in-out !important;
 
     }
-
-    #_lowerNav ul.nav {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        background-color: #1C3342;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        z-index: 10;
-        overflow-y: auto;
+    #_lowerNav ul.nav li.g-level1 a{
+        font-size: 13px !important;
+        color: #fff !important;
+        display: flex !important;
+        align-items: space-between!important;
     }
-
-    #_lowerNav ul.nav li.g-level1 {
-        width: 100%;
-    }
-
-    /* Menu button styling */
-    #_lowerNav ul.nav li.g-level1 button {
-        font-size: 18px;
-        color: #fff;
-        padding: 15px;
-        width: 100%;
-        text-align: left;
-        border: none;
-        background: none;
-    }
-
-    /* Submenu styling for mobile dropdown */
-    .submenu {
-        width: 100%; /* Full width of the navbar */
-        background-color: #f1f1f1;
-        padding: 10px 20px;
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease, opacity 0.3s ease;
-    }
-
-    /* Show submenu when active */
-    .g-level1.open .submenu {
-        max-height: 300px; /* Adjust based on submenu content */
-        opacity: 1;
-    }
+    
 
 
 }
