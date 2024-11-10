@@ -29,13 +29,13 @@ const sendWelcomeEmail = async(email, name) => {
         to: recipient,
         template_uuid: "1cdfbad1-ade9-40ed-91e9-7cffc80edcb4",
         template_variables: {
-            "name": "Test_Name"
+            "name": name,
           },
        });
-       console.log("Email sent successfully", response);
+       console.log("Welcome Email sent successfully", response);
     } catch(error){
-
+        res.status(400).json({ success: false, message: error.message });
     }
 }
 
-module.exports = sendVerificationEmail;
+module.exports =  { sendVerificationEmail, sendWelcomeEmail};

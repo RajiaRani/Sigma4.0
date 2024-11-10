@@ -2,8 +2,10 @@ const User = require("../models/User.js");
 const bcryptjs = require("bcryptjs");
 const generateVerificationCode = require("../utils/generateVerificationCode.js");
 const generateTokenAndSetCookie = require("../utils/generateTokenAndSetCookie.js");
-const sendVerificationEmail = require("../mailtrap/emails.js");
+const {sendVerificationEmail , sendWelcomeEmail }= require("../mailtrap/emails.js");
 
+
+//SIGNUP
 const signup = async (req, res) => {
     const { email, password, name } = req.body;
     try {
@@ -51,7 +53,7 @@ const signup = async (req, res) => {
     }
 };
 
-
+//VERIFYEMAIL
 const verifyEmail = async(req,res) => {
 const {code} = req.body;
 
@@ -76,17 +78,59 @@ try{
         }
     })
 } catch(error){
-
+    res.status(400).json({ success: false, message: error.message });
 }
 }
 
 
 
+//LOGIN
 const login = async (req, res) => {
-    res.send("Login page!!")
+ const { email, password } = req.body;
+ try{
+   const user = await User.findOne({email});
+   if(!user){
+    return res.status(400).json({
+        success: false,
+        message:"Invalid credentials"
+    });
+   }
+   const isPasswordValid = await bcryptjs.compare(password, user.password);
+   if(!isPasswordValid){
+    return res.status(400).json({
+        success: false,
+        message:"Invalid credentials"
+    });
+   }
+
+   generateTokenAndSetCookie(res, user._id);
+
+   user.lastLogin = new Date();
+   await user.save();
+
+   res.status(200).json({
+    success: true,
+   message:"Logged in successfully",
+   user:{
+    ...user._doc,
+    password: undefined,
+   },
+   })
+ }
+ catch(error){
+    console.log("error in login ", error);
+    res.status(400).json({ success: false, message: error.message });
+ }
 };
+
+
+//LOGOUT
 const logout = async (req, res) => {
-    res.send("Logout page!!")
+    res.clearCookie("token");
+    res.status(200).json({
+        success: true,
+        message: "Logged out successfully"
+    });
 };
 
 
