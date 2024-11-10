@@ -1,4 +1,4 @@
-require("dotenv").config(); // Load environment variables
+// require("dotenv").config(); // Load environment variables
 
 const express = require("express");
 const cors = require("cors");
@@ -6,9 +6,14 @@ const mongoose = require("mongoose");
 const Country = require("./models/Country.js");
 const University = require("./models/University.js");
 const bodyParser = require("body-parser");
+const authRoutes = require("./routes/auth.route.js");
+const dotenv = require("dotenv");
 
 const app = express();
 app.use(express.json());
+
+
+dotenv.config();
 
 // MongoDB URL from environment variables
 const MongoDb_URL = process.env.MONGODB_URL;
@@ -29,7 +34,6 @@ main().catch(err => {
 // Middleware to parse JSON
 app.use(bodyParser.json());
 
-// Allowed origins for CORS
 const allowedOrigins = [
     "http://localhost:3000",
     "http://localhost:5173",
@@ -37,18 +41,18 @@ const allowedOrigins = [
     "http://abroadhub.in",
     "http://www.abroadhub.in",
     "http://88.222.212.202:4173",
- "https://abroadhub.in",           
-    "https://www.abroadhub.in",      
-    "https://api.abroadhub.in",      
-    "https://www.api.abroadhub.in" 
-  ];
+    "https://abroadhub.in",
+    "https://www.abroadhub.in",
+    "https://api.abroadhub.in",
+    "https://www.api.abroadhub.in"
+];
 
-// CORS Configuration
 const corsOptions = {
     origin: function (origin, callback) {
-        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+        if (!origin || allowedOrigins.includes(origin) || origin.startsWith("chrome-extension://")) {
             callback(null, true);
         } else {
+            console.log(`Blocked by CORS: ${origin}`);
             callback(new Error("Not allowed by CORS"));
         }
     },
@@ -67,8 +71,11 @@ app.get("/", (req, res) => {
 });
 
 
+app.use("/api/auth", authRoutes);
+
+
 // Apply the middleware only to /api/country/:id route
-app.get("/api/country/:id",  async (req, res) => {
+app.get("/api/country/:id", async (req, res) => {
     try {
         const { id } = req.params;
         const country = await Country.findById(id);
@@ -144,7 +151,10 @@ app.get("/api/universities/:id", async (req, res) => {
 });
 
 
-app.use((req,res) => {
+
+
+
+app.use((req, res) => {
     res.status(404).send("Opps!! Page Not Found ..");
 });
 

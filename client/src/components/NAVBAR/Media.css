@@ -10,6 +10,7 @@
     .headline {
         display: none;
     }
+    
 
     .social,
     .contact {
@@ -17,6 +18,17 @@
     }
     .contact-sm {
         display: flex;
+        animation: colorWidthChange 1s ease 1s infinite !important;
+        color: var(--mainTextColor) !important;
+    }
+    @keyframes colorWidthChange {
+        0% {
+            color: #fff;
+        }
+    
+        100% {
+            color: rgb(251, 213, 106);
+        }
     }
 
     .navbar-upper-links {
@@ -61,11 +73,11 @@
         height: auto !important;
         justify-content: flex-start;
     }
-
+/* 
     .navbar-upper-links .upper-link .dropdown-menu li Button a {
         color: #fff !important;
         font-size: 14px !important;
-    }
+    } */
 
     .navbar-upper-links .upper-link .dropdown-menu li Button svg {
         font-size: 14px !important;

@@ -36,7 +36,7 @@ svg {
 
 .navbar-upper .headline a {
     font-size: 14px;
-    color: var(--mainTextColor);
+    color: var(--mainTextColor) !important;
     text-decoration: none;
     font-weight: 600;
     animation: colorWidthChange 1s ease 1s infinite;
