@@ -1,7 +1,8 @@
 const express = require("express");
 
 const router = express.Router();
-const {signup, login, logout, verifyEmail, forgotPassword, resetPassword} = require ("../controllers/auth.controller.js");
+const {signup, login, logout, verifyEmail, forgotPassword, resetPassword, checkAuth} = require ("../controllers/auth.controller.js");
+const verifyToken = require ("../middleware/verifyToken.js");
 
 router.get("/check-auth", verifyToken, checkAuth);
 

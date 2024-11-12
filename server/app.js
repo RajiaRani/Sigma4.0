@@ -12,7 +12,7 @@ const cookieParser = require("cookie-parser");
 
 const app = express();
 app.use(express.json());
-app.use(cookieParser());
+app.use(cookieParser()); // allow to pass incoming cookie
 
 dotenv.config();
 
