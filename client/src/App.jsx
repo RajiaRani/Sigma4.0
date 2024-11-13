@@ -1,4 +1,5 @@
 import "./styles/global.css";
+import "../index.css";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import MainPage from "../src/pages/MAINPAGE/MainPage.jsx";
 import Country from "./pages/COUNTRY/Country.jsx";
