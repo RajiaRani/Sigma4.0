@@ -29,17 +29,17 @@ svg {
  Upper-Navbar-Links Start
  -------------------------------------------------------------------- */
 .navbar-upper {
-    justify-content: space-between;
+    justify-content: space-between !important;
     align-items: center !important;
     padding: 2px 30px !important;
 }
 
 .navbar-upper .headline a {
-    font-size: 14px;
+    font-size: 14px !important;
     color: var(--mainTextColor) !important;
     text-decoration: none;
     font-weight: 600;
-    animation: colorWidthChange 1s ease 1s infinite;
+    animation: colorWidthChange 1s ease 1s infinite !important;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -50,7 +50,7 @@ svg {
     }
 
     100% {
-        color: rgb(251, 213, 106);
+        color: rgb(251, 213, 106) !important;
     }
 }
 
@@ -65,7 +65,6 @@ li {
 
 .navbar-upper-links li {
     padding: 0px 0px !important;
-    color: rgba(0, 0, 0, 0.5);
 }
 
 .navbar-upper-links li a {
@@ -75,7 +74,7 @@ li {
 
 .navbar-upper-links li Button {
     color: #fff !important;
-    font-size: 13px;
+    font-size: 13px !important;
     font-weight: 500 !important;
     padding: 0px 8px !important;
 }
@@ -89,10 +88,10 @@ color: #0f3054 !important;
     position: relative !important;
 }
 
-.navbar-upper-links .upper-link .dropdown-menu {
-    display: block;
+.navbar-upper-links .upper-link .dropdown-menu, .user-dropdown-menu {
+    display: block !important;
     min-width: 160px !important;
-    width: 160px;
+    width: 160px !important;
     height: auto !important;
     border-radius: none !important;
     position: absolute !important;
@@ -102,13 +101,13 @@ color: #0f3054 !important;
     opacity: 0;
     border-radius: 0px !important;
     transition: all 0.2s ease-in-out !important;
+    background-color: #fff;
 }
 
 .navbar-upper-links .upper-link .dropdown-menu li img {
-    width: 20px;
-    height: auto;
+    width: 20px !important;
+    height: auto !important;
 }
-
 
 .navbar-upper-links .upper-link:hover {
     background-color: #fff !important;
@@ -119,14 +118,15 @@ color: #0f3054 !important;
     background-color: transparent;
 }
 
-.navbar-upper-links .upper-link:hover .dropdown-menu {
+.navbar-upper-links .upper-link:hover .dropdown-menu, .navbar-upper-links .upper-link:hover .user-dropdown-menu  {
     visibility: inherit;
     opacity: 1;
     cursor: pointer;
     top: 100% !important;
 }
 
-.navbar-upper-links .upper-link .dropdown-menu li Button {
+
+.navbar-upper-links .upper-link .dropdown-menu li Button ,.navbar-upper-links .upper-link .user-dropdown-menu  li Button {
     padding: 5px 0px !important;
     border-radius: 0px !important;
     color: rgba(9, 62, 115, 0.9) !important;
@@ -138,14 +138,14 @@ color: #0f3054 !important;
     font-weight: 600;
 }
 
-.navbar-upper-links .upper-link .dropdown-menu li Button:hover {
+.navbar-upper-links .upper-link .dropdown-menu li Button:hover, .navbar-upper-links .upper-link .user-dropdown-menu  li Button:hover  {
     background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
-.navbar-upper-links .upper-link .dropdown-menu li Button a {
+.navbar-upper-links .upper-link .dropdown-menu li Button a{
     font-size: 13px !important;
     text-transform: capitalize !important;
-    color: rgba(9, 62, 115, 0.9) !important;
+
 }
 
 .navbar-upper-links .upper-link .dropdown-menu li {
@@ -155,10 +155,12 @@ color: #0f3054 !important;
 .navbar-upper-links .upper-link .dropdown-menu li Button svg {
     font-size: 13px !important;
     margin-right: 3px !important;
+   
 }
 
 .navbar-upper-links .upper-link:hover {
     background-color:transparent;
+    cursor: pointer !important;
 }
 
 .navbar-upper-links .upper-link:hover Button {
@@ -166,6 +168,26 @@ color: #0f3054 !important;
     background-color: transparent;
 }
 
+.user{
+    color:  #fff !important;
+    max-width: 23px !important;
+    width: 23px !important;
+    height: 23px !important;
+    border: none !important;
+    border-radius:  50% !important;
+}
+.user:hover{
+    color: #0f3054 !important;
+}
+.user-dropdown-menu {
+min-width: 100px !important;
+width: 100px !important;
+
+}
+.user-dropdown-menu a{
+    font-size: 13px !important;
+    color: #0f3054 !important;
+}
 /*----------------------------------------------------------------
  Upper-Navbar-Links End
  -------------------------------------------------------------------- */
@@ -199,7 +221,7 @@ color: #0f3054 !important;
 
 .navbar-container .logo-container img {
     width: auto;
-    height: 43px;
+    height: 43px !important;
 }
 
 .navbar-container .lowerWrap {

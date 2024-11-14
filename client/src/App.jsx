@@ -1,5 +1,4 @@
 import "./styles/global.css";
-import "../index.css";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import MainPage from "../src/pages/MAINPAGE/MainPage.jsx";
 import Country from "./pages/COUNTRY/Country.jsx";
@@ -11,6 +10,8 @@ import UniversityDetails from "./pages/UNIVERSITY/UniversityDetails.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
 
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import SignUp from "./UserPage/SignUp.jsx";
+import Login from "./UserPage/LogIn.jsx";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
             <Route path="/country/:id" element={<CountryDetails />} />
             <Route path="/universities/:id" element={<UniversityDetails />} />
             <Route path="/universities/MS-PG" element={<MSList />} />
+            <Route path="/auth/signup" element={<SignUp />} />
+            <Route path="/auth/login" element={<Login/>} />
             
             {/* 404 Not Found Route */}
             <Route path="*" element={<NotFound />} />

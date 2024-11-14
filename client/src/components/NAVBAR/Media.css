@@ -14,7 +14,7 @@
 
     .social,
     .contact {
-        display: none;
+        display: none; 
     }
     .contact-sm {
         display: flex;

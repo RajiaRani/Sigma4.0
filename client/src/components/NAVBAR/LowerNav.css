@@ -12,10 +12,6 @@
     margin-left: 150px !important;
 }
 
-.navbar-container .logo-container img {
-    width: auto;
-    height: 43px;
-}
 
 .navbar-container .lowerWrap {
     position: relative !important;
@@ -191,10 +187,6 @@ Lower-Navbar-Links End
         align-items: center;
         justify-content: space-between !important;
     }
-
-
-
-
 
       #_lowerNav ul.nav {
         display: flex;

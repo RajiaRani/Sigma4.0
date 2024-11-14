@@ -10,12 +10,13 @@ import telegram from "../../assets/IMAGES/SocialMedia/telegram.png"
 import facebook from "../../assets/IMAGES/SocialMedia/facebook.png"
 import whatsapp from "../../assets/IMAGES/SocialMedia/whatsapp.png"
 import { IoMdCall } from "react-icons/io";
+import { FaUserCircle } from "react-icons/fa";
 import "./Navbar.css";
 import "./Media.css";
 
 export default function Navbar() {
     const currentYear = new Date().getFullYear() + 1;
-    
+
     return (
         <>
             <header>
@@ -62,9 +63,10 @@ export default function Navbar() {
                                 <Button>Social</Button>
                                 <ul className="dropdown-menu shadow">
                                     <li>
-                                        <Button> <a href="https://wa.me/9121382805" target="_blank" rel="noopener noreferrer">
-                                            <img src={whatsapp} alt="whatsapp" /> Whatsapp
-                                        </a></Button>
+                                        <Button>
+                                            <a href="https://wa.me/9121382805" target="_blank" rel="noopener noreferrer">
+                                                <img src={whatsapp} alt="whatsapp" /> Whatsapp</a>
+                                        </Button>
                                     </li>
                                     <li>
                                         <Button><a href="https://www.instagram.com/i_am_abroadhub/" target="_blank" rel="noopener noreferrer">
@@ -89,8 +91,16 @@ export default function Navbar() {
                             <li><a href="#">
                                 <Button>FreeCall</Button>
                             </a></li>
-                            {/* <li className="login"><Link to="#"><Button>Log in</Button></Link></li>
-                            <li className="signup"><Link to="#"><Button>Sign Up</Button></Link></li> */}
+
+
+                            <li className="upper-link ">
+                                <Button><FaUserCircle className="user"/></Button>
+                                <ul className="user-dropdown-menu shadow">
+                                    <li className="login"><Button><Link to={"/auth/login"}>Log in</Link></Button></li>
+                                    <li className="signup"><Button><Link to={"/auth/signup"}>Sign Up</Link></Button></li>
+                                </ul>
+                            </li>
+
                         </ul>
                     </div>
 
@@ -99,7 +109,7 @@ export default function Navbar() {
 
 
                 <div className="navbar-container ">
-                    <LowerNav/>
+                    <LowerNav />
                 </div>
             </header >
         </>
