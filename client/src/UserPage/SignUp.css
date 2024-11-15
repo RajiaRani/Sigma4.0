@@ -1,0 +1,66 @@
+.bg-image{
+    position: relative !important;
+    background-image: url("../assets/IMAGES/AllLogos/user-page.jpg");
+    width: 60vw;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto !important;
+}
+
+.logo-image{
+  height: 50px !important;
+  width: auto !important;
+  position: absolute !important;
+  top: 0% !important;
+  right:10% !important;
+}
+
+.user-form input{
+    border: 1px solid rgba(0,0,0,0.4) !important;
+    margin-top: 5px !important;
+    background-color: rgba(255,255,255,0.5) !important;
+    padding: 3px !important;
+    width: 100% !important;
+
+} 
+
+
+.main-container {
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+.user-form {
+    display: flex !important;
+    flex-direction: column;
+    gap: 10px !important;
+    max-width:400px !important;
+    width: 100% !important;
+    margin: auto !important;
+    align-items: center !important;
+    background-color: rgba(0,0,0,0.6);
+    height: 300px !important;
+    padding: 20px 0px !important;
+}
+
+.form-input {
+    max-width:400px !important;
+    width: 100% !important;
+    padding: 10px !important;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    align-items: center !important;
+}
+
+@media (max-width: 768px) {
+    .user-form {
+        max-width: 300px;
+    }
+}
