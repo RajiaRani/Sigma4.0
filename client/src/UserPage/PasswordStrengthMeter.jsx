@@ -38,6 +38,15 @@ export default function PasswordStrengthMeter({password}) {
     const strength = getStrength(password);
 
 
+
+    const getColor= (strength) => {
+        if(strength === 0) return "bg-red-500";
+        if(strength === 1) return "bg-red-400";
+        if(strength === 2) return "bg-yellow-500";
+        if(strength === 3) return "bg-yellow-400";
+        return "bg-green-500";
+    }
+
     const getStrengthText = (strength) => {
         if(strength === 0) return "Very Weak";
         if(strength === 1) return " Weak";
@@ -51,6 +60,15 @@ export default function PasswordStrengthMeter({password}) {
            <div className="flex justify-center item-center mb-1">
             <span className="text-xs text-grey-400">Password strength</span>
             <span className="text-xs text-grey-400">{getStrengthText(strength)}</span>
+           </div>
+
+           <div>
+            {[...Array(4).map((_, index) => (
+                <div key={index}
+                className={`h-1 w-1/4 rounded-full transition-colors duration-300   ${index < strength ? getColor(strength)  : "bg-gray-700"}`}> 
+ 
+                </div>
+            ))]}
            </div>
         </div>
     )
