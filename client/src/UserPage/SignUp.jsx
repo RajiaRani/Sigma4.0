@@ -6,6 +6,7 @@ import userpage from "../assets/IMAGES/AllLogos/user-page.jpg";
 import logo from "../assets/IMAGES/AllLogos/small-logo-transparent.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import PasswordStrengthMeter from "./PasswordStrengthMeter";
 
 export default function SignUp() {
 
@@ -53,7 +54,7 @@ export default function SignUp() {
                                 value={Password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
-
+                            <PasswordStrengthMeter password={password} />
                             <button className="user-button" type="submit">Sign Up</button>
 
                         </form>
