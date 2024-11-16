@@ -37,9 +37,21 @@ export default function PasswordStrengthMeter({password}) {
     };
     const strength = getStrength(password);
 
+
+    const getStrengthText = (strength) => {
+        if(strength === 0) return "Very Weak";
+        if(strength === 1) return " Weak";
+        if(strength === 2) return "Fair";
+        if(strength === 3) return "Good";
+        return "Strong";
+    }
+
     return(
-        <div>
-           PasswordStrengthMeter
+        <div className="mt-2">
+           <div className="flex justify-center item-center mb-1">
+            <span className="text-xs text-grey-400">Password strength</span>
+            <span className="text-xs text-grey-400">{getStrengthText(strength)}</span>
+           </div>
         </div>
     )
 }
