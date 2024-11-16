@@ -4,8 +4,20 @@ import "./SignUp.css";
 import { Button } from "@mui/material";
 import userpage from "../assets/IMAGES/AllLogos/user-page.jpg";
 import logo from "../assets/IMAGES/AllLogos/small-logo-transparent.png";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
+
+    const [Email, setEmail] = useState("");
+    const [userName, setUserName] = useState("");
+    const [Password, setPassword] = useState("");
+
+    const handleSigUp = (event) => {
+        event.preventDefault();
+    };
+
+
     return (
         <>
             <div>
@@ -19,16 +31,36 @@ export default function SignUp() {
 
 
 
-                        <div className="user-form ">
-                          
-                                <input type="email" placeholder="Email ID" className="form-input" />
-                                <input type="password" placeholder="Password" className="form-input" />
-                                <input type="text" placeholder="Name" className="form-input" />
-                                <Button className="user-button">Sign Up</Button>
-                           
-                        </div>
-                    </div>
+                        <form className="user-form " onSubmit={handleSigUp} >
+                            <input
+                                type="text"
+                                placeholder="Name"
+                                className="form-input"
+                                value={userName}
+                                onChange={(e) => setUserName(e.target.value)}
+                            />
+                            <input
+                                type="email"
+                                placeholder="Email ID"
+                                className="form-input"
+                                value={Email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <input
+                                type="password"
+                                placeholder="Password"
+                                className="form-input"
+                                value={Password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
 
+                            <button className="user-button" type="submit">Sign Up</button>
+
+                        </form>
+                    </div>
+                    <div>
+                        <p>Already have an account ? <Link to={"/auth/login"}>Login</Link></p>
+                    </div>
 
                 </div>
                 <Footer />
