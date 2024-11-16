@@ -10,8 +10,8 @@ import UniversityDetails from "./pages/UNIVERSITY/UniversityDetails.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
 
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import SignUp from "./UserPage/SignUp.jsx";
-import Login from "./UserPage/LogIn.jsx";
+import SignUp from "../src/UserPage/Mailtrap/SignUp.jsx";
+import Login from "../src/UserPage/Mailtrap/LogIn.jsx";
 
 function App() {
   return (
