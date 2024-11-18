@@ -12,6 +12,7 @@ import NotFound from "./components/NotFound/NotFound.jsx";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import SignUp from "../src/UserPage/Mailtrap/SignUp.jsx";
 import Login from "../src/UserPage/Mailtrap/LogIn.jsx";
+import EmailVerification from "./UserPage/Mailtrap/EmailVerification.jsx";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/universities/MS-PG" element={<MSList />} />
             <Route path="/auth/signup" element={<SignUp />} />
             <Route path="/auth/login" element={<Login/>} />
+            <Route path="/auth/verify-password" element={<EmailVerification/>}  />
             
             {/* 404 Not Found Route */}
             <Route path="*" element={<NotFound />} />

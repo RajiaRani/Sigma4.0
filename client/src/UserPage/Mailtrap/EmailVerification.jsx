@@ -1,0 +1,92 @@
+import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../../components/NAVBAR/Navbar";
+import Footer from "../../components/FOOTER/Footer";
+import "./EmailVerification.css";
+
+
+export default function EmailVerification() {
+    const [code, setCode] = useState(["", "", "", "", "", ""]);
+    const inputRefs = useRef([]);
+    const navigate = useNavigate();
+
+    const handleChange = (index, value) => {
+        const newCode = [...code];
+
+        //Handle pasted content
+        if (value.length > 1) {
+            const pastedCode = value.slice(0, 6).split("");
+            for (let i = 0; i < 6; i++) {
+                newCode[i] = pastedCode[i] || "";
+            }
+            setCode(newCode);
+
+            //Focus on the last non-empty input or the first empty one
+            const lastFilledIndex = newCode.findLastIndex((digit) => digit !== "");
+            const focusIndex = lastFilledIndex < 5 ? lastFilledIndex + 1 : 5;
+            inputRefs.current[focusIndex].focus();
+        } else {
+            newCode[index] = value;
+            setCode(newCode);
+
+            if (value && index < 5) {
+                inputRefs.current[index + 1].focus();
+            }
+        }
+    }
+
+    const handleKeyDown = (index, value) => {
+        if (e.key === "Backspace" && !code[index] && index > 0) {
+            inputRefs.current[index - 1].focus();
+        }
+    };
+
+
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const verificationCode =code.join("");
+    console.log(`Verification code submitted : ${verificationCode}`);
+    }
+
+    //Aut submit when all fileds are filled
+    useEffect(() => {
+        if (code.every(digit => digit !== ' ')) {
+            handleSubmit(new Event("submit"));
+        }
+    }, [code]);
+
+    return (
+        <>
+            <Navbar />
+            <div className="main-container verify-main-container">
+                <div className="verify-container">
+                    <h2 className="mb-2">Verify Your Email</h2>
+                    <p className="mb-2">Enter the 6-digit code sent t your email address.</p>
+                    <form action="" onSubmit={handleSubmit}>
+
+                        <div className="flex ">
+                            {
+                                code.map((digit, index) => (
+                                    <input
+                                        key={index}
+                                        ref={(el) => (inputRefs.current[index] = el)}
+                                        type="text"
+                                        maxLength="6"
+                                        value={digit}
+                                        onChange={(e) => handleChange(index, e.target.value)}
+                                        onKeyDown={(e) => handleKeyDown(index, e)}
+
+                                    />
+                                ))
+                            }
+                        </div>
+                        <button className="user-button">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+            <Footer />
+        </>
+    )
+};

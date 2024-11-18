@@ -79,6 +79,7 @@
 .main-container {
     text-align: center;
     padding: 20px;
+    align-items: center !important;
 }
 
 
@@ -104,6 +105,20 @@
 
 
 
+
+
+
+
+
+
+.verify-container{
+    width: 20vw;
+    height: auto;
+    margin: 0 auto !important;
+    border: 1px solid rgba(0, 123, 255, 0.5);
+    padding: 20px !important;
+    line-height: 1.9 !important;
+}
 
 
 

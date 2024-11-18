@@ -19,7 +19,7 @@ dotenv.config();
 // MongoDB URL from environment variables
 const MongoDb_URL = process.env.MONGODB_URL;
 
-// Connect to MongoDB Atlas
+
 async function main() {
     try {
         await mongoose.connect(MongoDb_URL);
