@@ -137,9 +137,6 @@ app.get("/api/universities/:id", async (req, res) => {
     }
 });
 
-
-
-
 //middleware
 app.use((req, res) => {
     res.status(404).send("Opps!! Page Not Found ..");
