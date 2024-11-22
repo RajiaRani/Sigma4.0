@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 const authRoutes = require("./routes/auth.route.js");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
+const {ExpressError, errorHandler } = require("./utils/ExpressError.js");
 
 const app = express();
 app.use(express.json());
@@ -18,8 +19,6 @@ dotenv.config();
 
 // MongoDB URL from environment variables
 const MongoDb_URL = process.env.MONGODB_URL;
-
-
 async function main() {
     try {
         await mongoose.connect(MongoDb_URL);
@@ -31,6 +30,8 @@ async function main() {
 main().catch(err => {
     console.error("Database connection failed:", err.message);
 });
+
+
 
 // Middleware to parse JSON
 app.use(bodyParser.json());
@@ -75,13 +76,13 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRoutes);
 
 
-// Apply the middleware only to /api/country/:id route
+
 app.get("/api/country/:id", async (req, res) => {
     try {
         const { id } = req.params;
         const country = await Country.findById(id);
         if (!country) {
-            return res.status(404).json({ error: "Country not found." });
+            throw new ExpressError("Country not found.", 404);
         }
         res.json(country);
     } catch (error) {
@@ -154,11 +155,14 @@ app.get("/api/universities/:id", async (req, res) => {
 
 
 
-
+//middleware
 app.use((req, res) => {
     res.status(404).send("Opps!! Page Not Found ..");
 });
 
+
+// Error Handler Middleware
+app.use(errorHandler);
 
 const port = 3000;
 app.listen(port, () => {
