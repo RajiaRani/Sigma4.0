@@ -75,8 +75,10 @@ export default function Universities() {
         <div className="main-container">
             <section className="section">
                 <div className="universities">
-                    <h1>Find Country Vise Universities </h1>
-                    <Link to="/universities/MS-PG"><li>View All</li></Link>
+                  <div className=" uni-head">
+                  <h1>Find Country Vise Universities </h1>
+                  <Link to="/universities/MS-PG"><li>View All</li></Link>
+                  </div>
 
                     {/* Scrollable list */}
                     <ul className="scroll-container" ref={scrollRef}>
@@ -85,7 +87,7 @@ export default function Universities() {
                             <li className="university-container" key={index}>
                                 <div className="university-card">
                                     <img src={university.imageUrl} alt="university-image" />
-                                    <p>{university.universityName}</p>
+                                    <p style={{color: "#007bff", fontWeight:"600"}}>{university.universityName}</p>
                                     <p>Location: {university.location}</p>
                                     <p>Fee: {university.fees}</p>
                                     <p>Type: {university.uniType}</p>
