@@ -85,9 +85,8 @@ app.get("/api/country/:id", async (req, res) => {
             throw new ExpressError("Country not found.", 404);
         }
         res.json(country);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: "Oops! Failed to fetch the country data." });
+    } catch (err) {
+       next(err);
     }
 });
 
@@ -97,12 +96,7 @@ app.get("/api/country", async (req, res) => {
         const countries = await Country.find({});
         res.json(countries);
     } catch (err) {
-        console.error(err);
-        res.status(500).json({
-            err: process.env.NODE_ENV === "production"
-                ? "Failed to fetch the data"
-                : `Error: ${err.message}`
-        });
+        next(err);
     }
 });
 
@@ -112,12 +106,7 @@ app.get("/api/universities", async (req, res) => {
         const universities = await University.find({});
         res.json(universities);
     } catch (err) {
-        console.log(err);
-        res.status(500).json({
-            err: process.env.NODE_ENV === "production"
-                ? "Failed to fetch the data from backend"
-                : `Error: ${err.message}`
-        });
+        next(err);
     }
 });
 
@@ -126,14 +115,11 @@ app.get("/api/universities/search", async (req, res) => {
     try {
         const { countryName } = req.query;
         const query = {};
-
         if (countryName) query.countryName = countryName;
-
         const universities = await University.find(query);
         res.json(universities);
-    } catch (error) {
-        console.error("Error fetching universities:", error);
-        res.status(500).json({ message: "Error fetching universities" });
+    } catch (err) {
+       next(err);
     }
 });
 
@@ -143,12 +129,11 @@ app.get("/api/universities/:id", async (req, res) => {
     try {
         const university = await University.findById(id);
         if (!university) {
-            return res.status(404).json({ error: "University not found" });
+            throw new ExpressError("University not found", 404);
         }
         res.json(university);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: "Oops! Failed to fetch the university data." });
+    } catch (err) {
+        next(err);
     }
 });
 
