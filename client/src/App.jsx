@@ -63,22 +63,12 @@ function App() {
         <CSSTransition timeout={100} classNames="page" key={window.location.pathname}>
           <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="/country" element={<Country />} />
+            <Route path="/country" element={    <ProtectedRoute><Country /> </ProtectedRoute>} />
             <Route path="/country/:id" element={<CountryDetails />} />
             <Route path="/universities/:id" element={<UniversityDetails />} />
             <Route path="/universities/MS-PG" element={<MSList />} />
 
-{/* 
 
-
-            <Route
-              path='/'
-              element={
-                <ProtectedRoute>
-                  <DashboardPage />
-                </ProtectedRoute>
-              }
-            /> */}
             <Route path="/auth/signup" element={
               <RedirectAuthenticatedUser>
                 <SignUp />
@@ -107,7 +97,7 @@ function App() {
 					}
 				/>
 
-            <Route path="/auth/verify-password" element={<EmailVerification />} />
+            <Route path="/auth/verify-email" element={<EmailVerification />} />
 
             {/* 404 Not Found Route */}
             <Route path="*" element={<NotFound />} />

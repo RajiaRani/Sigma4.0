@@ -1,7 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api/auth";
 
 
 export const useAuthStore = create((set) => ({
@@ -12,27 +11,29 @@ export const useAuthStore = create((set) => ({
   isCheckingAuth: true,
 
   signup: async (email, password, name) => {
-    // Set loading to true
     set({ isLoading: true, error: null });
     try {
-      const response = await axios.post(`${API_URL}/signup`, {
+      if (process.env.NODE_ENV === "development") {
+        console.log("Signup data (partial):", { email, name });
+      }
+  
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/auth/signup`, {
         email,
         password,
         name,
       });
-      // Update store with successful signup data
       set({
         user: response.data.user,
         isAuthenticated: true,
         isLoading: false,
       });
     } catch (error) {
-      // Handle and set error in state
+      console.error("Signup error:", error.response?.data || error.message); // Debug log
       set({
         error: error.response?.data?.message || "Error signing up",
         isLoading: false,
       });
       throw error;
     }
-  },
+  }  
 }));

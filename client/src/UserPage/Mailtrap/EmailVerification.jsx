@@ -3,12 +3,18 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/NAVBAR/Navbar";
 import Footer from "../../components/FOOTER/Footer";
 import "./EmailVerification.css";
+import toast from "react-hot-toast";
+import { useAuthStore } from "../../store/authStore";
+
 
 
 export default function EmailVerification() {
     const [code, setCode] = useState(["", "", "", "", "", ""]);
     const inputRefs = useRef([]);
     const navigate = useNavigate();
+
+
+    const {  verifyEmail } = useAuthStore();
 
 	const handleChange = (index, value) => {
 		const newCode = [...code];
@@ -47,7 +53,7 @@ export default function EmailVerification() {
 		const verificationCode = code.join("");
 		try {
 			await verifyEmail(verificationCode);
-			navigate("/");
+			navigate("/api/country");
 			toast.success("Email verified successfully");
 		} catch (error) {
 			console.log(error);
@@ -86,7 +92,9 @@ export default function EmailVerification() {
                                 ))
                             }
                         </div>
-                        <button className="user-button">Submit</button>
+                        <button className="user-button">
+                        Verify Email
+                        </button>
                     </form>
                 </div>
 
