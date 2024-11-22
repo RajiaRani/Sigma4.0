@@ -4,9 +4,25 @@ import axios from "axios";
 // const BASE_URL = import.meta.env.MODE === "production"
 //     ?  "http://abroadhub.in"  
 //     : "http://localhost:3000"; 
-
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
-console.log("Using BASE_URL:", BASE_URL);
+
+// Utility to handle Axios errors
+const handleAxiosError = (error) => {
+    if (error.response) {
+        // Backend returned an error response
+        console.error("Backend Error:", error.response.data);
+        return error.response.data.message || "An error occurred on the server.";
+    } else if (error.request) {
+        // No response received from the server
+        console.error("No response from server:", error.request);
+        return "Unable to reach the server. Please check your internet connection.";
+    } else {
+        // Other errors during the request setup
+        console.error("Request Error:", error.message);
+        return "An unexpected error occurred. Please try again.";
+    }
+};
+
 
 // COUNTRY FETCH LIST
 export const fetchCountry = async () => {
@@ -19,8 +35,8 @@ export const fetchCountry = async () => {
         });
         return response.data;
     } catch (error) {
-        console.error("Fail to fetch", error);
-        throw new Error('Unable to fetch country data at this time. Please try again later.');
+        const message = handleAxiosError(error);
+        throw new Error(message);
     }
 };
 
@@ -31,12 +47,12 @@ export const fetchUniversity = async () => {
             headers: {
                 "Accept": "application/json",
             },
-            withCredentials: true // Ensure credentials are sent with the request
+            withCredentials: true 
         });
         return response.data;
     } catch (error) {
-        console.error(`Error fetching university list:`, error);
-        throw new Error('Unable to fetch university details. Please try again later.');
+        const message = handleAxiosError(error);
+        throw new Error(message);
     }
 };
 
@@ -47,21 +63,21 @@ export const fetchCountryDetailsById = async (id) => {
         const response = await axios.get(`${BASE_URL}/api/country/${id}`);
         return response.data;
     } catch (error) {
-        console.error("Failed to fetch the country details from the backend.", error);
-        throw error;
+        const message = handleAxiosError(error);
+        throw new Error(message);
     }
 };
 
 
 // FETCH University DETAILS BY ID
 export const fetchUniversityDetailsById = async(id) => {
-    if(!id) throw new Error("Opps! University Id Required");
+    if(!id) throw new Error(" University Id Required");
     try{
       const response = await axios.get(`${BASE_URL}/api/universities/${id}`);
       return response.data;
     }  catch(error) {
-        console.error("Failed to fetch the university details from the backend.", error);
-        throw error;
+        const message = handleAxiosError(error);
+        throw new Error(message);
     }
 }
 
@@ -74,7 +90,7 @@ export const fetchUniversitiesByFilters = async ({ countryName, universityName }
         });
         return response.data;
     } catch (error) {
-        console.error("Error fetching university data:", error);
-        throw error;
+        const message = handleAxiosError(error);
+        throw new Error(message);
     }
 };
