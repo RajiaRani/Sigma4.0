@@ -78,6 +78,12 @@ app.use((req, res) => {
 });
 
 
+// For unknown Route
+app.all("*", (req,res,next) => {
+    next(new ExpressError(404, "Opps!! Page Not Found"));
+});
+
+
 // Error Handler Middleware
 app.use(errorHandler);
 
