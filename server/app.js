@@ -3,13 +3,14 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const Country = require("./models/Country.js");
-const University = require("./models/University.js");
 const bodyParser = require("body-parser");
 const authRoutes = require("./routes/auth.route.js");
+const countryRoutes = require("./routes/country.route.js");
+const universityRoutes = require("./routes/universities.route.js");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
-const {ExpressError, errorHandler } = require("./utils/ExpressError.js");
+const { errorHandler , ExpressError}= require("./utils/ExpressError.js");
+
 
 const app = express();
 app.use(express.json());
@@ -67,75 +68,10 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 
-// Test route to verify the server is working
-app.get("/", (req, res) => {
-    res.send("Backend is working");
-});
-
-
+app.use("/api/country", countryRoutes);
+app.use("/api/universities", universityRoutes);
 app.use("/api/auth", authRoutes);
 
-
-
-app.get("/api/country/:id", async (req, res) => {
-    try {
-        const { id } = req.params;
-        const country = await Country.findById(id);
-        if (!country) {
-            throw new ExpressError("Country not found.", 404);
-        }
-        res.json(country);
-    } catch (err) {
-       next(err);
-    }
-});
-
-// COUNTRY List route
-app.get("/api/country", async (req, res) => {
-    try {
-        const countries = await Country.find({});
-        res.json(countries);
-    } catch (err) {
-        next(err);
-    }
-});
-
-// University List route
-app.get("/api/universities", async (req, res) => {
-    try {
-        const universities = await University.find({});
-        res.json(universities);
-    } catch (err) {
-        next(err);
-    }
-});
-
-// University Search route - Filters universities by country name
-app.get("/api/universities/search", async (req, res) => {
-    try {
-        const { countryName } = req.query;
-        const query = {};
-        if (countryName) query.countryName = countryName;
-        const universities = await University.find(query);
-        res.json(universities);
-    } catch (err) {
-       next(err);
-    }
-});
-
-// University Details by ID
-app.get("/api/universities/:id", async (req, res) => {
-    const { id } = req.params;
-    try {
-        const university = await University.findById(id);
-        if (!university) {
-            throw new ExpressError("University not found", 404);
-        }
-        res.json(university);
-    } catch (err) {
-        next(err);
-    }
-});
 
 //middleware
 app.use((req, res) => {
