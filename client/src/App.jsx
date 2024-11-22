@@ -8,13 +8,55 @@ import Universities from "./pages/UNIVERSITY/Universities.jsx";
 import MSList from "./pages/UNIVERSITY/MSList.jsx";
 import UniversityDetails from "./pages/UNIVERSITY/UniversityDetails.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
-
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import LoadingSpinner from "./components/LoadingSpiner/LoadingSpinner.jsx";
 import SignUp from "../src/UserPage/Mailtrap/SignUp.jsx";
 import Login from "../src/UserPage/Mailtrap/LogIn.jsx";
 import EmailVerification from "./UserPage/Mailtrap/EmailVerification.jsx";
+import ResetPasswordPage from "./UserPage/Mailtrap/ResetPasswordPage.jsx";
+import ForgotPasswordPage from "./UserPage/Mailtrap/ForgotPasswordPage.jsx";
+import DashboardPage from "./UserPage/Mailtrap/DashboardPage.jsx";
+
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { useAuthStore } from "./store/authStore.jsx";
+import { useEffect } from "react";
+
+
+// protect routes that require authentication
+const ProtectedRoute = ({ children }) => {
+  const { isAuthenticated, user } = useAuthStore();
+
+  if (!isAuthenticated) {
+    return <Navigate to='/login' replace />;
+  }
+
+  if (!user.isVerified) {
+    return <Navigate to='/verify-email' replace />;
+  }
+
+  return children;
+};
+// redirect authenticated users to the home page
+const RedirectAuthenticatedUser = ({ children }) => {
+  const { isAuthenticated, user } = useAuthStore();
+
+  if (isAuthenticated && user.isVerified) {
+    return <Navigate to='/' replace />;
+  }
+
+  return children;
+};
+
 
 function App() {
+
+  // const { isCheckingAuth, checkAuth } = useAuthStore();
+
+  // useEffect(() => {
+  //   checkAuth();
+  // }, [checkAuth]);
+  // if (isCheckingAuth) return <LoadingSpinner />;
+
+
   return (
     <BrowserRouter>
       <TransitionGroup>
@@ -25,10 +67,48 @@ function App() {
             <Route path="/country/:id" element={<CountryDetails />} />
             <Route path="/universities/:id" element={<UniversityDetails />} />
             <Route path="/universities/MS-PG" element={<MSList />} />
-            <Route path="/auth/signup" element={<SignUp />} />
-            <Route path="/auth/login" element={<Login/>} />
-            <Route path="/auth/verify-password" element={<EmailVerification/>}  />
-            
+
+{/* 
+
+
+            <Route
+              path='/'
+              element={
+                <ProtectedRoute>
+                  <DashboardPage />
+                </ProtectedRoute>
+              }
+            /> */}
+            <Route path="/auth/signup" element={
+              <RedirectAuthenticatedUser>
+                <SignUp />
+              </RedirectAuthenticatedUser>
+            } />
+
+            <Route path="/auth/login" element={<RedirectAuthenticatedUser>
+              <Login />
+            </RedirectAuthenticatedUser>} />
+
+            <Route
+					path='/auth/forgot-password'
+					element={
+						<RedirectAuthenticatedUser>
+							<ForgotPasswordPage />
+						</RedirectAuthenticatedUser>
+					}
+				/>
+
+				<Route
+					path='/auth/reset-password/:token'
+					element={
+						<RedirectAuthenticatedUser>
+							<ResetPasswordPage />
+						</RedirectAuthenticatedUser>
+					}
+				/>
+
+            <Route path="/auth/verify-password" element={<EmailVerification />} />
+
             {/* 404 Not Found Route */}
             <Route path="*" element={<NotFound />} />
           </Routes>

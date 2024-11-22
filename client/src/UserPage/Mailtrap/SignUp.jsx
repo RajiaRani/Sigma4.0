@@ -5,19 +5,29 @@ import { Button } from "@mui/material";
 import userpage from "../../assets/IMAGES/AllLogos/user-page.jpg";
 import { BiLogoGmail } from "react-icons/bi";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import PasswordStrengthMeter from "./PasswordStrengthMeter";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
+import { useAuthStore } from "../../store/authStore";
 
 export default function SignUp() {
 
     const [Email, setEmail] = useState("");
     const [userName, setUserName] = useState("");
     const [Password, setPassword] = useState("");
+    const navigate = useNavigate();
 
-    const handleSigUp = (event) => {
+    const {signup} = useAuthStore();
+
+    const handleSigUp = async(event) => {
         event.preventDefault();
+        try {
+			await signup(Email, Password, userName);
+			navigate("/verify-email");
+		} catch (error) {
+			console.log(error);
+		}
     };
 
 
