@@ -17,12 +17,12 @@
     height: 10px;
     margin: 5px;
     border-radius: 50%;
-    background-color: #ccc;
+    background-color: #ccc !important;
     cursor: pointer;
 }
 
 .carousel-dots .active-dot {
-    background-color: #000;
+    background-color: #000 !important;
 }
 
 .expert-cards-container {
@@ -52,7 +52,7 @@
     margin: 10px !important;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
     padding: 20px !important;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -88,8 +88,8 @@
     margin-top: 10px !important;
     padding: 5px 10px !important;
     font-size: 1rem; 
-    color: #fff;
-    background-color: var(--headingColor);
+    color: #fff !important;
+    background-color: var(--headingColor) !important;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -97,8 +97,8 @@
 }
 
 .free-counseling-btn:hover {
-    background-color:rgb(19, 35, 102);
-    color: #fff;
+    background-color:rgb(19, 35, 102) !important;
+    color: #fff !important;
 }
 
 .scroll-arrow {
