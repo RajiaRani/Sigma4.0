@@ -1,8 +1,9 @@
 .side-social {
     position: fixed !important;
-    bottom: 20px !important;
-    right: 30px !important; 
+    bottom: 30px !important;
+    right: 50px !important; 
     z-index: 200 !important;
+    
 }
 
 .side-social ul img {
@@ -10,17 +11,27 @@
     width: 58px !important;
 }
 
+
 .side-social ul li Button {
     max-width: 55px !important;
     height: 58px !important;
     width: 58px !important;
     border: 1px solid transparent;
     border-radius: 50% !important;
-    cursor: pointer;
-    position: relative; /* Required for positioning the pseudo-element */
-    background-color: rgba(0,0,0,0.1);
+    cursor: pointer !important;
+    position: relative; 
+    background-color: transparent !important;
     z-index: 1;
     overflow: hidden;
+    animation: Shake 2s ease-in-out 1s infinite !important; 
+    opacity: 1.0 !important;
+}
+@keyframes Shake {
+    0% { transform: translateY(0); } /* Start at the original position */
+    25% { transform: translateY(-5px); } /* Move left */
+    50% { transform: translateY(5px); } /* Move right */
+    75% { transform: translateY(-5px); } /* Move left */
+    100% { transform: translateY(0); } /* Back to the original position */
 }
 
 /* Pulsating animation */
@@ -31,28 +42,18 @@
     left: 50%;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.3);
     border-radius: 50%;
     opacity: 0.6;
     transform: translate(-50%, -50%) scale(1);
     z-index: -1;
-    animation: pulsate 1.5s infinite ease-out;
+    background-color: transparent !important;
+
 }
 
-/* Define the radiation pulsating effect */
-@keyframes pulsate {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.6;
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.5);
-        opacity: 0.3;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(2);
-        opacity: 0;
-    }
+.side-social ul li Button:hover{
+    cursor: pointer !important;
+    animation: none !important;
+    opacity: 0.8 !important;
 }
 
 
@@ -61,18 +62,18 @@
     .side-social {
         position: fixed !important;
         bottom: 20px !important;
-        right: 0px !important; 
+        right: 50px !important; 
         z-index: 200 !important;
     }
     
     .side-social ul img {
-        height: 50px !important;
-        width: 50px !important;
+        height: 45px !important;
+        width: 45px !important;
     }
     
     .side-social ul li Button {
-        max-width: 50px !important;
-        height: 50px !important;
-        width: 50px !important;
+        max-width: 45px !important;
+        height: 45px !important;
+        width: 45px !important;
     }
 }
