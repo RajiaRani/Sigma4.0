@@ -42,7 +42,7 @@
 
 #_lowerNav ul.nav li.g-level1 .submenu {
     background-color: #fff;
-    width: 210px;
+    width: 186px !important;
     height: auto;
     opacity: 0;
     visibility: hidden;
@@ -50,13 +50,14 @@
     z-index: 2;
     position: absolute !important;
     top: 104% !important;
-    left: 15px;
+    left: 0px !important;
     transition: all 0.3s ease-in-out;
+    padding: 2px 5px !important;
 
 }
 
 #_lowerNav ul.nav li.g-level1 .submenu ul.g-level2 li {
-    padding: 5px 10px !important;
+    padding: 5px  !important;
 }
 
 #_lowerNav ul.nav li.g-level1 .submenu ul.g-level2 li a {
@@ -72,8 +73,9 @@
 }
 
 #_lowerNav ul.nav li.g-level1 .submenu ul.g-level2 li:hover {
-    cursor: pointer;
+    cursor: pointer !important;
     background-color: #e8f1fa;
+    border-radius: 5px !important;
 }
 
 
@@ -123,7 +125,7 @@ Lower-Navbar-Links End
     right: 10px;
     font-size: 20px;
     cursor: pointer;
-    display: none;
+    display: none !important;
     /* Hidden by default */
 }
 
@@ -178,7 +180,7 @@ Lower-Navbar-Links End
  width: 100vw !important;
   } */
     .sub-menu .close-icon {
-        display: block;
+        display: block !important;
         color: #0f3054;
     }
 

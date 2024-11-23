@@ -142,6 +142,7 @@ export default function Experts() {
 
             <FaArrowCircleRight className="scroll-arrow right" onClick={() => handleArrowClick("right")} />
         </div>
+        
         </section>
        </div>
     );

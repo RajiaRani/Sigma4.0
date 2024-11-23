@@ -20,11 +20,9 @@ export default function Country({closeSubMenu}) {
                <RxCross2 className="close-icon" onClick={closeSubMenu} />
             <ul className="g-level2">
                 {["USA", "Canada", "UK", "Germany", "Ireland"].map((country) => (
-                    <li key={country}>
-                        <Button
-                            onClick={() => handleCountryClick(country)}
-                            className={currentCountry === country ? "active" : ""}
-                        >
+                    <li key={country}  onClick={() => handleCountryClick(country)}
+                    className={currentCountry === country ? "active" : ""}>
+                        <Button>
                             {country}
                         </Button>
                     </li>
