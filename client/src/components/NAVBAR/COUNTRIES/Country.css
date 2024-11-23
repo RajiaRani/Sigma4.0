@@ -1,7 +1,8 @@
 .country ul.g-level2 li.active {
-    background-color: #007bff; 
-    color: #fff;
+    background-color: #8ebdee; 
+    color: #fff !important;
     font-weight: bold;
+    border-radius: 5px !important;
 }
 
 .close-icon{

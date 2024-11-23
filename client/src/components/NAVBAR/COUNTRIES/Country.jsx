@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { RxCross2 } from "react-icons/rx";
 import "./Country.css"; 
+import { Link } from "react-router-dom";
 
 import { Button } from "@mui/material";
 
@@ -16,15 +17,15 @@ export default function Country({closeSubMenu}) {
     };
 
     return (
-        <div className="country">
+        <div className="country sub-menu">
                <RxCross2 className="close-icon" onClick={closeSubMenu} />
             <ul className="g-level2">
                 {["USA", "Canada", "UK", "Germany", "Ireland"].map((country) => (
                     <li key={country}  onClick={() => handleCountryClick(country)}
                     className={currentCountry === country ? "active" : ""}>
-                        <Button>
+                        <Link>
                             {country}
-                        </Button>
+                        </Link>
                     </li>
                 ))}
             </ul>
