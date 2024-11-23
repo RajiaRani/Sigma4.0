@@ -10,10 +10,22 @@ import { LiaChalkboardTeacherSolid } from "react-icons/lia"
 import { RiTodoLine } from "react-icons/ri"
 import { FaCheckToSlot } from "react-icons/fa6"
 import { RiArrowDropDownFill } from "react-icons/ri"
+import { useNavigate, useLocation } from "react-router-dom"
+import { RxCross2 } from "react-icons/rx"
+
 
 import "./Footer.css"
 import { useState } from "react"
-export default function Footer() {
+export default function Footer({ closeSubMenu}) {
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    // Get current country from URL query parameter
+    const currentCountry = new URLSearchParams(location.search).get("country");
+    const handleCountryClick = (country) => {
+        navigate(`/universities/MS-PG?country=${country}`);
+    };
 
     return (
         <footer>
@@ -80,17 +92,17 @@ export default function Footer() {
                             <li className="g-level1">
                                 <Button>COUNTRIES <RiArrowDropDownFill /></Button>
                                 <div className="submenu">
-                                    <ul className="g-level2">
-                                        <li><Link to="#">USA </Link></li>
-                                        <li><Link to="#">Canada  </Link></li>
-                                        <li><Link to="#"> UK </Link></li>
-                                        <li><Link to="#">Australia </Link></li>
-                                        <li><Link to="#"> Germony </Link></li>
-                                        <li><Link to="#">Ireland  </Link></li>
-                                        <li><Link to="#">France </Link></li>
-                                        <li><Link to="#">More Countries</Link></li>
-
-                                    </ul>
+                                <RxCross2 className="close-icon" onClick={closeSubMenu} />
+                                <ul className="g-level2">
+                                    {["USA", "Canada", "UK", "Germany", "Ireland"].map((country) => (
+                                        <li key={country} onClick={() => handleCountryClick(country)}
+                                            className={currentCountry === country ? "active" : ""}>
+                                            <Link>
+                                                {country}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
                                 </div>
                             </li>
                         </ul>

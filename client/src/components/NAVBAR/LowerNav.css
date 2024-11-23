@@ -52,12 +52,12 @@
     top: 104% !important;
     left: 0px !important;
     transition: all 0.3s ease-in-out;
-    padding: 2px 5px !important;
+    padding: 2px 5px 5px 5px !important;
 
 }
 
 #_lowerNav ul.nav li.g-level1 .submenu ul.g-level2 li {
-    padding: 5px  !important;
+    padding: 0px  !important;
 }
 
 #_lowerNav ul.nav li.g-level1 .submenu ul.g-level2 li a {
@@ -74,7 +74,7 @@
 
 #_lowerNav ul.nav li.g-level1 .submenu ul.g-level2 li:hover {
     cursor: pointer !important;
-    background-color: #e8f1fa;
+    background-color: #deebf9;
     border-radius: 5px !important;
 }
 
@@ -99,10 +99,10 @@ Lower-Navbar-Links End
 
 /* Menu visible when open */
 #_lowerNav ul.nav.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top:26.5px;
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top:26.5px !important;
     left: 0px;
     width: 100%;
     z-index: 10;
