@@ -72,6 +72,7 @@ export default function Footer({ closeSubMenu}) {
                             <li className="g-level1">
                                 <Button className="d-flex" >COURSES <RiArrowDropDownFill className="ms-auto" /></Button>
                                 <div className="submenu">
+                                <RxCross2 className="close-icon" onClick={closeSubMenu} />
                                     <ul className="g-level2">
                                         <li><Link to="#">CSE & Technology</Link></li>
                                         <li><Link to="#"> Business & Management</Link></li>
@@ -87,6 +88,7 @@ export default function Footer({ closeSubMenu}) {
 
                         </ul>
                     </div>
+
                     <div className="col">
                         <ul>
                             <li className="g-level1">
@@ -107,11 +109,13 @@ export default function Footer({ closeSubMenu}) {
                             </li>
                         </ul>
                     </div>
+
                     <div className="col">
                         <ul>
                             <li className="g-level1">
                                 <Button>UNIVERSITIES <RiArrowDropDownFill /></Button>
                                 <div className="submenu">
+                                <RxCross2 className="close-icon" onClick={closeSubMenu} />
                                     <ul className="g-level2">
                                         <li><Link to="#">MS University </Link></li>
                                         <li><Link to="#">MBA  </Link></li>
@@ -132,6 +136,7 @@ export default function Footer({ closeSubMenu}) {
                             <li className="g-level1">
                                 <Button>EXAMS <RiArrowDropDownFill /></Button>
                                 <div className="submenu">
+                                <RxCross2 className="close-icon" onClick={closeSubMenu} />
                                     <ul className="g-level2">
                                         <li><Link to="#">IELTS </Link></li>
                                         <li><Link to="#">TOEFL  </Link></li>
@@ -151,6 +156,7 @@ export default function Footer({ closeSubMenu}) {
                             <li className="g-level1">
                                 <Button>Loan <RiArrowDropDownFill /></Button>
                                 <div className="submenu">
+                                <RxCross2 className="close-icon" onClick={closeSubMenu} />
                                     <ul className="g-level2">
                                         <li><Link to="#">Student Loan</Link></li>
                                         <li><Link to="#">Loan Eligibility </Link></li>

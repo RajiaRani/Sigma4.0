@@ -152,11 +152,11 @@ footer .topInfo .col:hover{
     }
     
     .footer-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
         justify-content: flex-start;
-        width: 100%;
+        width: 100% !important;
         margin: auto !important;
         border-bottom: 1px solid #0f3054;
         background-color: #0f3054;
@@ -212,10 +212,10 @@ footer .topInfo .col:hover{
     }
     
     footer .topInfo {
-       flex-wrap: wrap;
-        border-bottom: 0px;
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
+      display: grid !important;
+      grid-template-columns: repeat(2,1fr) !important;
+      grid-template-rows: repeat(2,1fr) !important;
+      border-bottom: none !important;
     }
     
     footer .topInfo .col {
