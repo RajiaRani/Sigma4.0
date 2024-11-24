@@ -137,6 +137,25 @@ footer .topInfo .col:hover{
 }
 
 
+
+.button-flex {
+    display: flex; /* Flex container */
+    justify-content: space-between; /* Push items to the edges */
+    align-items: center; /* Vertically align items */
+    width: 100%; /* Ensure the button spans its container */
+  }
+  
+  .button-flex span {
+    flex: 1; /* Make the text take up available space */
+    text-align: left; /* Align text to the left */
+  }
+  
+  .button-flex svg {
+    margin-left: auto;
+    color: #fff !important;
+  }
+  
+
 @media screen and (max-width:768px) {
    
     .copyright {
@@ -223,8 +242,8 @@ footer .topInfo .col:hover{
         padding: 15px 15px !important;
         display: flex;
         align-items: center;
-        border-right: 1px solid rgba(288, 288, 288, 0.2);
-        border-bottom:1px solid rgba(288, 288, 288, 0.2) ;
+        border-right: 1px solid rgba(288, 288, 288, 0.2) !important;
+        border-bottom:1px solid rgba(288, 288, 288, 0.2) !important;
     }
     
     footer .topInfo .col:last-child {
@@ -244,10 +263,10 @@ footer .topInfo .col:hover{
     
     
     .footer-middle {
-        margin: 20px auto !important;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+        margin: 17px auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
 
     }
     .footer-middle .col p{
@@ -256,7 +275,7 @@ footer .topInfo .col:hover{
     .footer-middle .col ul li a {
         color: rgba(288, 288, 288, 0.6) !important;
         text-decoration: none;
-        font-size: 12px;
+        font-size: 13px !important;
     }
     
     .footer-middle .col ul li a:hover {
@@ -265,6 +284,7 @@ footer .topInfo .col:hover{
     }
     .col li.g-level1{
         position:  relative !important;
+         display: flex;
     }
     .submenu {
         background-color: #fff;
@@ -289,4 +309,17 @@ footer .topInfo .col:hover{
         cursor: pointer;
         background-color: #e8f1fa;
     }
+    .button-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px 0px !important;
+        padding: 5px 10px !important;
+        font-size: 15px !important;
+        box-shadow: 4px -5px 6px  rgba(0, 0, 0, 0.1);
+      }
+    
+      .button-flex span {
+        text-align: left;
+      }
 }

@@ -70,7 +70,7 @@ export default function Footer({ closeSubMenu}) {
                     <div className="col">
                         <ul>
                             <li className="g-level1">
-                                <Button className="d-flex" >COURSES <RiArrowDropDownFill className="ms-auto" /></Button>
+                                <Button className="d-flex justify-content-between align-items-center button-flex" >COURSES <RiArrowDropDownFill /></Button>
                                 <div className="submenu">
                                 <RxCross2 className="close-icon" onClick={closeSubMenu} />
                                     <ul className="g-level2">
@@ -92,7 +92,7 @@ export default function Footer({ closeSubMenu}) {
                     <div className="col">
                         <ul>
                             <li className="g-level1">
-                                <Button>COUNTRIES <RiArrowDropDownFill /></Button>
+                                <Button className="d-flex justify-content-between align-items-center button-flex">COUNTRIES <RiArrowDropDownFill /></Button>
                                 <div className="submenu">
                                 <RxCross2 className="close-icon" onClick={closeSubMenu} />
                                 <ul className="g-level2">
@@ -113,7 +113,7 @@ export default function Footer({ closeSubMenu}) {
                     <div className="col">
                         <ul>
                             <li className="g-level1">
-                                <Button>UNIVERSITIES <RiArrowDropDownFill /></Button>
+                                <Button className="d-flex justify-content-between align-items-center button-flex">UNIVERSITIES <RiArrowDropDownFill /></Button>
                                 <div className="submenu">
                                 <RxCross2 className="close-icon" onClick={closeSubMenu} />
                                     <ul className="g-level2">
@@ -134,7 +134,7 @@ export default function Footer({ closeSubMenu}) {
                     <div className="col">
                         <ul>
                             <li className="g-level1">
-                                <Button>EXAMS <RiArrowDropDownFill /></Button>
+                                <Button className="d-flex justify-content-between align-items-center button-flex">EXAMS <RiArrowDropDownFill /></Button>
                                 <div className="submenu">
                                 <RxCross2 className="close-icon" onClick={closeSubMenu} />
                                     <ul className="g-level2">
@@ -154,7 +154,7 @@ export default function Footer({ closeSubMenu}) {
                     <div className="col">
                         <ul>
                             <li className="g-level1">
-                                <Button>Loan <RiArrowDropDownFill /></Button>
+                                <Button className="d-flex justify-content-between align-items-center button-flex">Loan <RiArrowDropDownFill /></Button>
                                 <div className="submenu">
                                 <RxCross2 className="close-icon" onClick={closeSubMenu} />
                                     <ul className="g-level2">
