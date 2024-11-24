@@ -155,6 +155,9 @@ footer .topInfo .col:hover{
     color: #fff !important;
   }
   
+  .drop-icon{
+    display: none !important;
+  }
 
 @media screen and (max-width:768px) {
    
@@ -286,9 +289,9 @@ footer .topInfo .col:hover{
         position:  relative !important;
          display: flex;
     }
-    .submenu {
+    .footer-middle .submenu {
         background-color: #fff;
-        width: 210px;
+        width: 100% !important;
         height: auto;
         opacity: 0;
         visibility: hidden;
@@ -296,19 +299,37 @@ footer .topInfo .col:hover{
         z-index: 2;
         position: absolute !important;
         top: 104% !important;
-        left: 15px;
-        transition: all 0.3s ease-in-out;
+        left: 0px !important;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
     
     }
+    .footer-middle .submenu.active {
+        max-height: 400px;
+        padding: 10px 3px !important;
+    }
+
     .col li.g-level1:hover .submenu {
         display: block !important;
         opacity: 1;
         visibility: inherit;
     }
-    .col li.g-level1 .submenu ul.g-level2 li:hover {
-        cursor: pointer;
-        background-color: #e8f1fa;
+    .col li.g-level1 .submenu ul.g-level2 li a{
+        color: #0f3054 !important;
+        font-size: 13px !important;
+      
     }
+    .col li.g-level1 .submenu ul.g-level2 li {
+        padding:5px !important;
+    }
+    .col li.g-level1 .submenu ul.g-level2 li:hover  {
+        cursor: pointer;
+        background-color:#0f3054;
+        border-radius: 5px !important;
+        color: #fff !important;
+    }
+    
     .button-flex {
         display: flex;
         justify-content: space-between;
@@ -322,4 +343,9 @@ footer .topInfo .col:hover{
       .button-flex span {
         text-align: left;
       }
+       
+  .drop-icon{
+    display: block !important;
+  }
+
 }

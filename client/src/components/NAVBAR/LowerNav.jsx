@@ -17,7 +17,8 @@ import { FiXSquare } from "react-icons/fi";
 
 export default function LowerNav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+   
+    const [activeMenu, setActiveMenu] = useState(null);
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
@@ -33,13 +34,8 @@ export default function LowerNav() {
                 <div className="lowerWrap">
                     <div className="lower-links" id="_lowerNav">
                         <ul className="nav d-flex" >
-                            {/* <div className="d-flex nav-mobile align-items-center">
-                                <div className="logo-container">
-                                    <img src={logo} alt="logo" />
-                                </div>
-                                <RxCross2 onClick={toggleMenu} className="cross"/>
-                            </div> */}
-
+                           
+ 
                             <li className="g-level1"><Button><Link to="/"> HOME  <LiaHomeSolid /></Link></Button></li>
                             <li className="g-level1">
                                 <Button className="d-flex" >COURSES <RiArrowDropDownFill className="ms-auto" /></Button>
@@ -60,8 +56,13 @@ export default function LowerNav() {
                                 </div>
                             </li>
                             <li className="g-level1">
-                                <Button>EXAMS <RiArrowDropDownFill /></Button>
-                                <div className="submenu shadow">
+                            <Button 
+                                className="d-flex justify-content-between align-items-center button-flex"
+                                onClick={() => toggleMenu("exam")}>
+                                    EXAMS 
+                                    <RiArrowDropDownFill className="drop-icon" />
+                                </Button>
+                                <div className={`submenu ${activeMenu === "exam" ? "active" : ""}`}>
                                     <Exams />
                                 </div>
 

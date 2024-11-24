@@ -249,20 +249,7 @@ width: 100px !important;
     color: #0f3054 !important;
 }
 
-#_lowerNav ul.nav li.g-level1 .submenu {
-    background-color: #fff;
-    width: 210px;
-    height: auto;
-    opacity: 0;
-    visibility: hidden;
-    display: none;
-    z-index: 2;
-    position: absolute !important;
-    top: 104% !important;
-    left: 15px;
-    transition: all 0.3s ease-in-out;
 
-}
 
 .g-level1[aria-expanded="true"] .submenu {
     opacity: 1;

@@ -2,6 +2,10 @@
 
 
  @media (max-width: 768px) {
+    .mobile-navbar {
+        display: block !important;
+    }
+
     .navbar-upper {
         min-width: 100% !important;
         width: 100% !important;
@@ -10,7 +14,11 @@
     .headline {
         display: none;
     }
-    
+    .logo-container img{
+        height: auto !important;
+        width: 175px !important;
+        padding: 5px !important;
+    }
 
     .social,
     .contact {
@@ -27,7 +35,7 @@
         }
     
         100% {
-            color: rgb(251, 213, 106);
+            color: rgb(251, 213, 106) !important;
         }
     }
 
@@ -55,7 +63,7 @@
     }
 
     .navbar-upper-links .upper-link .dropdown-menu li img {
-        width: 10px;
+        width: 10px !important;
         height: auto;
     }
 
@@ -128,24 +136,68 @@
         display: flex;
     }
 
-    .nav{
+    #_lowerNav ul.nav li.g-level1 a{
+        font-size: 15px !important;
+        color: #fff !important;
+        display: flex !important;
+    }
+    
+    .larger-navbar {
+        display: none !important;
+    }
+
+    #_lowerNav ul.nav.closed {
+        display: none !important;
+    }
+
+    #_lowerNav ul.nav.open {
+        display: flex !important;
+
+    }
+
+
+    .navbar-container .lowerWrap .lower-links ul.nav Button {
+        color: #fff !important;
+        font-size: 15px !important;
+        padding: 3px 0px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 0px;
+        width: 100% !important;
+    }
+
+
+    .hamburger,
+    .cross {
+        display: block;
+        cursor: pointer;
+    }
+
+    .sub-menu .close-icon {
+        display: block !important;
+        color: #0f3054;
+    }
+
+      #_lowerNav ul.nav {
+        display: flex;
+        background-color:#0f3054 !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        overflow-y: auto;
+        padding: 0;
+        margin: 0;
         display: none !important;
         flex-direction: column;
         z-index: 2;
         width: 50vw !important;
         height: 100vh !important;
-        height: 50vh;
         transition: all 0.3s ease-in-out !important;
-
     }
-    #_lowerNav ul.nav li.g-level1 a{
-        font-size: 13px !important;
-        color: #fff !important;
-        display: flex !important;
-        align-items: space-between!important;
-    }
-    
 
+    #_lowerNav ul.nav li.g-level1 {
+        width: 100%;
+    }
 
 }
 

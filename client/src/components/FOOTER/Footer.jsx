@@ -12,10 +12,10 @@ import { FaCheckToSlot } from "react-icons/fa6"
 import { RiArrowDropDownFill } from "react-icons/ri"
 import { useNavigate, useLocation } from "react-router-dom"
 import { RxCross2 } from "react-icons/rx"
-
-
 import "./Footer.css"
 import { useState } from "react"
+
+
 export default function Footer({ closeSubMenu}) {
 
     const navigate = useNavigate();
@@ -25,6 +25,12 @@ export default function Footer({ closeSubMenu}) {
     const currentCountry = new URLSearchParams(location.search).get("country");
     const handleCountryClick = (country) => {
         navigate(`/universities/MS-PG?country=${country}`);
+    };
+
+    const [activeMenu, setActiveMenu] = useState(null); // State to track active submenu
+
+    const toggleMenu = (menu) => {
+        setActiveMenu(activeMenu === menu ? null : menu); // Toggle submenu open/close
     };
 
     return (
@@ -70,10 +76,12 @@ export default function Footer({ closeSubMenu}) {
                     <div className="col">
                         <ul>
                             <li className="g-level1">
-                                <Button className="d-flex justify-content-between align-items-center button-flex" >COURSES <RiArrowDropDownFill /></Button>
-                                <div className="submenu">
-                                <RxCross2 className="close-icon" onClick={closeSubMenu} />
-                                    <ul className="g-level2">
+                                <Button className="d-flex justify-content-between align-items-center button-flex"  onClick={() => toggleMenu("courses")} >
+                                    COURSES <RiArrowDropDownFill className="drop-icon"/>
+                                </Button>
+                                <div  className={`submenu ${activeMenu === "courses" ? "active" : ""}`}>
+                                
+                                    <ul className="g-level2" onClick={closeSubMenu} >
                                         <li><Link to="#">CSE & Technology</Link></li>
                                         <li><Link to="#"> Business & Management</Link></li>
                                         <li><Link to="#">Engineering</Link></li>
@@ -92,10 +100,13 @@ export default function Footer({ closeSubMenu}) {
                     <div className="col">
                         <ul>
                             <li className="g-level1">
-                                <Button className="d-flex justify-content-between align-items-center button-flex">COUNTRIES <RiArrowDropDownFill /></Button>
-                                <div className="submenu">
-                                <RxCross2 className="close-icon" onClick={closeSubMenu} />
-                                <ul className="g-level2">
+                                <Button 
+                                className="d-flex justify-content-between align-items-center button-flex"
+                                onClick={() => toggleMenu("country")}
+                                >COUNTRIES <RiArrowDropDownFill className="drop-icon" />
+                                </Button>
+                                <div  className={`submenu ${activeMenu === "country" ? "active" : ""}`}>
+                                <ul className="g-level2" onClick={closeSubMenu}>
                                     {["USA", "Canada", "UK", "Germany", "Ireland"].map((country) => (
                                         <li key={country} onClick={() => handleCountryClick(country)}
                                             className={currentCountry === country ? "active" : ""}>
@@ -113,10 +124,13 @@ export default function Footer({ closeSubMenu}) {
                     <div className="col">
                         <ul>
                             <li className="g-level1">
-                                <Button className="d-flex justify-content-between align-items-center button-flex">UNIVERSITIES <RiArrowDropDownFill /></Button>
-                                <div className="submenu">
-                                <RxCross2 className="close-icon" onClick={closeSubMenu} />
-                                    <ul className="g-level2">
+                                <Button 
+                                className="d-flex justify-content-between align-items-center button-flex"
+                                onClick={() => toggleMenu("university")}
+                                >UNIVERSITIES <RiArrowDropDownFill className="drop-icon" />
+                                </Button>
+                                <div className={`submenu ${activeMenu === "university" ? "active" : ""}`}>
+                                    <ul className="g-level2" onClick={closeSubMenu}>
                                         <li><Link to="#">MS University </Link></li>
                                         <li><Link to="#">MBA  </Link></li>
                                         <li><Link to="#">BE/BTech </Link></li>
@@ -134,10 +148,14 @@ export default function Footer({ closeSubMenu}) {
                     <div className="col">
                         <ul>
                             <li className="g-level1">
-                                <Button className="d-flex justify-content-between align-items-center button-flex">EXAMS <RiArrowDropDownFill /></Button>
-                                <div className="submenu">
-                                <RxCross2 className="close-icon" onClick={closeSubMenu} />
-                                    <ul className="g-level2">
+                                <Button 
+                                className="d-flex justify-content-between align-items-center button-flex"
+                                onClick={() => toggleMenu("exam")}>
+                                    EXAMS 
+                                    <RiArrowDropDownFill className="drop-icon" />
+                                </Button>
+                                <div className={`submenu ${activeMenu === "exam" ? "active" : ""}`}>
+                                    <ul className="g-level2" onClick={closeSubMenu}>
                                         <li><Link to="#">IELTS </Link></li>
                                         <li><Link to="#">TOEFL  </Link></li>
                                         <li><Link to="#"> DET </Link></li>
@@ -154,10 +172,14 @@ export default function Footer({ closeSubMenu}) {
                     <div className="col">
                         <ul>
                             <li className="g-level1">
-                                <Button className="d-flex justify-content-between align-items-center button-flex">Loan <RiArrowDropDownFill /></Button>
-                                <div className="submenu">
-                                <RxCross2 className="close-icon" onClick={closeSubMenu} />
-                                    <ul className="g-level2">
+                                <Button 
+                                className="d-flex justify-content-between align-items-center button-flex"
+                                onClick={() => toggleMenu("loan")}>
+                                Loan 
+                                <RiArrowDropDownFill className="drop-icon" />
+                                </Button>
+                                <div className={`submenu ${activeMenu === "loan" ? "active" : ""}`}>
+                                    <ul className="g-level2" onClick={closeSubMenu}>
                                         <li><Link to="#">Student Loan</Link></li>
                                         <li><Link to="#">Loan Eligibility </Link></li>
                                         <li><Link to="#">Interest Rate </Link></li>
