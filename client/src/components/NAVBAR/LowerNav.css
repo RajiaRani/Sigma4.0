@@ -137,3 +137,6 @@ Lower-Navbar-Links End
 
 }
 
+.user-account{
+    display: none !important;
+}

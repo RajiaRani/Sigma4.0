@@ -93,8 +93,8 @@ export default function Navbar() {
                             </a></li>
 
 
-                            <li className="upper-link ">
-                                <Button><FaUserCircle className="user"/></Button>
+                            <li className="upper-link user">
+                                <Button><FaUserCircle/></Button>
                                 <ul className="user-dropdown-menu shadow">
                                     <li className="login"><Button><Link to={"/auth/login"}>Log in</Link></Button></li>
                                     <li className="signup"><Button><Link to={"/auth/signup"}>Sign Up</Link></Button></li>

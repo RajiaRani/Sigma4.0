@@ -198,7 +198,12 @@
     #_lowerNav ul.nav li.g-level1 {
         width: 100%;
     }
-
+.user{
+    display: none !important;
+}
+.user-account{
+    display: block !important;
+}
 }
 
 

@@ -5,8 +5,8 @@ export default function Exams({ closeSubMenu}) {
     return (
         <>
             <div className="sub-menu">
-                 {/* <RxCross2 className="close-icon" onClick={closeSubMenu} /> */}
-                <ul className="g-level2" onClick={closeSubMenu}>
+            <RxCross2 className="close-icon" onClick={closeSubMenu} />
+                <ul className="g-level2">
                     <li><Link to="#">IELTS </Link></li>
                     <li><Link to="#">TOEFL  </Link></li>
                     <li><Link to="#"> DET </Link></li>

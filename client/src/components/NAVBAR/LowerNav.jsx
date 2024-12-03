@@ -17,7 +17,7 @@ import { FiXSquare } from "react-icons/fi";
 
 export default function LowerNav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-   
+
     const [activeMenu, setActiveMenu] = useState(null);
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -34,8 +34,8 @@ export default function LowerNav() {
                 <div className="lowerWrap">
                     <div className="lower-links" id="_lowerNav">
                         <ul className="nav d-flex" >
-                           
- 
+
+
                             <li className="g-level1"><Button><Link to="/"> HOME  <LiaHomeSolid /></Link></Button></li>
                             <li className="g-level1">
                                 <Button className="d-flex" >COURSES <RiArrowDropDownFill className="ms-auto" /></Button>
@@ -56,13 +56,11 @@ export default function LowerNav() {
                                 </div>
                             </li>
                             <li className="g-level1">
-                            <Button 
-                                className="d-flex justify-content-between align-items-center button-flex"
-                                onClick={() => toggleMenu("exam")}>
-                                    EXAMS 
-                                    <RiArrowDropDownFill className="drop-icon" />
+                                <Button>
+                                    EXAMS
+                                    <RiArrowDropDownFill />
                                 </Button>
-                                <div className={`submenu ${activeMenu === "exam" ? "active" : ""}`}>
+                                <div className="submenu shadow">
                                     <Exams />
                                 </div>
 
@@ -74,12 +72,21 @@ export default function LowerNav() {
                                 </div>
                             </li>
                         </ul>
+                        
                     </div>
+                    <div>
+                    <li className="upper-link user-account">
+                                <Button><FaUserCircle/></Button>
+                                <ul className="user-dropdown-menu shadow">
+                                    <li className="login"><Button><Link to={"/auth/login"}>Log in</Link></Button></li>
+                                    <li className="signup"><Button><Link to={"/auth/signup"}>Sign Up</Link></Button></li>
+                                </ul>
+                            </li>
+                    </div>
+        
                 </div>
 
-                <div className="user">
-                    {/* <Link to="#"><Button><FaUserCircle /></Button></Link> */}
-                </div>
+
 
 
                 {/* For Mobile Screen */}
@@ -88,18 +95,19 @@ export default function LowerNav() {
                     <div className="lower-links" id="_lowerNav">
 
                         <ul className={`nav d-flex ${isMenuOpen ? "open" : "close"}`}>
-                            <div className="logo-container d-flex " style={{backgroundColor:"#fff", borderRight:"1px solid #1C3342"}}>
+                            <div className="logo-container d-flex " style={{ backgroundColor: "#fff", borderRight: "1px solid #1C3342" }}>
                                 <img src={logo} alt="logo" />
-                             
-                            </div> 
+                                
+                            </div>
                             
-                            <li className="g-level1"><Button><Link to="/"> HOME  <LiaHomeSolid /></Link></Button></li>
+                        
                             <div className="mobile-navbar">
-                            <MenuItem title="COURSES" SubmenuComponent={Courses}/>
-                            <MenuItem title="COUNTRIES" SubmenuComponent={Country} />
-                            <MenuItem title="UNIVERSITIES" SubmenuComponent={University} />
-                            <MenuItem title="EXAMS" SubmenuComponent={Exams} />
-                            <MenuItem title="LOAN" SubmenuComponent={Loan} />
+                            <li className="g-level1"><Button><Link to="/"> HOME  <LiaHomeSolid /></Link></Button></li>
+                                <MenuItem title="COURSES" SubmenuComponent={Courses} />
+                                <MenuItem title="COUNTRIES" SubmenuComponent={Country} />
+                                <MenuItem title="UNIVERSITIES" SubmenuComponent={University} />
+                                <MenuItem title="EXAMS" SubmenuComponent={Exams} />
+                                <MenuItem title="LOAN" SubmenuComponent={Loan} />
                             </div>
                         </ul>
                     </div>
@@ -110,7 +118,7 @@ export default function LowerNav() {
                     {!isMenuOpen ? (
                         <RxHamburgerMenu onClick={toggleMenu} className="hamburger" />
                     ) : (
-                        <FiXSquare  onClick={toggleMenu} className="cross"  />
+                        <FiXSquare onClick={toggleMenu} className="cross" />
 
                     )}
                 </div>

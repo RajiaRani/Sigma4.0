@@ -7,8 +7,8 @@
 }
 
 .side-social ul img {
-    height: 58px !important;
-    width: 58px !important;
+    height: 55px !important;
+    width: 55px !important;
 }
 
 
@@ -25,6 +25,7 @@
     overflow: hidden;
     animation: Shake 2s ease-in-out 1s infinite !important; 
     opacity: 1.0 !important;
+    background-color: rgba(90, 206, 59, 0.902) !important;
 }
 @keyframes Shake {
     0% { transform: translateY(0); } /* Start at the original position */
