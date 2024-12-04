@@ -11,6 +11,7 @@ const uniData = [
     fees: "₹14.47 L - 22.92 L",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1511853795php3M5jzM_270x200.jpg",
+    logo:"https://www.unh.edu/sites/default/files/styles/max_width_480px/public/media/2024-05/unhbrand_cs_w_rgb_r_0.png?itok=DutJb15W ",
     description: "University of New Hampshire description here",
     PG: [
       {
@@ -45,6 +46,7 @@ const uniData = [
     fees: "₹14.98 L",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1534139541phpyHQKLa_270x200.jpg",
+    logo:" https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Seal_of_the_University_of_Central_Florida.svg/1200px-Seal_of_the_University_of_Central_Florida.svg.png",
     description: "University of Central Florida description here",
     PG: [
       {
@@ -76,6 +78,7 @@ const uniData = [
     fees: "₹22.42 L - 24.06 L",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1593692160php5nRL9W_270x200.jpg ",
+    logo:"https://miamioh.edu/_hannonhill/_files/images/logos/primary-alternate-logos/alt-logo-stacked-oxford-black.png ",
     description: "Miami University-Oxford description here",
     PG: [
       {
@@ -109,6 +112,7 @@ const uniData = [
     fees: "₹14.11 L - 14.98 L",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1533813832phpeWuPgT_270x200.jpg",
+    logo:" https://1000logos.net/wp-content/uploads/2021/07/San-Jose-State-Spartans-logo.png",
     description: "San Jose State University description here",
     PG: [
       {
@@ -142,6 +146,7 @@ const uniData = [
     fees: "₹16.11 L",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1547106543phpN4UlfX_270x200.jpg ",
+    logo:"https://www.newpaltz.edu/media/ocm/toolkit/the-new-paltz-brand/vdp_pg13-2415x873.jpg ",
     description: "State University of New York at New Paltz description here",
     PG: [
       {
@@ -175,6 +180,7 @@ const uniData = [
     fees: "₹25.31 L",
     uniType: "Public",
     imageUrl: " https://images.shiksha.com/mediadata/images/1411983907php5kWUWg_270x200.jpg",
+    logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Temple_T_logo.svg/1811px-Temple_T_logo.svg.png ",
     description: "Temple University description here",
     PG: [
       {
@@ -208,6 +214,7 @@ const uniData = [
     fees: "₹22.11 L - 22.23 L",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1537789181phpCB7mna_270x200.png ",
+    logo:" https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Mississippi_State_University_Bulldogs_Logo_Official.svg/1200px-Mississippi_State_University_Bulldogs_Logo_Official.svg.png",
     description: "Mississippi State University description here",
     PG: [
       {
@@ -240,6 +247,7 @@ const uniData = [
     fees: "₹17.15 L",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1536667304phpl8hjpn_270x200.jpg ",
+    logo:" https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Oklahoma_Sooners_logo.svg/1200px-Oklahoma_Sooners_logo.svg.png",
     description: "University of Oklahoma description here",
     PG: [
       {
@@ -273,6 +281,7 @@ const uniData = [
     fees: "₹13.54L",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1534497252phpLTf4xB_270x200.jpg",
+    logo:" https://i.pinimg.com/474x/38/61/7b/38617b0a190faea294f439e700b1fed0.jpg",
     description: "Massachusetts Institute of Technology description here",
     PG: [
       {
@@ -304,6 +313,7 @@ const uniData = [
     fees: "₹18.57L - ₹20.07L",
     uniType: "Private",
     imageUrl: "https://images.shiksha.com/mediadata/images/1537961817phpvz3MRj_270x200.jpg",
+    logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Logo_of_Lawrence_Technological_University.svg/1200px-Logo_of_Lawrence_Technological_University.svg.png",
     description: "Texas A & M University description here",
     PG: [
       {
@@ -337,6 +347,7 @@ const uniData = [
     fees: "₹17.29 L - 21.59 L",
     uniType: "Public",
     imageUrl: " https://images.shiksha.com/mediadata/images/1536648230phpDkvgql_270x200.jpg",
+    logo:"https://cdn.vox-cdn.com/thumbor/xfCo02V63SiR9SQI2rCPdiAdYG0=/0x0:2124x1332/1200x0/filters:focal(0x0:2124x1332):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/22640486/Screen_Shot_2021_06_06_at_12.20.18_AM.png",
     description: "University of California - Berkeley Campus description here",
     PG: [
       {
@@ -370,6 +381,7 @@ const uniData = [
     fees: "₹14.38 L",
     uniType: "Private",
     imageUrl: "https://images.shiksha.com/mediadata/images/1547015041phpRiAeqP_270x200.jpg",
+    logo:"https://upload.wikimedia.org/wikipedia/commons/d/d2/Harrisburg-U-Logo-Full.png",
     description: "Auburn University description here",
     PG: [
       {
@@ -958,6 +970,7 @@ const uniData = [
     acceptanceRate: null,
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1533551492phpLKGGFI_270x200.jpg",
+    logo:"https://e7.pngegg.com/pngimages/922/702/png-clipart-university-of-british-columbia-university-of-california-berkeley-university-of-chicago-igec-sagar-route-66-logo-text-logo-thumbnail.png",
     description: "University of South Dakota description here",
     PG: [
       {
@@ -988,6 +1001,7 @@ const uniData = [
     acceptanceRate: null,
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1533646004phpFUNLK4_270x200.jpg",
+    logo:"https://seekvectorlogo.com/wp-content/uploads/2022/02/university-of-alberta-vector-logo-2022.png",
     description: "University of Alberta description here",
     PG: [
       {
@@ -1010,13 +1024,14 @@ const uniData = [
     ]
   },
   {
-    universityName: "Northeastern University, Canada",
+    universityName: "Northeastern University",
     countryName: "Canada",
     location: "Toronto, Canada",
     ranking: null,
     acceptanceRate: null,
     uniType: "Private",
     imageUrl: "https://images.shiksha.com/mediadata/images/1722231922php5eJzx7_270x200.jpg",
+    logo:"https://brand.northeastern.edu/wp-content/uploads/2022/05/clearspace_primary-type-a.png",
     description: "Northeastern University description here",
     PG: [
       {
@@ -1045,6 +1060,7 @@ const uniData = [
     acceptanceRate: null,
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1537356102php0pdMGX_270x200.jpg",
+    logo:"https://static.wixstatic.com/media/6d93ff_8e8f1060e4624e7c97fdcb6236a42348~mv2.png/v1/crop/x_4,y_0,w_796,h_248/fill/w_378,h_118,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Trent-University-Logo.png",
     description: "Trent University description here",
     PG: [
       {
@@ -1072,6 +1088,7 @@ const uniData = [
     acceptanceRate: null,
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1513922151phpyhMkzk_270x200.png",
+    logo:"https://collegecomposed.com/wp-content/uploads/2019/04/mcgill-university-logo-png-transparent.png",
     description: "McGill University description here",
     PG: [
       {
@@ -1100,6 +1117,7 @@ const uniData = [
     acceptanceRate: null,
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1588769013phpQ3woUn_270x200.jpg",
+    logo:"https://cdn.freebiesupply.com/logos/large/2x/university-of-calgary-logo-png-transparent.png",
     description: "University of Calgary description here",
     PG: [
       {
@@ -1128,6 +1146,7 @@ const uniData = [
     acceptanceRate: null,
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1533813768phpVozIV9_270x200.jpg",
+    logo:" https://upload.wikimedia.org/wikipedia/en/5/53/McMaster_University_logo.svg",
     description: "McMaster University description here",
     PG: [
       {
@@ -1782,6 +1801,7 @@ const uniData = [
     location: "Bath, UK",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1497272086phpAUVQB1_270x200.jpg",
+    logo:"https://cdn.worldvectorlogo.com/logos/university-of-bath.svg",
     description: "University of Bath description here",
     PG: [
       {
@@ -1808,6 +1828,7 @@ const uniData = [
     location: "Cardiff, UK",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1534412382phpYPav1d_270x200.jpg",
+    logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Cardiff_University_%28logo%29.svg/1066px-Cardiff_University_%28logo%29.svg.png",
     description: "Cardiff University description here",
     PG: [
       {
@@ -1833,6 +1854,7 @@ const uniData = [
     location: "Exeter, UK",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1534164648phpB3vNSE_270x200.jpg",
+    logo:"https://exepose.com/wp-content/uploads/2022/09/Uni_Landscape_Pos_Lrg-e1662406285626.png",
     description: "University of Exeter description here",
     PG: [
       {
@@ -1859,6 +1881,7 @@ const uniData = [
     location: "Canterbury, UK",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1495605792phpNksALN_270x200.jpg",
+    logo:"https://upload.wikimedia.org/wikipedia/commons/2/20/University_for_the_Creative_Arts_%28UCA%29_logo.png",
     description: "University For The Creative Arts description here",
     PG: [
       {
@@ -1884,6 +1907,7 @@ const uniData = [
     location: "Northampton, UK",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1544164615phpEXodJC_270x200.jpg",
+    logo:"https://northampton.sparkplusglobal.com/img/logos/northampton-logo.png ",
     description: "University of Northampton description here",
     PG: [
       {
@@ -3754,6 +3778,7 @@ const uniData = [
     location: "Melbourne, Australia",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1539253667php1AcBOm_270x200.jpg",
+    logo:"https://brandslogos.com/wp-content/uploads/thumbs/the-university-of-melbourne-logo-black-and-white.png ",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -3772,6 +3797,7 @@ const uniData = [
     location: "Sydney, Australia",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1515481785phpZsgL9D_270x200.png",
+    logo:" https://seekvectorlogo.com/wp-content/uploads/2018/01/the-university-of-sydney-vector-logo.png",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -3790,6 +3816,7 @@ const uniData = [
     location: "Brisbane, Australia",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1575364977phprol8xE_270x200.jpg",
+    logo:" https://images.squarespace-cdn.com/content/v1/5c6abbc83560c32e41568416/1563694784906-4DT7SOD5UG9AW8FN829E/University-of-Queensland-UQ-logo.png",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -3803,11 +3830,12 @@ const uniData = [
     ]
   },
   {
-    universityName: "University of Wollongong - Australia",
+    universityName: "University of Wollongong",
     countryName:" Australia",
     location: "Wollongong, Australia",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1540468765php8iStPY_270x200.jpg",
+    logo:" https://www.uow.edu.au/assets/curated/brand-playbook/logo/logo-uowd-primary.png",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -3826,6 +3854,7 @@ const uniData = [
     location: "Sydney, Australia",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1533723518phpzYjJlZ_270x200.jpg",
+    logo:"https://logos-world.net/wp-content/uploads/2023/08/Macquarie-University-Logo.jpg",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -3844,6 +3873,7 @@ const uniData = [
     location: "Melbourne, Australia",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1533128219phpdgezPU_270x200.jpg",
+    logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Monash_University_logo.svg/2560px-Monash_University_logo.svg.png ",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -4816,6 +4846,7 @@ const uniData = [
     location: "Munich, Germany",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1533559592phpsYF8Oy_270x200.jpg",
+    logo:" https://learningabroad.utoronto.ca/wp-content/uploads/TUM_logo.png",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -4834,6 +4865,7 @@ const uniData = [
     location: "Munich, Germany",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1535019884php6xm6hf_270x200.jpg",
+    logo:"  https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/LMU_Muenchen_Logo.svg/1280px-LMU_Muenchen_Logo.svg.png",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -4852,6 +4884,7 @@ const uniData = [
     location: "Aachen, Germany",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1534133001phpYHn5t8_270x200.jpg",
+    logo:" https://seeklogo.com/images/R/rwth-aachen-university-logo-0B4D95CD9D-seeklogo.com.png",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -4870,6 +4903,7 @@ const uniData = [
     location: "Munich, Germany",
     uniType: "Private",
     imageUrl: "https://images.shiksha.com/mediadata/images/1514958483php4awclE_270x200.jpg",
+    logo:" https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/EU_Business_School_logo_2017_new.png/300px-EU_Business_School_logo_2017_new.png",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -4888,6 +4922,7 @@ const uniData = [
     location: "Berlin, Germany",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1593517035phpg7q0HA_270x200.jpg",
+    logo:" https://d30mzt1bxg5llt.cloudfront.net/public/uploads/images/_signatoryLogo/BSBI-NEW-LOGO.png",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -4901,11 +4936,12 @@ const uniData = [
     ]
   },
   {
-    universityName: "Heidelberg University - Germany",
+    universityName: "Heidelberg University",
     countryName:"Germany",
     location: "Heidelberg, Germany",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1541158293phpdnuacJ_270x200.jpg",
+    logo:" https://inside.heidelberg.edu/sites/default/files/users/rhiser/images/H.jpg",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -6435,6 +6471,7 @@ const uniData = [
     location: "Dublin, Ireland",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1506081013phpIBVFp2_270x200.jpg",
+    logo:" https://seeklogo.com/images/T/trinity-college-logo-1CBF853A26-seeklogo.com.png",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -6454,6 +6491,7 @@ const uniData = [
     location: "Dublin, Ireland",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1632913162phpX2Q2aT_270x200.jpg",
+    logo:" https://upload.wikimedia.org/wikipedia/en/9/9e/UCD_Dublin.png",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -6473,6 +6511,7 @@ const uniData = [
     location: "Galway, Ireland",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1664883749phpmwMWmw_270x200.jpg",
+    logo:" https://upload.wikimedia.org/wikipedia/en/7/79/University_of_Galway_logo_2022.png",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -6492,6 +6531,7 @@ const uniData = [
     location: "Letterkenny, Ireland",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1502694420phpDbiLv8_270x200.jpg",
+    logo:" https://tukuz.com/wp-content/uploads/2020/05/letterkenny-institute-of-technology-lyit-logo-vector.png",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -6510,6 +6550,7 @@ const uniData = [
     location: "Cork, Ireland",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1644382168phpdYUqY3_270x200.jpg",
+    logo:" https://upload.wikimedia.org/wikipedia/en/thumb/0/09/University_College_Cork_logo.svg/1200px-University_College_Cork_logo.svg.png",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -6529,6 +6570,7 @@ const uniData = [
     location: "Limerick, Ireland",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1535457467php0UInsN_270x200.jpg",
+    logo:" https://tukuz.com/wp-content/uploads/2021/06/university-of-limerick-logo-vector.png",
     PG: [
       {
         courseName: "MS in [Course Name]",
@@ -6547,6 +6589,7 @@ const uniData = [
     location: "Dublin, Ireland",
     uniType: "Public",
     imageUrl: "https://images.shiksha.com/mediadata/images/1536667121phpWIKpkF_270x200.jpg",
+    logo:" https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Dublin_City_University_Logo.svg/512px-Dublin_City_University_Logo.svg.png",
     PG: [
       {
         courseName: "MS in [Course Name]",

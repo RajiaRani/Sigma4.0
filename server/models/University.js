@@ -1,3 +1,4 @@
+const { type } = require("express/lib/response");
 const mongoose = require("mongoose");
 
 const examSchema = new mongoose.Schema({
@@ -67,6 +68,7 @@ const universitySchema = new mongoose.Schema({
   fees: { type: String }, 
   uniType: { type: String },
   imageUrl: { type: String },
+  logo:{type:String},
   description: { type: String },
   UG: [courseSchema], 
   PG: [courseSchema], 
