@@ -200,7 +200,6 @@
     }
 .user{
     display: none !important;
-    visibility: hidden !important;
 }
 .user-account{
     display: block !important;
