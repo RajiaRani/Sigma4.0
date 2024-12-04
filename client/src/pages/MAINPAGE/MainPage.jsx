@@ -5,6 +5,7 @@ import Services from "../SERVICES/Services.jsx";
 import Experts from "../EMOPLYEE/Experts.jsx";
 import Tourist from "../TOURIST/Tourist.jsx";
 import Country from "../COUNTRY/Country.jsx";
+import Logo from "../Uni-LOGO/Logo.jsx";
 import Navbar from "../../components/NAVBAR/Navbar.jsx";
 import Footer from "../../components/FOOTER/Footer.jsx";
 import "./MainPage.css";
@@ -23,6 +24,7 @@ export default function Body() {
                 <Home />
                 <Country/>
                 <VisaInfo />
+                <Logo/>
                 <Universities/>  
                 <VisaSteps />
                 <Tourist />

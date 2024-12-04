@@ -1,0 +1,9 @@
+.logo-container{
+    display: flex;
+    flex-wrap: wrap !important;
+}
+.logo-card img{
+    width: 70px !important;
+    height: 70px !important;
+    border: none !important;
+}
