@@ -88,18 +88,16 @@ export default function Navbar() {
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="#">
+                            {/* <li><a href="#">
                                 <Button>FreeCall</Button>
-                            </a></li>
+                            </a></li> */}
 
 
-                            <li className="upper-link user">
-                                <Button><FaUserCircle/></Button>
-                                <ul className="user-dropdown-menu shadow">
-                                    <li className="login"><Button><Link to={"/auth/login"}>Log in</Link></Button></li>
-                                    <li className="signup"><Button><Link to={"/auth/signup"}>Sign Up</Link></Button></li>
-                                </ul>
-                            </li>
+
+                            <li><Link to={"/auth/login"}><Button>Log in</Button></Link></li>
+                            <li><Link to={"/auth/signup"}><Button>Sign Up</Button></Link></li>
+
+
 
                         </ul>
                     </div>

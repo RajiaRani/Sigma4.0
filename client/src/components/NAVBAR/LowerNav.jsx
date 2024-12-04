@@ -76,7 +76,7 @@ export default function LowerNav() {
                     </div>
                     <div>
                     <li className="upper-link user-account">
-                                <Button><FaUserCircle/></Button>
+                                <Button><FaUserCircle className="user-svg" /></Button>
                                 <ul className="user-dropdown-menu shadow">
                                     <li className="login"><Button><Link to={"/auth/login"}>Log in</Link></Button></li>
                                     <li className="signup"><Button><Link to={"/auth/signup"}>Sign Up</Link></Button></li>

@@ -168,17 +168,7 @@ color: #0f3054 !important;
     background-color: transparent;
 }
 
-.user{
-    color:  #fff !important;
-    max-width: 23px !important;
-    width: 23px !important;
-    height: 23px !important;
-    border: none !important;
-    border-radius:  50% !important;
-}
-.user:hover{
-    color: #0f3054 !important;
-}
+
 .user-dropdown-menu {
 min-width: 100px !important;
 width: 100px !important;
@@ -340,6 +330,11 @@ Lower-Navbar-Links End
 .cross {
     font-size: 25px;
     font-weight: 600;
+}
+.upper-link  svg{
+    color: #fff !important;
+    font-size: 25px !important;
+    
 }
 
 
