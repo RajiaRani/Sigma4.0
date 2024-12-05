@@ -1,11 +1,10 @@
 import Footer from "../../components/FOOTER/Footer";
 import Navbar from "../../components/NAVBAR/Navbar";
-import "../Mailtrap/SignUp.css";
 import { BiLogoGmail } from "react-icons/bi";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { RiLockPasswordFill } from "react-icons/ri";
-import "./Login.css";
+import "./Common.css";
 
 
 

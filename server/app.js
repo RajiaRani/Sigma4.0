@@ -9,6 +9,10 @@ const universityRoutes = require("./routes/universities.route.js");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const { errorHandler , ExpressError}= require("./utils/ExpressError.js");
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
+const User = require("./models/User.js");
+
 
 
 const app = express();
@@ -35,6 +39,8 @@ main().catch(err => {
 
 // Middleware to parse JSON
 app.use(bodyParser.json());
+
+
 
 const allowedOrigins = [
     "http://localhost:3000",
@@ -65,6 +71,13 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
+//Middle ware for Passport Auth
+passport.use(passport.initialize());
+passport.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 
 app.use("/api/country", countryRoutes);

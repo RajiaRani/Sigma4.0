@@ -1,12 +1,12 @@
 import Footer from "../../components/FOOTER/Footer";
 import Navbar from "../../components/NAVBAR/Navbar";
-import "./SignUp.css";
 import { Button } from "@mui/material";
 import { BiLogoGmail } from "react-icons/bi";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
+import "./Common.css";
 
 export default function Signup() {
     
