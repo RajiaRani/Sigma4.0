@@ -6,7 +6,7 @@ const verifyToken = require ("../middleware/verifyToken.js");
 
 // router.get("/check-auth", verifyToken, checkAuth);
 
-router.post("/signup",signup);
+router.get("/signup",signup);
 router.post("/login", login);
 router.post("/logout", logout);
 
