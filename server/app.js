@@ -84,7 +84,6 @@ app.use("/api/country", countryRoutes);
 app.use("/api/universities", universityRoutes);
 app.use("/api/auth", authRoutes);
 
-
 //middleware
 app.use((req, res) => {
     res.status(404).send("Opps!! Page Not Found ..");
