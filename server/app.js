@@ -76,6 +76,7 @@ const sessionOption = {
     resave:false,
     saveUninitialized:true,
 };
+app.use(session(sessionOption));
 
 // Flash Middleware
 app.use(flash());
@@ -86,7 +87,7 @@ app.use((req,res,next) => {
 });
 
 
-app.use(session(sessionOption));
+
 
 //Middle ware for Passport Auth
 passport.use(passport.initialize());
