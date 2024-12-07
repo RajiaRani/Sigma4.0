@@ -82,7 +82,7 @@ app.use((req,res,next) => {
 });
 
 app.use(cors(corsOptions));
-app.use(session(sessionOption()));
+app.use(session(sessionOption));
 
 //Middle ware for Passport Auth
 passport.use(passport.initialize());
