@@ -79,8 +79,8 @@ app.use(session(sessionOption));
 // Flash Middleware
 app.use(flash());
 app.use((req,res,next) => {
-    req.locals.success = req.flash();
-    req.locals.error = req.flash();
+    res.locals.successMessage = req.flash("success");
+    res.locals.errorMessage = req.flash("error");
     next();
 });
 
