@@ -75,10 +75,10 @@ const sessionOption = {
     saveUninitialized:true,
 };
 
-
+app.use(flash());
 app.use((req,res,next) => {
-    req.flash.success = req.flash("success");
-    req.flash.error = req.flash("error");
+    req.locals.success = req.flash("success");
+    req.locals.error = req.flash("error");
 });
 
 app.use(cors(corsOptions));
