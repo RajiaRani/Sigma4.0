@@ -87,8 +87,6 @@ app.use((req,res,next) => {
 });
 
 
-
-
 //Middle ware for Passport Auth
 passport.use(passport.initialize());
 passport.use(passport.session());
