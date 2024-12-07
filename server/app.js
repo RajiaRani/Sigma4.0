@@ -68,7 +68,9 @@ const corsOptions = {
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
 };
+app.use(cors(corsOptions));
 
+// Session Configuration
 const sessionOption = {
     secret:"myabroadhubsecret98158",
     resave:false,
@@ -82,7 +84,7 @@ app.use((req,res,next) => {
     req.locals.error = req.flash("error");
 });
 
-app.use(cors(corsOptions));
+
 app.use(session(sessionOption));
 
 //Middle ware for Passport Auth
