@@ -67,11 +67,18 @@ const corsOptions = {
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
 };
+
 const sessionOption = {
     secret:"myabroadhubsecret98158",
     resave:false,
     saveUninitialized:true,
 };
+
+
+app.use((req,res,next) => {
+    req.flash.success = req.flash("success");
+    req.flash.error = req.flash("error");
+});
 
 app.use(cors(corsOptions));
 app.use(session(sessionOption()));
