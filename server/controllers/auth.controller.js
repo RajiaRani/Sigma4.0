@@ -1,17 +1,39 @@
 
-const signup = async(req,res) => {
+// Signup
+const signup = async (req, res) => {
+    const { email, password } = req.body;
 
-}
+    try {
+        const newUser = new User({ email });
+        await User.register(newUser, password); // Registers and hashes the password automatically
+        res.status(201).json({ message: 'User registered successfully' });
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to register user', details: error.message });
+    }
+};
+
+// Login
+const login = (req, res, next) => {
+    passport.authenticate('local', (err, user, info) => {
+        if (err) return next(err);
+        if (!user) return res.status(400).json({ message: 'Invalid credentials' });
+
+        // Log in the user
+        req.logIn(user, (err) => {
+            if (err) return next(err);
+            return res.status(200).json({ message: 'Logged in successfully', user });
+        });
+    })(req, res, next);
+};
 
 
-const login = async(req,res) => {
-    
-}
-
-
-const logout = async(req,res) => {
-    
-}
+// Logout
+const logout = (req, res) => {
+    req.logout((err) => {
+        if (err) return res.status(500).json({ error: 'Logout failed' });
+        res.status(200).json({ message: 'Logged out successfully' });
+    });
+};
 
 module.exports = { signup, logout, login};
 
