@@ -85,7 +85,6 @@ app.use(cors(corsOptions));
 // });
 
 
-
 //Middle ware for Passport Auth
 passport.use(passport.initialize());
 passport.use(passport.session());
