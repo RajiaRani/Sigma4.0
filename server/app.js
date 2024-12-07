@@ -67,8 +67,14 @@ const corsOptions = {
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
 };
+const sessionOption = {
+    secret:"myabroadhubsecret98158",
+    resave:false,
+    saveUninitialized:true,
+};
 
 app.use(cors(corsOptions));
+app.use(session(sessionOption()));
 
 //Middle ware for Passport Auth
 passport.use(passport.initialize());
