@@ -36,10 +36,8 @@ main().catch(err => {
     console.error("Database connection failed:", err.message);
 });
 
-
 // Middleware to parse JSON
 app.use(bodyParser.json());
-
 
 const allowedOrigins = [
     "http://localhost:3000",
