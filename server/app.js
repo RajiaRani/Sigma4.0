@@ -12,7 +12,7 @@ const { errorHandler , ExpressError}= require("./utils/ExpressError.js");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/User.js");
-
+const session = require("express-session");
 
 
 const app = express();
@@ -36,10 +36,8 @@ main().catch(err => {
 });
 
 
-
 // Middleware to parse JSON
 app.use(bodyParser.json());
-
 
 
 const allowedOrigins = [
