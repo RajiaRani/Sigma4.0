@@ -75,6 +75,7 @@ const sessionOption = {
     saveUninitialized:true,
 };
 
+// Flash Middleware
 app.use(flash());
 app.use((req,res,next) => {
     req.locals.success = req.flash("success");
