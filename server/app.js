@@ -12,8 +12,8 @@ const { errorHandler , ExpressError}= require("./utils/ExpressError.js");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/User.js");
-const session = require("express-session");
-const flash = require("connect-flash");
+const session = require('express-session');
+const flash = require('connect-flash');
 
 
 const app = express();
@@ -71,18 +71,19 @@ app.use(cors(corsOptions));
 // Session Configuration
 const sessionOption = {
     secret:"myabroadhubsecret98158",
-    resave:false,
-    saveUninitialized:true,
+    resave: false,
+    saveUninitialized: true,
 };
 app.use(session(sessionOption));
 
 // Flash Middleware
 app.use(flash());
 app.use((req,res,next) => {
-    req.locals.success = req.flash("success");
-    req.locals.error = req.flash("error");
+    req.locals.success = req.flash();
+    req.locals.error = req.flash();
     next();
 });
+
 
 
 //Middle ware for Passport Auth
