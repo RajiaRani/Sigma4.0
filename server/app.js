@@ -13,6 +13,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/User.js");
 const session = require("express-session");
+const flash = require("connect-flash");
 
 
 const app = express();
