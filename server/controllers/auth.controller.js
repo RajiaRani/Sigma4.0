@@ -1,7 +1,7 @@
 
 // Signup
 const signup = async (req, res) => {
-    const { email, password } = req.body;
+    const {username,  email, password } = req.body;
 
     try {
         const newUser = new User({ email });

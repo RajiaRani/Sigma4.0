@@ -4,10 +4,7 @@ const {signup, login, logout} = require ("../controllers/auth.controller.js");
 
 
 
-
-
-router.get("/signup",signup);
-router.post("/signup", signup); // Route to handle form submission
+router.post("/signup", signup); 
 
 
 router.post("/login", login);

@@ -15,21 +15,20 @@ export default function Signup() {
     const [Password, setPassword] = useState("");
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
-    
+
     // Fetch Signup Page (GET Request)
     useEffect(() => {
-        axios.get("/auth/signup")
-        .then((response) => {
-            console.log("Page Loaded", response.data);
-        })
-        .catch((error) => {
-            console.error("Error loading signup page:", error);
-        })
+        axios
+            .get("/auth/signup")
+            .then((response) => {
+                console.log("Page Loaded", response.data);
+            })
+            .catch((error) => {
+                console.error("Error loading signup page:", error);
+            });
     }, []);
 
-
-
-    const handleSigUp = (event) => {
+    const handleSigUp = async (event) => {
         event.preventDefault();
 
         const newErrors = {};
@@ -37,18 +36,28 @@ export default function Signup() {
             newErrors.userName = "Name is required.";
         }
         if (!Email || !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(Email)) {
-            newErrors.Email = "Email is required";
+            newErrors.Email = "Valid email is required.";
         }
         if (!Password || Password.length < 6) {
-            newErrors.Password = "Password is required";
+            newErrors.Password = "Password must be at least 6 characters.";
         }
 
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
         } else {
             setErrors({});
-            console.log("Form submitted:", { userName, Email});
-            navigate("/success"); // Redirect to success page or desired route
+            try {
+                const response = await axios.post("/api/auth/signup", {
+                    username: userName,
+                    email: Email,
+                    password: Password,
+                });
+                console.log("Signup successful:", response.data);
+                navigate("/success"); // Redirect to the success page or desired route
+            } catch (error) {
+                console.error("Signup error:", error.response?.data || error.message);
+                setErrors({ form: "Failed to register. Please try again." });
+            }
         }
     };
 
@@ -122,11 +131,13 @@ export default function Signup() {
                                 Sign Up
                             </Button>
 
+                            {/* Display Form Error */}
+                            {errors.form && <p style={{ color: "red" }}>{errors.form}</p>}
+
                             {/* Login Redirect */}
                             <div style={{ marginTop: "1rem" }}>
                                 <p>
-                                    Already have an account?{" "}
-                                    <Link to="/auth/login">Log in</Link>
+                                    Already have an account? <Link to="/auth/login">Log in</Link>
                                 </p>
                             </div>
                         </form>
