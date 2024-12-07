@@ -69,20 +69,20 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Session Configuration
-const sessionOption = {
-    secret:"myabroadhubsecret98158",
-    resave: false,
-    saveUninitialized: true,
-};
-app.use(session(sessionOption));
+// const sessionOption = {
+//     secret:"myabroadhubsecret98158",
+//     resave: false,
+//     saveUninitialized: true,
+// };
+// app.use(session(sessionOption));
 
 // Flash Middleware
-app.use(flash());
-app.use((req,res,next) => {
-    res.locals.successMessage = req.flash("success");
-    res.locals.errorMessage = req.flash("error");
-    next();
-});
+// app.use(flash());
+// app.use((req,res,next) => {
+//     res.locals.successMessage = req.flash("success");
+//     res.locals.errorMessage = req.flash("error");
+//     next();
+// });
 
 
 
