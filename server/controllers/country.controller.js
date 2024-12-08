@@ -1,7 +1,6 @@
 const Country = require("../models/Country.js");
 const ExpressError = require("../utils/ExpressError.js");
 
-
 // COUNTRY List route
 exports.getAllCountries = async (req, res, next) =>{
     try {
@@ -11,7 +10,6 @@ exports.getAllCountries = async (req, res, next) =>{
         next(err);
     }
 };
-
 
 exports.getCountryById = async (req, res, next)  => {
     try {
