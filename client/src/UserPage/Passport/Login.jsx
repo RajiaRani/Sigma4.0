@@ -1,3 +1,4 @@
+import axios from "axios";
 import Footer from "../../components/FOOTER/Footer";
 import Navbar from "../../components/NAVBAR/Navbar";
 import { BiLogoGmail } from "react-icons/bi";
@@ -6,6 +7,8 @@ import { Link } from "react-router-dom";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { TextField } from "@mui/material";
 import "./Common.css";
+
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function Login() {
     const [Email, setEmail] = useState("");
@@ -40,17 +43,22 @@ export default function Login() {
 
         if (validateInputs()) {
             try {
-                const response = await fetch("/login", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
+                const response = await axios.post(
+                    `${BASE_URL}/api/login`,
+                    {
+                        username: Email,
+                        password: Password,
                     },
-                    body: JSON.stringify({ username: Email, password: Password }),
-                });
+                    {
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    }
+                );
 
-                const data = await response.json();
+                const data = response.data;
 
-                if (response.ok) {
+                if (response.status === 200) {
                     alert("Logged in successfully!");
                     console.log("User data:", data.user);
                 } else {
@@ -58,7 +66,13 @@ export default function Login() {
                 }
             } catch (error) {
                 console.error("Error during login:", error.message);
-                alert("An error occurred. Please try again later.");
+
+                // Handle specific errors
+                if (error.response) {
+                    alert(error.response.data.message || "Login failed. Please try again.");
+                } else {
+                    alert("An error occurred. Please try again later.");
+                }
             }
         }
     };

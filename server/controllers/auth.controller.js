@@ -1,4 +1,5 @@
 const User = require("../models/User.js");
+app.use(express.json()); 
 
 // Signup
 const signup = async (req, res) => {
