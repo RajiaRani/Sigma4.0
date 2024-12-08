@@ -20,11 +20,11 @@ export default function Signup() {
     useEffect(() => {
         axios
             .get("/api/signup")
-            .then((response) => {
-                console.log("Page Loaded", response.data);
+            .then((res) => {
+                console.log(res);
             })
             .catch((error) => {
-                console.error("Error loading signup page:", error);
+                console.log(error);
             });
     }, []);
 
@@ -47,7 +47,7 @@ export default function Signup() {
         } else {
             setErrors({});
             try {
-                const response = await axios.post("/api/auth/signup", {
+                const response = await axios.post("/api/signup", {
                     username: userName,
                     email: Email,
                     password: Password,

@@ -94,8 +94,8 @@ export default function Navbar() {
 
 
 
-                            <li className="user"><Link to={"/auth/login"}><Button>Log in</Button></Link></li>
-                            <li className="user"><Link to={"/auth/signup"}><Button>Sign Up</Button></Link></li>
+                            <li className="user"><Link to={"/login"}><Button>Log in</Button></Link></li>
+                            <li className="user"><Link to={"/signup"}><Button>Sign Up</Button></Link></li>
 
 
 
