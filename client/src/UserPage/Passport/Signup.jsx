@@ -57,7 +57,7 @@ export default function Signup() {
                 setUserName("");
                 setEmail("");
                 setPassword("");
-                navigate("/success"); // Redirect to the success page or desired route
+                navigate("/"); // Redirect to the success page or desired route
             } catch (error) {
                 console.error("Signup error:", error.response?.data || error.message);
                 setErrors({ form: "Failed to register. Please try again." });

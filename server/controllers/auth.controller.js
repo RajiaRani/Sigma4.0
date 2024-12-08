@@ -1,3 +1,4 @@
+const User = require("../models/User.js");
 
 // Signup
 const signup = async (req, res) => {
@@ -5,11 +6,10 @@ const signup = async (req, res) => {
 
     try {
         // Create a new user
-        const newUser = new User({ email, username });
-        
+        const newUser = new User({ email, username});
         // Registers and hashes the password automatically
-        await User.register(newUser, password);
-
+        const registeredUser = await User.register(newUser, password);
+       // console.log(registeredUser);
         res.status(201).json({ message: 'User registered successfully' });
     } catch (error) {
         res.status(500).json({ error: 'Failed to register user', details: error.message });
