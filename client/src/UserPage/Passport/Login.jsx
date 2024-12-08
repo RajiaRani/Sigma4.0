@@ -62,7 +62,7 @@ export default function Login() {
                     alert(data.message || "Login failed. Please check your credentials.");
                 }
             } catch (error) {
-                console.error("Error during login:", error.message);
+                console.log("Error during login:", error.message);
 
                 // Handle specific errors
                 if (error.response) {

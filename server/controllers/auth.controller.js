@@ -2,6 +2,7 @@ const User = require("../models/User.js");
 const express = require("express");
 const app = express();
 app.use(express.json()); 
+const passport = require("passport");
 
 // Signup
 const signup = async (req, res) => {
