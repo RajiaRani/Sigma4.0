@@ -101,7 +101,7 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use("/api/country", countryRoutes);
 app.use("/api/universities", universityRoutes);
-app.use("/api/auth", authRoutes);
+app.use("/api", authRoutes);
 
 //middleware
 app.use((req, res) => {

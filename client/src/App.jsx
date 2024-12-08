@@ -66,8 +66,8 @@ function App() {
             <Route path="/country/:id" element={<CountryDetails />} />
             <Route path="/universities/:id" element={<UniversityDetails />} />
             <Route path="/universities/MS-PG" element={<MSList />} />
-            <Route path="/auth/signup" element={<SignUp />} />
-            <Route path="/auth/login" element={<Login /> } />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login /> } />
 
             {/* 404 Not Found Route */}
             <Route path="*" element={<NotFound />} />

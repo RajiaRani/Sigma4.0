@@ -19,7 +19,7 @@ export default function Signup() {
     // Fetch Signup Page (GET Request)
     useEffect(() => {
         axios
-            .get("/auth/signup")
+            .get("/api/signup")
             .then((response) => {
                 console.log("Page Loaded", response.data);
             })
