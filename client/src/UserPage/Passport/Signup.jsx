@@ -17,17 +17,7 @@ export default function Signup() {
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
-    // Removed the GET request since it was unnecessary
-    // UseEffect for fetching any necessary data when the component mounts
-    useEffect(() => {
-        // Example for future API calls if needed
-        // axios.get("/api/signup").then(res => {
-        //     console.log(res);
-        // }).catch(error => {
-        //     console.log(error);
-        // });
-    }, []);
-
+    
     const handleSigUp = async (event) => {
         event.preventDefault();
 
