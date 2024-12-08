@@ -12,13 +12,13 @@ export default function Login() {
     const [Password, setPassword] = useState("");
     const [errors, setErrors] = useState({ email: "", password: "" });
 
-    // Validate Inputs
+    // Function to validate inputs
     const validateInputs = () => {
         let isValid = true;
         const newErrors = { email: "", password: "" };
 
         // Validate Email
-        if (!Email) {
+        if (!Email.trim()) {
             newErrors.email = "Email is required.";
             isValid = false;
         } else if (!/\S+@\S+\.\S+/.test(Email)) {
@@ -27,7 +27,7 @@ export default function Login() {
         }
 
         // Validate Password
-        if (!Password) {
+        if (!Password.trim()) {
             newErrors.password = "Password is required.";
             isValid = false;
         } else if (Password.length < 6) {
@@ -39,15 +39,36 @@ export default function Login() {
         return isValid;
     };
 
-    // Handle Form Submit
-    const handleLogIn = (event) => {
+    // Handle form submission
+    const handleLogIn = async (event) => {
         event.preventDefault();
 
         if (validateInputs()) {
-            // Call API or Handle Successful Validation
-            console.log("Form is valid, send API request", { Email, Password });
+            try {
+                // Send POST request to login endpoint
+                const response = await fetch("/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ email: Email, password: Password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    console.log("Login successful:", data);
+                    // Redirect or update the UI after successful login
+                } else {
+                    console.error("Login failed:", data.message);
+                    alert(data.message || "Login failed. Please try again.");
+                }
+            } catch (error) {
+                console.error("Error during login request:", error.message);
+                alert("An error occurred. Please try again later.");
+            }
         } else {
-            console.log("Form has errors");
+            console.log("Form has validation errors.");
         }
     };
 
@@ -72,8 +93,8 @@ export default function Login() {
                                     className="form-input"
                                     value={Email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    error={!!errors.email} // Convert string to boolean
-                                    helperText={errors.email} // Show error message
+                                    error={!!errors.email} // Show red outline if error exists
+                                    helperText={errors.email} // Show error message below the input
                                     fullWidth
                                     variant="outlined"
                                 />
