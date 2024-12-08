@@ -11,22 +11,19 @@ import "./Common.css";
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function Login() {
-    const [Email, setEmail] = useState("");
+    const [username, setUserName] = useState("");
     const [Password, setPassword] = useState("");
-    const [errors, setErrors] = useState({ email: "", password: "" });
+    const [errors, setErrors] = useState({ username: "", password: "" });
 
     // Validate Inputs
     const validateInputs = () => {
         let isValid = true;
-        const newErrors = { email: "", password: "" };
+        const newErrors = { username: "", password: "" };
 
-        if (!Email.trim()) {
-            newErrors.email = "Email is required.";
+        if (!username.trim()) {
+            newErrors.username = "Usernmae is required.";
             isValid = false;
-        } else if (!/\S+@\S+\.\S+/.test(Email)) {
-            newErrors.email = "Please enter a valid email.";
-            isValid = false;
-        }
+        } 
 
         if (!Password.trim()) {
             newErrors.password = "Password is required.";
@@ -46,7 +43,7 @@ export default function Login() {
                 const response = await axios.post(
                     `${BASE_URL}/api/login`,
                     {
-                        username: Email,
+                        username:username,
                         password: Password,
                     },
                     {
@@ -88,17 +85,17 @@ export default function Login() {
                     <form className="user-form" onSubmit={handleLogIn}>
                         <h3>Welcome Back</h3>
 
-                        {/* Email */}
+                        {/* username */}
                         <div className="input-wrapper">
                             <BiLogoGmail className="input-icon" />
                             <TextField
-                                type="email"
-                                label="Email ID"
+                                type="username"
+                                label="username"
                                 className="form-input"
-                                value={Email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                error={!!errors.email}
-                                helperText={errors.email}
+                                value={username}
+                                onChange={(e) => setUserName(e.target.value)}
+                                error={!!errors.username}
+                                helperText={errors.username}
                                 fullWidth
                                 variant="outlined"
                             />

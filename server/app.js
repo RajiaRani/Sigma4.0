@@ -92,9 +92,9 @@ app.use((req,res,next) => {
 
 
 //Middle ware for Passport Auth
-passport.use(passport.initialize());
-passport.use(passport.session());
-passport.use(new LocalStrategy(User.authenticate()));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate())); // LocalStrategy setup
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
