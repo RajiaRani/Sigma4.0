@@ -8,6 +8,7 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
 import "./Common.css";
 import axios from "axios";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function Signup() {
     const [userName, setUserName] = useState("");
@@ -16,16 +17,15 @@ export default function Signup() {
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
-    // Fetch Signup Page (GET Request)
+    // Removed the GET request since it was unnecessary
+    // UseEffect for fetching any necessary data when the component mounts
     useEffect(() => {
-        axios
-            .get("/api/signup")
-            .then((res) => {
-                console.log(res);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        // Example for future API calls if needed
+        // axios.get("/api/signup").then(res => {
+        //     console.log(res);
+        // }).catch(error => {
+        //     console.log(error);
+        // });
     }, []);
 
     const handleSigUp = async (event) => {
@@ -35,7 +35,7 @@ export default function Signup() {
         if (!userName) {
             newErrors.userName = "Name is required.";
         }
-        if (!Email || !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(Email)) {
+        if (!Email || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(Email)) {
             newErrors.Email = "Valid email is required.";
         }
         if (!Password || Password.length < 6) {
@@ -47,12 +47,16 @@ export default function Signup() {
         } else {
             setErrors({});
             try {
-                const response = await axios.post("/api/signup", {
+                const response = await axios.post(`${BASE_URL}/api/signup`, {
                     username: userName,
                     email: Email,
                     password: Password,
                 });
                 console.log("Signup successful:", response.data);
+                // Reset the form and navigate to success page
+                setUserName("");
+                setEmail("");
+                setPassword("");
                 navigate("/success"); // Redirect to the success page or desired route
             } catch (error) {
                 console.error("Signup error:", error.response?.data || error.message);
@@ -85,6 +89,7 @@ export default function Signup() {
                                     helperText={errors.userName}
                                     fullWidth
                                     margin="normal"
+                                    aria-label="Name"
                                 />
                             </div>
 
@@ -101,6 +106,7 @@ export default function Signup() {
                                     helperText={errors.Email}
                                     fullWidth
                                     margin="normal"
+                                    aria-label="Email"
                                 />
                             </div>
 
@@ -117,6 +123,7 @@ export default function Signup() {
                                     helperText={errors.Password}
                                     fullWidth
                                     margin="normal"
+                                    aria-label="Password"
                                 />
                             </div>
 
