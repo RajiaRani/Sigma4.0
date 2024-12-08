@@ -18,10 +18,14 @@ const signup = async (req, res) => {
 
 
 
-
 // Login
 const login = (req, res, next) => {
-    passport.authenticate('local', (err, user, info) => {
+    passport.authenticate('local', 
+        {
+            failureRedirect:"/login" ,
+            failureFlash: true
+        },
+         (err, user, info) => {
         if (err) return next(err);
         if (!user) return res.status(400).json({ message: 'Invalid credentials' });
 
