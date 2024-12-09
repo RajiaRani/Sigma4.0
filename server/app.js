@@ -81,7 +81,6 @@ const sessionOption = {
         maxAge: 14 * 24 * 60 * 60 * 1000, // 14 days
         secure: process.env.NODE_ENV === "production",  // Set to true in production for HTTPS
         sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // Required for cross-origin
-        sameSite: "lax",
     }
 };
 app.use(session(sessionOption));
@@ -106,10 +105,10 @@ passport.deserializeUser(User.deserializeUser());
 // Middleware to check authentication
 const isAuthenticated = (req, res, next) => {
     console.log("User Authenticated:", req.isAuthenticated());
-    if (req.isAuthenticated()) {
-        return next();
+    if (!req.isAuthenticated()) {
+        res.status(401).json({ message: "you must be login" });
     }
-    res.status(401).json({ message: "Unauthorized" });
+    next();
 }
 
 
