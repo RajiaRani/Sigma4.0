@@ -77,10 +77,10 @@ const sessionOption = {
     cookie: {
         httpOnly: true,
         maxAge: 14 * 24 * 60 * 60 * 1000, // 14 days
-        secure: process.env.NODE_ENV === 'production',  // Set to true in production for HTTPS
+        secure: process.env.NODE_ENV === "production",  // Set to true in production for HTTPS
+        sameSite: "lax",
     }
 };
-
 app.use(session(sessionOption));
 
 // Flash Middleware
@@ -100,24 +100,29 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
+// Middleware to check authentication
+const isAuthenticated = (req, res, next) => {
+    if (req.isAuthenticated()) {
+      return next();
+    }
+    res.status(401).json({ message: "Unauthorized" });
+  };
+
+
 app.use("/api/country", countryRoutes);
 app.use("/api/universities", universityRoutes);
 app.use("/api", authRoutes);
 
+
 // Dashboard Route - Show user information
-app.get("/api/user-dashboard", (req, res) => {
-    //console.log("Session:", req.session);  // Log the session to see if it's initialized
-    if (req.isAuthenticated()) {
-        const user = req.user;
-        console.log('Authenticated user:', user);
-        res.status(200).json({
-            username: user.username,
-            email: user.email
-        });
-    } else {
-        res.status(401).json({ message: 'Not authenticated' });
-    }
-});
+app.get("/api/user-dashboard", isAuthenticated, (req, res) => {
+    const user = req.user;
+    console.log("Authenticated user:", user);
+    res.status(200).json({
+      username: user.username,
+      email: user.email,
+    });
+  });
 
 
 //middleware

@@ -51,7 +51,7 @@ export default function Login() {
 
         if (response.status === 200) {
           toast.success("Logged in successfully!");
-          navigate("/");
+          navigate("/user-dashboard");
         }
       } catch (error) {
         if (error.response) {
