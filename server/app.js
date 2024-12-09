@@ -102,11 +102,12 @@ passport.deserializeUser(User.deserializeUser());
 
 // Middleware to check authentication
 const isAuthenticated = (req, res, next) => {
+    console.log("User Authenticated:", req.isAuthenticated());
     if (req.isAuthenticated()) {
-      return next();
+        return next();
     }
     res.status(401).json({ message: "Unauthorized" });
-  };
+}
 
 
 app.use("/api/country", countryRoutes);

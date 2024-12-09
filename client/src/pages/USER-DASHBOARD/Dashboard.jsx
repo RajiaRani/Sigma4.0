@@ -7,17 +7,17 @@ function Dashboard() {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
+        // Fetch user data from backend
         axios.get(`${BASE_URL}/api/user-dashboard`, { withCredentials: true })
+  
             .then((response) => {
-                setUser(response.data);
+                setUser(response.data);  // Set user data in state
+                      console.log('User data:', response.data);
             })
+
             .catch((error) => {
-                if (error.response && error.response.status === 401) {
-                    console.error("Unauthorized. Redirecting to login...");
-                    window.location.href = "/login"; // Redirect to login page
-                } else {
-                    console.error("Error fetching user data:", error);
-                }
+                console.log('Error fetching user data:', error);
+                // Handle errors such as not being authenticated
             });
     }, []);
 
