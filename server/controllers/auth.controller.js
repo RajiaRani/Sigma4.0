@@ -24,32 +24,23 @@ const signup = async (req, res) => {
 
 // Login
 const login = (req, res, next) => {
-    passport.authenticate('local', 
-        (err, user, info) => {
-            if (err) {
-                return next(err); // Pass the error to the next middleware
-            }
+    // At this point, the user has already been authenticated by passport.authenticate()
+    // So, we directly handle the login process
 
-            if (!user) {
-                return res.status(400).json({ message: 'Invalid credentials' }); // Send error response to frontend
-            }
-
-            req.logIn(user, (err) => {
-                if (err) {
-                    return next(err); // Pass the error to the next middleware
-                }
-
-                // Here we send only the necessary user info (username and email)
-                return res.status(200).json({ 
-                    message: 'Logged in successfully', 
-                    user: {
-                        username: user.username, // Send username
-                        email: user.email, // Send email
-                    }
-                }); 
-            });
+    req.logIn(req.user, (err) => {
+        if (err) {
+            return next(err); // Pass the error to the next middleware
         }
-    )(req, res, next);
+
+        // Send a successful login response with user info
+        return res.status(200).json({ 
+            message: "Logged in successfully",
+            user: {
+                username: req.user.username, 
+                email: req.user.email,      
+            }
+        });
+    });
 };
 
 
