@@ -45,13 +45,13 @@ export default function Login() {
       try {
         const response = await axios.post(
           `${BASE_URL}/api/login`,
-          { username, password: Password },
+          { username:username, password: Password },
           { headers: { "Content-Type": "application/json" } }
         );
 
         if (response.status === 200) {
           toast.success("Logged in successfully!");
-          navigate("/");
+          navigate("/user-dashboard");
         }
       } catch (error) {
         if (error.response) {

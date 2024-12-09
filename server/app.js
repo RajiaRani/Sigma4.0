@@ -8,7 +8,7 @@ const countryRoutes = require("./routes/country.route.js");
 const universityRoutes = require("./routes/universities.route.js");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
-const { errorHandler , ExpressError}= require("./utils/ExpressError.js");
+const { errorHandler, ExpressError } = require("./utils/ExpressError.js");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/User.js");
@@ -71,20 +71,21 @@ app.use(cors(corsOptions));
 
 // Session Configuration
 const sessionOption = {
-    secret:"myabroadhubsecret98158",
+    secret: process.env.SESSION_SECRET || "myabroadhubsecret98158",
     resave: false,
     saveUninitialized: true,
-    cookie:{
-        secret:"myabroadhubcode98158",
-        httpOnly: true, 
-        maxAge: 14 * 24 * 60 * 60 * 1000,
+    cookie: {
+        httpOnly: true,
+        maxAge: 14 * 24 * 60 * 60 * 1000, // 14 days
+        secure: process.env.NODE_ENV === 'production',  // Set to true in production for HTTPS
     }
 };
+
 app.use(session(sessionOption));
 
 // Flash Middleware
 app.use(flash());
-app.use((req,res,next) => {
+app.use((req, res, next) => {
     res.locals.successMessage = req.flash("success");
     res.locals.errorMessage = req.flash("error");
     next();
@@ -103,6 +104,22 @@ app.use("/api/country", countryRoutes);
 app.use("/api/universities", universityRoutes);
 app.use("/api", authRoutes);
 
+// Dashboard Route - Show user information
+app.get("/api/user-dashboard", (req, res) => {
+    //console.log("Session:", req.session);  // Log the session to see if it's initialized
+    if (req.isAuthenticated()) {
+        const user = req.user;
+        console.log('Authenticated user:', user);
+        res.status(200).json({
+            username: user.username,
+            email: user.email
+        });
+    } else {
+        res.status(401).json({ message: 'Not authenticated' });
+    }
+});
+
+
 //middleware
 app.use((req, res) => {
     res.status(404).send("Opps!! Page Not Found ..");
@@ -110,7 +127,7 @@ app.use((req, res) => {
 
 
 // For unknown Route
-app.all("*", (req,res,next) => {
+app.all("*", (req, res, next) => {
     next(new ExpressError(404, "Opps!! Page Not Found"));
 });
 

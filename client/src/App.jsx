@@ -18,6 +18,7 @@ import Login from "../src/UserPage/Passport/Login.jsx";
 // import { useAuthStore } from "./store/authStore.jsx";
 // import { useEffect } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import Dashboard from "./pages/USER-DASHBOARD/Dashboard.jsx";
 
 
 // protect routes that require authentication
@@ -68,7 +69,7 @@ function App() {
             <Route path="/universities/MS-PG" element={<MSList />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login /> } />
-
+            <Route path="/user-dashboard" element={<Dashboard/>} />
             {/* 404 Not Found Route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
