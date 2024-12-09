@@ -44,14 +44,14 @@
 
 
 } 
-/* .input-wrapper {
+.input-wrapper {
     position: relative !important;
     display: flex;
     align-items: center;
     margin-bottom: 1rem !important;
     width: 100% !important;
   }
-   */
+  
   .input-icon {
     position: absolute !important;
     left: 10px !important;
@@ -72,10 +72,6 @@
 }
 
 
-
-
-
-
 .user-button {
     width: 100% !important;
     background-color: rgb(61, 61, 240) !important;
@@ -90,23 +86,6 @@
 .user-button:hover {
     background-color: blue !important;
     cursor: pointer !important;
-}
-
-
-
-
-
-
-
-
-
-.verify-container{
-    width: 20vw;
-    height: auto;
-    margin: 0 auto !important;
-    border: 1px solid rgba(0, 123, 255, 0.5);
-    padding: 20px !important;
-    line-height: 1.9 !important;
 }
 
 
