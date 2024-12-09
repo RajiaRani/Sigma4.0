@@ -46,7 +46,7 @@ export default function Login() {
         const response = await axios.post(
           `${BASE_URL}/api/login`,
           { username:username, password: Password },
-          { headers: { "Content-Type": "application/json" } }
+          { headers: { "Content-Type": "application/json" }, withCredentials: true }
         );
 
         if (response.status === 200) {

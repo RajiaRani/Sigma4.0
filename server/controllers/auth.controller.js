@@ -23,7 +23,6 @@ const signup = async (req, res) => {
 
 
 // Login
-// Login
 const login = (req, res, next) => {
     passport.authenticate('local', 
         (err, user, info) => {

@@ -55,6 +55,7 @@ const allowedOrigins = [
 
 const corsOptions = {
     origin: function (origin, callback) {
+        console.log(`Request origin: ${origin}`); // Debugging
         if (!origin || allowedOrigins.includes(origin) || origin.startsWith("chrome-extension://")) {
             callback(null, true);
         } else {
@@ -64,9 +65,10 @@ const corsOptions = {
     },
     optionsSuccessStatus: 200,
     methods: ["GET", "PUT", "POST", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
     credentials: true,
 };
+
 app.use(cors(corsOptions));
 
 // Session Configuration
@@ -78,6 +80,7 @@ const sessionOption = {
         httpOnly: true,
         maxAge: 14 * 24 * 60 * 60 * 1000, // 14 days
         secure: process.env.NODE_ENV === "production",  // Set to true in production for HTTPS
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // Required for cross-origin
         sameSite: "lax",
     }
 };
@@ -117,13 +120,11 @@ app.use("/api", authRoutes);
 
 // Dashboard Route - Show user information
 app.get("/api/user-dashboard", isAuthenticated, (req, res) => {
-    const user = req.user;
-    console.log("Authenticated user:", user);
     res.status(200).json({
-      username: user.username,
-      email: user.email,
+        username: req.user.username,
+        email: req.user.email,
     });
-  });
+});
 
 
 //middleware
