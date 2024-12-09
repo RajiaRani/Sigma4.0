@@ -39,34 +39,23 @@
     padding: 20px 0px !important;
     padding: 30px !important;
 }
-
-
+ 
 .user-form .form-input {
-    border: 1px solid #ccc !important;
-    border-radius: 5px;
-    align-items: center !important;
-    margin: 0 auto !important;
-    background-color: rgba(255, 255, 255, 0.5) !important;
-    width: 100% !important;
-    border: 1px solid #ccc !important;
-    box-sizing: border-box !important;
-    padding: 10px 10px 10px 40px !important; 
-    border-radius: 5px !important;
-    align-items: center !important;
 
-}
-.input-wrapper {
+
+} 
+/* .input-wrapper {
     position: relative !important;
     display: flex;
     align-items: center;
     margin-bottom: 1rem !important;
     width: 100% !important;
   }
-  
+   */
   .input-icon {
     position: absolute !important;
     left: 10px !important;
-    color: rgba(0, 123, 255, 0.7)!important;
+    color: rgba(0, 123, 255, 0.8)!important;
     font-size: 20px !important;
     pointer-events: none !important; 
   }

@@ -27,22 +27,22 @@ const login = (req, res, next) => {
     passport.authenticate('local', 
         (err, user, info) => {
             if (err) {
-                console.error("Error during authentication:", err); // Log errors during authentication
+                //console.error("Error during authentication:", err); // Log errors during authentication
                 return next(err); // Pass the error to the next middleware
             }
 
             if (!user) {
-                console.log("Invalid credentials"); // Log when credentials are invalid
+                //console.log("Invalid credentials"); // Log when credentials are invalid
                 return res.status(400).json({ message: 'Invalid credentials' }); // Send error response to frontend
             }
 
             req.logIn(user, (err) => {
                 if (err) {
-                    console.error("Error during login:", err); // Log errors during login
+                    //console.error("Error during login:", err); // Log errors during login
                     return next(err); // Pass the error to the next middleware
                 }
 
-                console.log("User logged in successfully");
+                //console.log("User logged in successfully");
                 return res.status(200).json({ message: 'Logged in successfully', user }); // Send success response to frontend
             });
         }

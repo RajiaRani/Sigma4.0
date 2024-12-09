@@ -5,8 +5,16 @@ import { BiLogoGmail } from "react-icons/bi";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { RiLockPasswordFill } from "react-icons/ri";
-import { TextField } from "@mui/material";
-import FlashMessage from "../../components/FLASH/FlashMessage.jsx";
+import TextField from '@mui/material/TextField';
+import FormControl from '@mui/material/FormControl';
+import Input from '@mui/material/Input';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import Box from '@mui/material/Box';
+
+import { toast, ToastContainer } from "react-toastify"; // Importing toast and ToastContainer
+import "react-toastify/dist/ReactToastify.css";// Import CSS for toast notifications
+import { useNavigate } from "react-router-dom";
 import "./Common.css";
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -15,17 +23,7 @@ export default function Login() {
     const [username, setUserName] = useState("");
     const [Password, setPassword] = useState("");
     const [errors, setErrors] = useState({ username: "", password: "" });
-    //for Flash messages
-    const [flashMessage, setFlashMessage] = useState("");
-    const [flashType, setFlashType] = useState(""); 
-
-
-      // Close flash message
-      const closeFlashMessage = () => {
-        setFlashMessage("");
-        setFlashType("");
-    };
-
+    const navigate = useNavigate();
 
     // Validate Inputs
     const validateInputs = () => {
@@ -49,7 +47,7 @@ export default function Login() {
     // Handle Login Submit
     const handleLogIn = async (event) => {
         event.preventDefault();
-    
+
         if (validateInputs()) {
             try {
                 const response = await axios.post(
@@ -57,44 +55,45 @@ export default function Login() {
                     { username, password: Password },
                     { headers: { "Content-Type": "application/json" } }
                 );
-    
+
+                // Log response data for debugging
+                console.log("Response:", response);
+
                 if (response.status === 200) {
-                    setFlashMessage("Logged in successfully!");
-                    setFlashType("success");
-                    console.log("User data:", response.data.user);
-                    // Optionally redirect the user
+                    console.log("Logged in successfully, triggering toast...");
+                    toast.success("Logged in successfully!"); // Success toast
+                    navigate("/");
                 }
             } catch (error) {
                 console.log("Error during login:", error);
-    
+
                 if (error.response) {
-                    setFlashMessage(error.response.data.message || "Login failed. Please check your credentials.");
-                    setFlashType("error");
+                    toast.error(error.response.data.message || "Login failed. Please check your credentials."); // Error toast
                 } else {
-                    setFlashMessage("An error occurred. Please try again later.");
-                    setFlashType("error");
+                    toast.error("An error occurred. Please try again later."); // Error toast
                 }
             }
         }
     };
-    
 
     return (
         <div>
             <Navbar />
             <div className="main-container">
-            <FlashMessage message={flashMessage} type={flashType} onClose={closeFlashMessage} />
                 <h2>Login</h2>
                 <p>Start your journey with AbroadHub.</p>
 
                 <div className="bg-image">
-                    <form className="user-form" onSubmit={handleLogIn}>
+
+                    <ToastContainer />
+           
+                    <FormControl variant="standard" className="user-form" onSubmit={handleLogIn}>
                         <h3>Welcome Back</h3>
 
                         {/* Username */}
-                        <div className="input-wrapper">
-                            <BiLogoGmail className="input-icon" />
-                            <TextField
+                 
+                            
+                            {/* <TextField
                                 type="text"  // Fixed to "text" for username input
                                 label="Username"
                                 className="form-input"
@@ -104,8 +103,28 @@ export default function Login() {
                                 helperText={errors.username}
                                 fullWidth
                                 variant="outlined"
+                            /> */}
+
+                            <InputLabel htmlFor="input-with-icon-adornment">
+                                Enter username
+                            </InputLabel>
+                            <Input
+                                id="input-with-icon-adornment"
+                                type="text"  // Fixed to "text" for username input
+                                label="Username"
+                                className="form-input"
+                                value={username}
+                                onChange={(e) => setUserName(e.target.value)}
+                                error={!!errors.username}
+                                helperText={errors.username}
+                                fullWidth
+                                startAdornment={
+                                    <InputAdornment position="start">
+                                      <BiLogoGmail className="input-icon" />
+                                    </InputAdornment>
+                                }
                             />
-                        </div>
+               
 
                         {/* Password */}
                         <div className="input-wrapper">
@@ -132,9 +151,13 @@ export default function Login() {
                             Don't have an account?{" "}
                             <Link to="/signup">Sign Up</Link>
                         </p>
-                    </form>
+                    </FormControl>
+
                 </div>
             </div>
+
+
+
             <Footer />
         </div>
     );

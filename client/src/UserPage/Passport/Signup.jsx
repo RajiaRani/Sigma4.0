@@ -2,12 +2,14 @@ import Footer from "../../components/FOOTER/Footer";
 import Navbar from "../../components/NAVBAR/Navbar";
 import { TextField, Button } from "@mui/material";
 import { BiLogoGmail } from "react-icons/bi";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
-import "./Common.css";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import styles for toastify
 import axios from "axios";
+
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function Signup() {
@@ -17,7 +19,6 @@ export default function Signup() {
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
-    
     const handleSigUp = async (event) => {
         event.preventDefault();
 
@@ -42,15 +43,24 @@ export default function Signup() {
                     email: Email,
                     password: Password,
                 });
-                console.log("Signup successful:", response.data);
-                // Reset the form and navigate to success page
+
+                // Display success toast message
+                toast.success("Signup successful! Redirecting...");
+
+                // Reset the form
                 setUserName("");
                 setEmail("");
                 setPassword("");
-                navigate("/"); // Redirect to the success page or desired route
+
+                // Redirect after a delay to allow the user to see the message
+                setTimeout(() => navigate("/"), 2000); // Adjust the route as needed
             } catch (error) {
                 console.error("Signup error:", error.response?.data || error.message);
-                setErrors({ form: "Failed to register. Please try again." });
+
+                // Display error toast message
+                toast.error(
+                    error.response?.data?.message || "Failed to register. Please try again."
+                );
             }
         }
     };
@@ -64,6 +74,9 @@ export default function Signup() {
                     <p>Start your journey with AbroadHub.</p>
 
                     <div className="bg-image">
+                        {/* Toast Container for Flash Messages */}
+                        <ToastContainer />
+
                         {/* Form Section */}
                         <form className="user-form" onSubmit={handleSigUp}>
                             {/* Name Input */}
@@ -128,13 +141,10 @@ export default function Signup() {
                                 Sign Up
                             </Button>
 
-                            {/* Display Form Error */}
-                            {errors.form && <p style={{ color: "red" }}>{errors.form}</p>}
-
                             {/* Login Redirect */}
                             <div style={{ marginTop: "1rem" }}>
                                 <p>
-                                    Already have an account? <Link to="/auth/login">Log in</Link>
+                                    Already have an account? <Link to="/login">Log in</Link>
                                 </p>
                             </div>
                         </form>
