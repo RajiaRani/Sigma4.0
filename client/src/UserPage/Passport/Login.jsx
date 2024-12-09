@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { TextField } from "@mui/material";
+import FlashMessage from "../../components/FLASH/FlashMessage.jsx";
 import "./Common.css";
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -14,6 +15,17 @@ export default function Login() {
     const [username, setUserName] = useState("");
     const [Password, setPassword] = useState("");
     const [errors, setErrors] = useState({ username: "", password: "" });
+    //for Flash messages
+    const [flashMessage, setFlashMessage] = useState("");
+    const [flashType, setFlashType] = useState(""); 
+
+
+      // Close flash message
+      const closeFlashMessage = () => {
+        setFlashMessage("");
+        setFlashType("");
+    };
+
 
     // Validate Inputs
     const validateInputs = () => {
@@ -21,9 +33,9 @@ export default function Login() {
         const newErrors = { username: "", password: "" };
 
         if (!username.trim()) {
-            newErrors.username = "Usernmae is required.";
+            newErrors.username = "Username is required.";
             isValid = false;
-        } 
+        }
 
         if (!Password.trim()) {
             newErrors.password = "Password is required.";
@@ -37,47 +49,41 @@ export default function Login() {
     // Handle Login Submit
     const handleLogIn = async (event) => {
         event.preventDefault();
-
+    
         if (validateInputs()) {
             try {
                 const response = await axios.post(
                     `${BASE_URL}/api/login`,
-                    {
-                        username:username,
-                        password: Password,
-                    },
-                    {
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                    }
+                    { username, password: Password },
+                    { headers: { "Content-Type": "application/json" } }
                 );
-
-                const data = response.data;
-
+    
                 if (response.status === 200) {
-                    alert("Logged in successfully!");
-                    console.log("User data:", data.user);
-                } else {
-                    alert(data.message || "Login failed. Please check your credentials.");
+                    setFlashMessage("Logged in successfully!");
+                    setFlashType("success");
+                    console.log("User data:", response.data.user);
+                    // Optionally redirect the user
                 }
             } catch (error) {
-                console.log("Error during login:", error.message);
-
-                // Handle specific errors
+                console.log("Error during login:", error);
+    
                 if (error.response) {
-                    alert(error.response.data.message || "Login failed. Please try again.");
+                    setFlashMessage(error.response.data.message || "Login failed. Please check your credentials.");
+                    setFlashType("error");
                 } else {
-                    alert("An error occurred. Please try again later.");
+                    setFlashMessage("An error occurred. Please try again later.");
+                    setFlashType("error");
                 }
             }
         }
     };
+    
 
     return (
         <div>
             <Navbar />
             <div className="main-container">
+            <FlashMessage message={flashMessage} type={flashType} onClose={closeFlashMessage} />
                 <h2>Login</h2>
                 <p>Start your journey with AbroadHub.</p>
 
@@ -85,12 +91,12 @@ export default function Login() {
                     <form className="user-form" onSubmit={handleLogIn}>
                         <h3>Welcome Back</h3>
 
-                        {/* username */}
+                        {/* Username */}
                         <div className="input-wrapper">
                             <BiLogoGmail className="input-icon" />
                             <TextField
-                                type="username"
-                                label="username"
+                                type="text"  // Fixed to "text" for username input
+                                label="Username"
                                 className="form-input"
                                 value={username}
                                 onChange={(e) => setUserName(e.target.value)}

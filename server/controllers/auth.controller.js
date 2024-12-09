@@ -25,17 +25,30 @@ const signup = async (req, res) => {
 // Login
 const login = (req, res, next) => {
     passport.authenticate('local', 
-         (err, user, info) => {
-        if (err) return next(err);
-        if (!user) return res.status(400).json({ message: 'Invalid credentials' });
+        (err, user, info) => {
+            if (err) {
+                console.error("Error during authentication:", err); // Log errors during authentication
+                return next(err); // Pass the error to the next middleware
+            }
 
-        // Log in the user
-        req.logIn(user, (err) => {
-            if (err) return next(err);
-            return res.status(200).json({ message: 'Logged in successfully', user });
-        });
-    })(req, res, next);
+            if (!user) {
+                console.log("Invalid credentials"); // Log when credentials are invalid
+                return res.status(400).json({ message: 'Invalid credentials' }); // Send error response to frontend
+            }
+
+            req.logIn(user, (err) => {
+                if (err) {
+                    console.error("Error during login:", err); // Log errors during login
+                    return next(err); // Pass the error to the next middleware
+                }
+
+                console.log("User logged in successfully");
+                return res.status(200).json({ message: 'Logged in successfully', user }); // Send success response to frontend
+            });
+        }
+    )(req, res, next);
 };
+
 
 
 // Logout
